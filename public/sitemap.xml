@@ -14,19 +14,8 @@
   <url><loc>https://www.example.com/privacy</loc></url>
   <url><loc>https://www.example.com/terms</loc></url>
   <url><loc>https://www.example.com/services/document-digitization</loc></url>
-  <url><loc>https://www.example.com/services/high-volume-scanning</loc></url>
-  <url><loc>https://www.example.com/services/bound-book-scanning</loc></url>
-  <url><loc>https://www.example.com/services/large-format-scanning</loc></url>
-  <url><loc>https://www.example.com/services/microfilm-digitization</loc></url>
   <url><loc>https://www.example.com/services/audiovisual-digitization</loc></url>
-  <url><loc>https://www.example.com/services/ocr-searchable-pdf</loc></url>
-  <url><loc>https://www.example.com/services/document-indexing</loc></url>
-  <url><loc>https://www.example.com/services/digital-archiving</loc></url>
-  <url><loc>https://www.example.com/services/edrms</loc></url>
-  <url><loc>https://www.example.com/services/data-conversion</loc></url>
-  <url><loc>https://www.example.com/services/software-development</loc></url>
-  <url><loc>https://www.example.com/services/hardware-scanner-supply</loc></url>
-  <url><loc>https://www.example.com/services/on-site-digitization</loc></url>
-  <url><loc>https://www.example.com/services/digital-preservation</loc></url>
-  <url><loc>https://www.example.com/services/3d-artefact-digitization</loc></url>
+  <url><loc>https://www.example.com/services/document-records-management</loc></url>
+  <url><loc>https://www.example.com/services/imaging-consultation</loc></url>
+  <url><loc>https://www.example.com/services/geographic-information-system</loc></url>
 </urlset>

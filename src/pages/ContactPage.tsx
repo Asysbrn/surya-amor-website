@@ -16,7 +16,7 @@ export default function ContactPage() {
   const [errors, setErrors] = useState<ContactFormErrors>({})
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [statusMessage, setStatusMessage] = useState('')
-  useSeo({ title: 'Contact Us', description: 'Discuss a document digitization, preservation, information-management, software or technology project with Surya Amor Technology.', path: '/contact' })
+  useSeo({ title: 'Contact Us', description: 'Contact Surya Amor Technology in Kuala Lumpur about document digitization, audiovisual conversion, records management, imaging consultation or GIS.', path: '/contact' })
 
   function update(event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) {
     const target = event.target
@@ -81,15 +81,16 @@ export default function ContactPage() {
           <aside>
             <div className="aside-panel">
               <h2>Company contact details</h2>
-              <p>Official contact details must be supplied and approved before launch.</p>
+              <p>These details are published on the legacy company website and require final owner confirmation.</p>
               <div className="contact-options">
                 <div className="contact-option"><Mail size={19} /><div><strong>Email</strong><span>{siteConfig.email}</span></div></div>
                 <div className="contact-option"><Smartphone size={19} /><div><strong>Phone</strong><span>{siteConfig.phone}</span></div></div>
                 <div className="contact-option"><MapPin size={19} /><div><strong>Address</strong><span>{siteConfig.address}</span></div></div>
                 <div className="contact-option"><Clock3 size={19} /><div><strong>Business hours</strong><span>{siteConfig.hours}</span></div></div>
-                <div className="contact-option"><Building2 size={19} /><div><strong>Registration</strong><span>Confirmation required</span></div></div>
+                <div className="contact-option"><Building2 size={19} /><div><strong>Registration</strong><span>[COMPANY OWNER TO PROVIDE]</span></div></div>
               </div>
             </div>
+            <ConfirmationNotice>{siteConfig.contactNote}</ConfirmationNotice>
             <ConfirmationNotice>The form uses a mock submission unless `VITE_CONTACT_FORM_ENDPOINT` is configured. In mock mode, no personal data leaves the browser.</ConfirmationNotice>
           </aside>
         </div>

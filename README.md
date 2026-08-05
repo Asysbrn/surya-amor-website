@@ -1,6 +1,6 @@
 # Surya Amor Technology Corporate Website
 
-A modern, responsive corporate website for Surya Amor Technology Sdn Bhd, focused on document digitization, digital preservation, information management, software and technology services. Content that requires company verification is deliberately labelled and is never represented as confirmed fact.
+A modern, responsive corporate website for Surya Amor Technology Sdn Bhd, focused on the five service areas published by the company: document digitization, audiovisual digitization, document and records management, imaging consultation and Geographic Information System services. Content requiring company verification is deliberately labelled and is never represented as confirmed fact.
 
 ## Technology stack
 
@@ -59,16 +59,17 @@ src/
 
 ## Adding images
 
-Place company-approved files in `src/assets/images/`. Prefer lowercase kebab-case names such as `bound-book-scanner.webp`. Then import them from the component or data file that uses them:
+Place company-approved files in `src/assets/images/`. Prefer lowercase kebab-case names such as `document-scanning-equipment.webp`. Then import them from the component or data file that uses them:
 
 ```tsx
-import scannerImage from '../assets/images/bound-book-scanner.webp'
+import scannerImage from '../assets/images/document-scanning-equipment.webp'
 ```
 
 See `src/assets/images/README.md` for dimensions, formats, naming and the asset checklist. Do not link to third-party image URLs. Replace the generated `hero-digitization-studio.png` before launch if it could be mistaken for a real facility.
 
 ## Updating website content
 
+- Source inventory and verification notes: `Content-Reference.md`
 - Services: `src/data/services.ts`
 - Navigation, industries, projects and company placeholders: `src/data/site.ts`
 - Home sections: `src/sections/`
@@ -76,7 +77,7 @@ See `src/assets/images/README.md` for dimensions, formats, naming and the asset 
 - Brand colours, type and layout tokens: `src/styles/index.css`
 - Route titles and descriptions: each page's `useSeo` call
 
-Keep unverified claims labelled `Confirmation required` until an authorized company source approves them.
+Keep unverified claims visibly labelled until an authorized company source approves them. The legacy website at `satsb.com.my` is a content reference only; never copy its design, code or images.
 
 ## Resuming development
 

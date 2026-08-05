@@ -25,8 +25,9 @@ Do not upscale small files. Keep focal subjects inside the central 70% for respo
 Use lowercase kebab-case names that describe the subject, not camera numbers:
 
 - `hero-digitization-facility.webp`
-- `service-bound-book-scanning.webp`
-- `project-archive-conversion-01.webp`
+- `service-document-scanning.webp`
+- `service-audiovisual-conversion.webp`
+- `project-approved-digitization-01.webp`
 - `client-logo-confirmed-name.svg`
 
 Add `-2x` only for an intentional high-density asset and avoid spaces, dates, `final-final`, or unverified client names.
@@ -51,3 +52,5 @@ Add `-2x` only for an intentional high-density asset and avoid spaces, dates, `f
 - `og-default.*`: shared social preview metadata.
 
 `hero-digitization-studio.png` is an AI-generated placeholder, not evidence of a Surya Amor Technology facility or project. Replace or approve it before launch.
+
+Do not download or reuse images from the legacy SATSB website. Suitable approved replacements include document scanning equipment, paper preparation, VHS or Betacam transfer, audio cassette transfer, records-management interfaces, imaging consultation, GIS workflows, the corporate team and the Kuala Lumpur office.

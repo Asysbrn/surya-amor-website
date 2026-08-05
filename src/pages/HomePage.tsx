@@ -3,6 +3,6 @@ import { HomeHero } from '../sections/HomeHero'
 import { ContactPreviewSection, IndustriesSection, IntroductionSection, ProcessSection, ProjectsSection, ServicesSection, TechnologySection, TrustSection, WhySection } from '../sections/HomeSections'
 
 export default function HomePage() {
-  useSeo({ title: 'Document Digitization & Technology Solutions', description: 'Professional document digitization, digital preservation, information management, software and technology capabilities for Malaysian organizations.', path: '/' })
+  useSeo({ title: 'Document Digitization & Information Solutions', description: 'Document digitization, audiovisual conversion, document and records management, imaging consultation and GIS services from Kuala Lumpur.', path: '/' })
   return <><HomeHero /><IntroductionSection /><ServicesSection /><IndustriesSection /><WhySection /><ProcessSection /><ProjectsSection /><TechnologySection /><TrustSection /><ContactPreviewSection /></>
 }

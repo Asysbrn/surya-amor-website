@@ -10,6 +10,7 @@ export interface Service {
   description: string
   outcomes: string[]
   deliverables: string[]
+  verificationNote?: string
   icon: LucideIcon
   featured?: boolean
 }

@@ -1,12 +1,14 @@
 # Project Roadmap
 
 > **Current phase:** Phase 13 — Company content and launch review  
-> **Last completed task:** Production build, 29-route preview check, contact-validation test and dependency review completed  
-> **Next task:** Supply approved company content, replace/optimize the hero image, and complete manual browser/accessibility QA  
-> **Known issues:** Company contact/registration details, statistics, clients, certifications, testimonials and case studies have not been supplied. The generated PNG hero is 1.84 MB and should be replaced with an optimized approved AVIF/WebP. `npm audit` reports a high-severity React Router RSC-mode advisory in 7.18.2; this static Browser Router site does not use RSC, Actions or a React Router server, but the dependency should be updated as soon as a patched stable release is available. No browser executable was available for console, visual breakpoint, screen-reader or Lighthouse testing.  
+> **Last completed task:** Reviewed the public legacy website, created `Content-Reference.md`, restricted the site to five source-supported service areas, integrated rewritten company content, and verified the 18-route production preview
+> **Next task:** Obtain owner approval for the sourced content and remaining placeholders, then replace/optimize the hero image and complete manual browser/accessibility QA
+> **Known issues:** The source conflicts between office units `T2A-09-3A` and `T02A-09-3A`. Registration details, formal vision, GIS scope, detailed quality/security practices, current staffing, project facts and publication permissions remain unconfirmed. Privacy Policy and Terms require owner/legal approval. The generated PNG hero is 1.84 MB and should be replaced with an optimized approved AVIF/WebP. `npm audit` previously reported a high-severity React Router RSC-mode advisory in 7.18.2; this static Browser Router site does not use RSC, Actions or a React Router server, but the dependency should be updated when an appropriate patched version is approved. No browser executable was available for console, visual breakpoint, screen-reader or Lighthouse testing.
 > **Notes for continuing:** Run `npm install`, then `npm run dev`. Review this file from the first unchecked task. Never convert a `Confirmation required` placeholder into a factual claim without company approval. Run `npm run lint && npm run typecheck && npm run build` after every content or code change.
 
 **Verification record (2026-08-05):** `npm run dev` served HTTP 200; ESLint passed; TypeScript passed; the production build passed; all 29 public, service-detail and fallback routes returned HTTP 200 from the production preview; invalid and valid form datasets produced the expected validation results. Browser-only visual/console checks remain listed below.
+
+**Content integration record (2026-08-05):** The public legacy site at `https://www.satsb.com.my/` was reviewed as a content source only. No legacy images, code, layout or design were reused. `Content-Reference.md` records extracted information, rewrites, destinations and verification status. TypeScript, ESLint and the production build passed after integration; all 18 current public, service-detail and fallback routes returned HTTP 200.
 
 ## Phase 1 — Planning
 
@@ -121,10 +123,15 @@
 
 ## Phase 13 — Content review
 
-- [ ] Replace company address and contact placeholders
+- [x] Review the legacy company website as a factual content source only
+- [x] Create the required `Content-Reference.md` inventory and owner checklist
+- [x] Restrict public services to the five areas supported by the source
+- [x] Add the published email, telephone and address with the unit-number conflict visibly flagged
+- [ ] Confirm the correct office unit, email, telephone and business hours with the owner
 - [ ] Verify registration and company profile details
-- [ ] Replace representative statistics with approved figures or remove them
-- [ ] Replace project examples with approved case studies
+- [x] Remove unsupported quantitative, certification, software and experience claims from public copy
+- [x] Replace invented representative projects with the nine legacy credential names and explicit evidence limits
+- [ ] Replace verification listings with approved case studies or obtain permission for the current names
 - [ ] Add approved client logos and testimonials
 - [ ] Add verified certifications and partnerships only if supplied
 - [ ] Complete legal review of Privacy Policy and Terms

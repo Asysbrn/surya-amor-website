@@ -9,7 +9,7 @@ export function Footer() {
       <div className="container footer__top">
         <div className="footer__company">
           <Brand />
-          <p className="footer__about">Helping organizations plan and deliver careful document digitization, digital preservation and information technology initiatives.</p>
+          <p className="footer__about">Document digitization, audiovisual conversion, records management, imaging consultation and GIS services from Kuala Lumpur.</p>
         </div>
         <div>
           <h2>Company</h2>
@@ -20,7 +20,7 @@ export function Footer() {
         <div>
           <h2>Core services</h2>
           <div className="footer__links">
-            {services.filter((service) => service.featured).slice(0, 5).map((service) => <Link key={service.slug} to={`/services/${service.slug}`}>{service.title}</Link>)}
+            {services.map((service) => <Link key={service.slug} to={`/services/${service.slug}`}>{service.title}</Link>)}
             <Link to="/services">All services</Link>
           </div>
         </div>

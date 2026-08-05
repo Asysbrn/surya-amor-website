@@ -2,16 +2,56 @@ import { ConfirmationNotice } from '../components/common/ConfirmationNotice'
 import { PageHero } from '../components/common/PageHero'
 import { useSeo } from '../hooks/useSeo'
 
-function LegalNotice({ type }: { type: 'privacy' | 'terms' }) {
-  return <ConfirmationNotice>This is starter {type === 'privacy' ? 'privacy' : 'terms'} content for structural purposes, not legal advice. Company details, actual data practices and applicable contractual terms require review by qualified Malaysian legal counsel before launch.</ConfirmationNotice>
-}
-
 export function PrivacyPage() {
-  useSeo({ title: 'Privacy Policy', description: 'Starter privacy notice for the Surya Amor Technology website, pending company and legal review.', path: '/privacy' })
-  return <><PageHero eyebrow="Legal" title="Privacy Policy" description="How website enquiry information is intended to be handled. Effective date: to be confirmed." /><section className="section section--white"><div className="container content-layout"><article className="prose"><LegalNotice type="privacy" /><h2>1. About this notice</h2><p>This notice is intended to explain how Surya Amor Technology Sdn Bhd may collect, use and protect personal information submitted through this website. The company’s official registration number, address and privacy contact must be inserted before publication.</p><h2>2. Information collected</h2><p>The enquiry form may collect your name, work email, telephone number, organization, service interest, message and consent acknowledgement. Do not submit confidential records, identity documents or sensitive personal information through the general form.</p><h2>3. Intended use</h2><p>Information is intended to be used to respond to enquiries, understand potential project requirements, maintain appropriate business records and protect website operations.</p><h2>4. Legal basis and disclosure</h2><p>The final notice must identify applicable grounds for processing, service providers, cross-border transfers and legally required disclosures based on the production systems selected.</p><h2>5. Retention and security</h2><p>Retention periods and safeguards must be approved once the enquiry backend, email provider and CRM or recordkeeping process are known.</p><h2>6. Your choices and rights</h2><p>The final policy should explain how individuals may request access or correction, withdraw consent where applicable, ask questions or lodge concerns under applicable Malaysian requirements.</p><h2>7. Cookies and analytics</h2><p>This initial website does not intentionally add analytics or advertising cookies. Update this section and implement appropriate controls before adding analytics, embedded media or marketing technologies.</p><h2>8. Contact</h2><p>Privacy contact name, email, postal address and response process: <strong>confirmation required</strong>.</p></article><aside className="aside-panel"><h2>Before launch</h2><p>Confirm the form provider, recipients, retention, hosting locations, analytics, cookie use and privacy contact. Then obtain legal approval.</p></aside></div></section></>
+  useSeo({ title: 'Privacy Policy', description: 'Privacy Policy placeholder for Surya Amor Technology, pending company information and Malaysian legal review.', path: '/privacy' })
+  return (
+    <>
+      <PageHero eyebrow="Legal information" title="Privacy Policy" description="[COMPANY OWNER AND QUALIFIED MALAYSIAN LEGAL COUNSEL TO PROVIDE OR APPROVE THIS INFORMATION]" />
+      <section className="section section--white">
+        <div className="container content-layout">
+          <article className="prose">
+            <ConfirmationNotice>No privacy policy was available on the legacy company website. This page is a labelled content placeholder and must not be treated as an approved legal notice.</ConfirmationNotice>
+            <h2>Information required before publication</h2>
+            <ul>
+              <li>Official company identity, registration number and privacy contact</li>
+              <li>Information collected through the website and the purpose for collecting it</li>
+              <li>Contact-form provider, recipients and data-storage locations</li>
+              <li>Legal basis, disclosure, retention and security practices</li>
+              <li>Individual access, correction, consent and complaint processes</li>
+              <li>Analytics, cookies, embedded media and third-party services</li>
+              <li>Effective date and policy-update process</li>
+            </ul>
+          </article>
+          <aside className="aside-panel"><h2>Current status</h2><p>[OWNER AND LEGAL REVIEW REQUIRED BEFORE LAUNCH]</p></aside>
+        </div>
+      </section>
+    </>
+  )
 }
 
 export function TermsPage() {
-  useSeo({ title: 'Terms & Conditions', description: 'Starter website terms for Surya Amor Technology, pending company and legal review.', path: '/terms' })
-  return <><PageHero eyebrow="Legal" title="Terms & Conditions" description="Starter terms governing use of this website. Effective date: to be confirmed." /><section className="section section--white"><div className="container content-layout"><article className="prose"><LegalNotice type="terms" /><h2>1. Website information</h2><p>This website provides general information about potential services and capabilities. It does not constitute a binding quotation, warranty, service-level commitment or professional advice.</p><h2>2. Accuracy and availability</h2><p>Information may be updated or withdrawn. Project methods, availability, timeframes and deliverables are confirmed only in an authorized written agreement.</p><h2>3. Intellectual property</h2><p>Ownership statements for company content, trademarks and licensed assets must be confirmed. Visitors must not copy or reuse protected material except as permitted by law or written authorization.</p><h2>4. Acceptable use</h2><p>Visitors must not misuse the site, attempt unauthorized access, introduce malicious code, interfere with operation or submit unlawful or misleading content.</p><h2>5. Third-party services</h2><p>If third-party form, analytics or embedded services are introduced, the final terms should explain that their separate terms may apply.</p><h2>6. Limitation and governing law</h2><p>Appropriate limitations, exclusions, governing law, jurisdiction and dispute provisions require legal drafting based on the company’s actual operations and contracts.</p><h2>7. Changes and contact</h2><p>The final document should state how changes are published and provide verified legal contact details. These details are currently <strong>confirmation required</strong>.</p></article><aside className="aside-panel"><h2>Before launch</h2><p>Confirm company identity, content ownership, service disclaimers, governing law, jurisdiction and contact details with legal counsel.</p></aside></div></section></>
+  useSeo({ title: 'Terms & Conditions', description: 'Terms and Conditions placeholder for Surya Amor Technology, pending company information and Malaysian legal review.', path: '/terms' })
+  return (
+    <>
+      <PageHero eyebrow="Legal information" title="Terms & Conditions" description="[COMPANY OWNER AND QUALIFIED MALAYSIAN LEGAL COUNSEL TO PROVIDE OR APPROVE THIS INFORMATION]" />
+      <section className="section section--white">
+        <div className="container content-layout">
+          <article className="prose">
+            <ConfirmationNotice>No terms and conditions were available on the legacy company website. This page is a labelled content placeholder and must not be treated as approved legal terms.</ConfirmationNotice>
+            <h2>Information required before publication</h2>
+            <ul>
+              <li>Official company identity and contact details</li>
+              <li>Permitted website use and prohibited activities</li>
+              <li>Ownership and permitted use of company content and branding</li>
+              <li>Accuracy, availability and service-information disclaimers</li>
+              <li>Third-party links and service terms</li>
+              <li>Liability, governing law, jurisdiction and dispute provisions</li>
+              <li>Effective date and terms-update process</li>
+            </ul>
+          </article>
+          <aside className="aside-panel"><h2>Current status</h2><p>[OWNER AND LEGAL REVIEW REQUIRED BEFORE LAUNCH]</p></aside>
+        </div>
+      </section>
+    </>
+  )
 }

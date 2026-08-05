@@ -28,7 +28,7 @@ export function Header() {
     <>
       <div className="announcement">
         <div className="container announcement__inner">
-          <span>Planning a digitization programme?</span><Link to="/contact">Start with a collection assessment →</Link>
+          <span>Planning a digitization project?</span><Link to="/contact">Discuss your requirements →</Link>
         </div>
       </div>
       <header className="header">
@@ -44,8 +44,8 @@ export function Header() {
                     </Link>
                     <div className="nav__dropdown">
                       {item.children.map((child) => <Link key={child.href} to={child.href}><strong>{child.label}</strong><span>{child.description}</span></Link>)}
-                      <Link to="/services"><strong>View all services</strong><span>Explore the complete capability catalogue.</span></Link>
-                      <Link to="/process"><strong>Our delivery process</strong><span>See how discovery becomes controlled handover.</span></Link>
+                      <Link to="/services"><strong>View all services</strong><span>Explore the five published service areas.</span></Link>
+                      <Link to="/process"><strong>Proposed process</strong><span>Review the high-level workflow awaiting owner approval.</span></Link>
                     </div>
                   </>
                 ) : (

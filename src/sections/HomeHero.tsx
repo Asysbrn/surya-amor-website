@@ -8,21 +8,21 @@ export function HomeHero() {
       <img className="hero__image" src={heroImage} width="1664" height="941" alt="Illustrative document digitization studio with an overhead scanner, archival books and a large technical drawing" fetchPriority="high" />
       <div className="container hero__content">
         <div className="hero__copy">
-          <p className="eyebrow">Digitization · Preservation · Technology</p>
-          <h1 className="display" id="home-hero-title">Your records, ready for what comes next.</h1>
-          <p className="lead">Surya Amor Technology helps organizations transform physical and legacy information into structured, searchable and sustainable digital assets.</p>
+          <p className="eyebrow">Document imaging · Digital conversion · Information systems</p>
+          <h1 className="display" id="home-hero-title">Turn physical and legacy information into usable digital resources.</h1>
+          <p className="lead">Surya Amor Technology Sdn Bhd provides document digitization, audiovisual conversion, information-management and imaging consultation services from Kuala Lumpur.</p>
           <div className="button-row">
-            <Button to="/contact" arrow>Plan your project</Button>
-            <Button to="/services" variant="ghost">Explore capabilities</Button>
+            <Button to="/contact" arrow>Request a consultation</Button>
+            <Button to="/services" variant="ghost">Explore services</Button>
           </div>
-          <div className="hero__proof" aria-label="Service principles">
-            <span><CheckCircle2 size={16} aria-hidden="true" /> Collection-aware workflows</span>
-            <span><CheckCircle2 size={16} aria-hidden="true" /> Quality-led delivery</span>
-            <span><CheckCircle2 size={16} aria-hidden="true" /> On-site options</span>
+          <div className="hero__proof" aria-label="Published service areas">
+            <span><CheckCircle2 size={16} aria-hidden="true" /> Document digitization</span>
+            <span><CheckCircle2 size={16} aria-hidden="true" /> Audio & video transfer</span>
+            <span><CheckCircle2 size={16} aria-hidden="true" /> Records solutions</span>
           </div>
         </div>
       </div>
-      <span className="hero__caption">AI-generated illustrative placeholder — replace before launch</span>
+      <span className="hero__caption">AI-generated illustrative placeholder — replace with an approved company image before launch</span>
     </section>
   )
 }

@@ -7,7 +7,7 @@ export function OrganizationSchema() {
     '@type': 'Organization',
     name: siteConfig.name,
     url: origin,
-    description: 'Malaysian document digitization, digital preservation, information management and technology company.',
+    description: 'Kuala Lumpur company providing document digitization, audiovisual conversion, document and records management, imaging consultation and GIS services.',
     areaServed: { '@type': 'Country', name: 'Malaysia' },
   }
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />

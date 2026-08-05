@@ -168,7 +168,7 @@ img { display: block; max-width: 100%; }
 .principle h3 { margin: 0; color: var(--white); font: 700 1.12rem var(--font-display); }
 .principle p { margin: .4rem 0 0; color: #adc6d1; line-height: 1.6; }
 
-.process-line { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); margin-top: 3rem; }
+.process-line { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); margin-top: 3rem; }
 .process-step { position: relative; padding: 1.2rem 1rem 0 0; border-top: 1px solid var(--cloud-300); }
 .process-step::before { content: ''; position: absolute; top: -5px; left: 0; width: 9px; height: 9px; border-radius: 50%; background: var(--teal-400); box-shadow: 0 0 0 5px var(--cloud-50); }
 .process-step__number { color: var(--blue-600); font: 800 .74rem var(--font-display); }

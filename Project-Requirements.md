@@ -2,16 +2,16 @@
 
 ## 1. Project overview
 
-Surya Amor Technology Sdn Bhd requires a production-quality corporate website that presents its digitization, preservation, information-management, software, and technology-supply capabilities to Malaysian government, corporate, archive, library, museum, and institutional buyers. The first release is a fast static single-page application with clearly separated content and presentation layers, ready for a form API or CMS later.
+Surya Amor Technology Sdn Bhd requires a production-quality corporate website that presents only service areas supported by approved source material. The current source inventory supports document digitization, audiovisual digitization, document and records management, imaging consultation and Geographic Information System services. The first release is a fast static single-page application with clearly separated content and presentation layers, ready for a form API or CMS later.
 
-All unverified claims are explicitly labelled `Confirmation required` in the interface or documented as replacement items. The website must not imply certifications, clients, awards, project quantities, partnerships, or government approval that the company has not supplied.
+The legacy website at `https://www.satsb.com.my/` may be used only as a factual content source. Its design, template, code, images, layout, components and branding presentation must not be reused or imitated. All extracted content, rewrites and evidence limitations are recorded in `Content-Reference.md`. Unverified claims are explicitly labelled in the interface or documented as replacement items. The website must not imply certifications, clients, awards, project quantities, partnerships, endorsements or government approval that the company has not substantiated.
 
 ## 2. Company website objectives
 
 - Establish a credible, modern and procurement-friendly digital presence.
-- Explain a broad service catalogue without overwhelming the homepage.
+- Explain the five source-supported service areas without inventing technical specifications.
 - Guide visitors from challenge to relevant service and enquiry.
-- Demonstrate a careful, traceable digitization process.
+- Present a clearly labelled proposed process until the owner approves the formal workflow.
 - Make company, service, industry and legal information easy to find.
 - Generate qualified enquiries through an accessible contact form.
 - Provide an extensible foundation for verified case studies, CMS content and backend integrations.
@@ -42,14 +42,14 @@ Future flow: browser → CDN/static host → contact API/serverless function →
 
 - Home: overview, selected services, industries, process, trust, projects and calls to action.
 - About Us: company positioning, values, operating principles and unverified-company-detail notice.
-- Services: grouped catalogue of all services.
-- Service detail: reusable route at `/services/:slug` with outcomes, deliverables and workflow.
-- Industries: government, archives, libraries, museums, engineering, corporate and education.
-- Projects: case-study-ready portfolio with clearly marked representative examples.
-- Technology: equipment and solution capabilities without unsupported brand claims.
-- Our Process: discovery through handover and preservation.
-- Why Choose Us: risk-aware differentiators and delivery principles.
-- Careers: culture, general-interest submission guidance and vacancy placeholder.
+- Services: catalogue of the five service areas named by the legacy source.
+- Service detail: reusable route at `/services/:slug` with published focus and explicit detail-verification notes.
+- Industries: sectors derived from organizations displayed in the legacy portfolio, with evidence limits shown.
+- Projects: the nine legacy credential names presented as owner-review records without implied scope or endorsement.
+- Solutions: published solution categories without unsupported products, platforms or partner claims.
+- Our Process: proposed high-level sequence derived from service descriptions and labelled for owner approval.
+- Why Choose Us: themes from the published mission; quantitative and certification claims are excluded pending evidence.
+- Careers: explicit placeholder because no vacancies or recruitment channel were published.
 - Contact: enquiry options, validation and company-detail placeholders.
 - Privacy Policy and Terms: starter legal content requiring professional review.
 - 404: recovery links.
@@ -111,7 +111,7 @@ The temporary identity uses midnight navy, ocean blue, teal and warm cloud neutr
 - Canonical link and Open Graph/Twitter metadata managed per page.
 - Semantic content hierarchy and descriptive URLs.
 - Static `robots.txt` and `sitemap.xml` included; production domain must be replaced.
-- Organization structured data uses placeholders only and must be verified before production.
+- Organization structured data uses only the supported high-level company description and must be verified before production.
 - Real social-sharing image and company address should be added before launch.
 
 ## 13. Performance requirements
@@ -170,7 +170,7 @@ Recommended: Netlify, Cloudflare Pages or Vercel for preview deployments, TLS, C
 - All required routes render and recover cleanly at 404.
 - Navigation, mobile menu, form and scroll-to-top work with keyboard and pointer.
 - All page metadata is meaningful and route-specific.
-- Service content is data-driven and every service has a valid detail URL.
+- Service content is data-driven, limited to source-supported areas and every service has a valid detail URL.
 - Layout remains usable at mobile, tablet and desktop targets.
 - No external image URLs, exposed secrets, broken imports, build errors or unsupported factual claims.
 - `npm run lint`, `npm run typecheck`, and `npm run build` pass.
