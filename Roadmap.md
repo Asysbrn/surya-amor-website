@@ -1,14 +1,16 @@
 # Project Roadmap
 
 > **Current phase:** Phase 13 — Company content and launch review  
-> **Last completed task:** Reviewed the public legacy website, created `Content-Reference.md`, restricted the site to five source-supported service areas, integrated rewritten company content, and verified the 18-route production preview
-> **Next task:** Obtain owner approval for the sourced content and remaining placeholders, then replace/optimize the hero image and complete manual browser/accessibility QA
+> **Last completed task:** Integrated the official Surya Amor Technology Sdn Bhd logo into the responsive header and footer through a reusable component, removed the temporary favicon reference, and verified the development and production builds
+> **Next task:** Obtain owner approval for the sourced content and remaining placeholders, then replace/optimize the hero image and complete remaining browser/accessibility QA
 > **Known issues:** The source conflicts between office units `T2A-09-3A` and `T02A-09-3A`. Registration details, formal vision, GIS scope, detailed quality/security practices, current staffing, project facts and publication permissions remain unconfirmed. Privacy Policy and Terms require owner/legal approval. The generated PNG hero is 1.84 MB and should be replaced with an optimized approved AVIF/WebP. `npm audit` previously reported a high-severity React Router RSC-mode advisory in 7.18.2; this static Browser Router site does not use RSC, Actions or a React Router server, but the dependency should be updated when an appropriate patched version is approved. No browser executable was available for console, visual breakpoint, screen-reader or Lighthouse testing.
 > **Notes for continuing:** Run `npm install`, then `npm run dev`. Review this file from the first unchecked task. Never convert a `Confirmation required` placeholder into a factual claim without company approval. Run `npm run lint && npm run typecheck && npm run build` after every content or code change.
 
 **Verification record (2026-08-05):** `npm run dev` served HTTP 200; ESLint passed; TypeScript passed; the production build passed; all 29 public, service-detail and fallback routes returned HTTP 200 from the production preview; invalid and valid form datasets produced the expected validation results. Browser-only visual/console checks remain listed below.
 
 **Content integration record (2026-08-05):** The public legacy site at `https://www.satsb.com.my/` was reviewed as a content source only. No legacy images, code, layout or design were reused. `Content-Reference.md` records extracted information, rewrites, destinations and verification status. TypeScript, ESLint and the production build passed after integration; all 18 current public, service-detail and fallback routes returned HTTP 200.
+
+**Official logo integration record (2026-08-05):** Added the supplied `SAT LOGO.jpeg` wordmark to the desktop/mobile header and footer using one responsive `CompanyLogo` component with the approved alt text. The original aspect ratio and colours are preserved. The unrelated temporary favicon reference and asset were removed because the wide JPEG artwork is not suitable as a small browser-tab icon without cropping or altering it. The development page and logo asset returned HTTP 200; ESLint, TypeScript and the production build passed, with Vite emitting the logo as a hashed JPEG asset. Responsive sizing was checked against the 375 px, 768 px and desktop CSS layouts; browser-based visual QA remains open because no browser executable is installed in this environment.
 
 ## Phase 1 — Planning
 
@@ -33,7 +35,7 @@
 - [x] Define buttons, cards, form fields, borders and shadows
 - [x] Add responsive breakpoints and layout primitives
 - [x] Add visible focus and reduced-motion treatment
-- [x] Create logo placeholder and favicon treatment
+- [x] Replace temporary branding with the official responsive logo in the header and footer
 
 ## Phase 4 — Application shell and navigation
 

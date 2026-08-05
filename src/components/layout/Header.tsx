@@ -2,7 +2,7 @@ import { ChevronDown, Menu, X } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { navigation } from '../../data/site'
-import { Brand } from '../common/Brand'
+import { CompanyLogo } from '../common/CompanyLogo'
 import { Button } from '../ui/Button'
 
 function isSectionActive(pathname: string, href: string) {
@@ -33,7 +33,7 @@ export function Header() {
       </div>
       <header className="header">
         <div className="container header__inner">
-          <Brand />
+          <CompanyLogo variant="header" />
           <nav className="nav" aria-label="Primary navigation">
             {navigation.map((item) => (
               <div className="nav__item" key={item.href}>

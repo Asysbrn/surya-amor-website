@@ -1,14 +1,14 @@
 import { Link } from 'react-router-dom'
 import { services } from '../../data/services'
 import { siteConfig } from '../../data/site'
-import { Brand } from '../common/Brand'
+import { CompanyLogo } from '../common/CompanyLogo'
 
 export function Footer() {
   return (
     <footer className="footer">
       <div className="container footer__top">
         <div className="footer__company">
-          <Brand />
+          <CompanyLogo variant="footer" />
           <p className="footer__about">Document digitization, audiovisual conversion, records management, imaging consultation and GIS services from Kuala Lumpur.</p>
         </div>
         <div>
