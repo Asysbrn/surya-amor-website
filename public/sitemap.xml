@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Replace www.example.com with the verified production domain before launch. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://www.example.com/</loc></url>
+  <url><loc>https://www.example.com/about</loc></url>
+  <url><loc>https://www.example.com/services</loc></url>
+  <url><loc>https://www.example.com/industries</loc></url>
+  <url><loc>https://www.example.com/projects</loc></url>
+  <url><loc>https://www.example.com/technology</loc></url>
+  <url><loc>https://www.example.com/process</loc></url>
+  <url><loc>https://www.example.com/why-us</loc></url>
+  <url><loc>https://www.example.com/careers</loc></url>
+  <url><loc>https://www.example.com/contact</loc></url>
+  <url><loc>https://www.example.com/privacy</loc></url>
+  <url><loc>https://www.example.com/terms</loc></url>
+  <url><loc>https://www.example.com/services/document-digitization</loc></url>
+  <url><loc>https://www.example.com/services/high-volume-scanning</loc></url>
+  <url><loc>https://www.example.com/services/bound-book-scanning</loc></url>
+  <url><loc>https://www.example.com/services/large-format-scanning</loc></url>
+  <url><loc>https://www.example.com/services/microfilm-digitization</loc></url>
+  <url><loc>https://www.example.com/services/audiovisual-digitization</loc></url>
+  <url><loc>https://www.example.com/services/ocr-searchable-pdf</loc></url>
+  <url><loc>https://www.example.com/services/document-indexing</loc></url>
+  <url><loc>https://www.example.com/services/digital-archiving</loc></url>
+  <url><loc>https://www.example.com/services/edrms</loc></url>
+  <url><loc>https://www.example.com/services/data-conversion</loc></url>
+  <url><loc>https://www.example.com/services/software-development</loc></url>
+  <url><loc>https://www.example.com/services/hardware-scanner-supply</loc></url>
+  <url><loc>https://www.example.com/services/on-site-digitization</loc></url>
+  <url><loc>https://www.example.com/services/digital-preservation</loc></url>
+  <url><loc>https://www.example.com/services/3d-artefact-digitization</loc></url>
+</urlset>
