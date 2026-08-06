@@ -19,9 +19,10 @@ export function ServiceCard({ service }: { service: Service }) {
   )
 }
 
-export function ProjectCard({ title, tag, description }: { title: string; tag: string; description: string }) {
+export function ProjectCard({ title, tag, description, logo }: { title: string; tag: string; description: string; logo: string }) {
   return (
-    <article className="card">
+    <article className="card client-card">
+      <div className="client-card__logo"><img src={logo} alt={`${title} logo`} loading="lazy" /></div>
       <p className="card__tag">{tag}</p>
       <h3>{title}</h3>
       <p>{description}</p>

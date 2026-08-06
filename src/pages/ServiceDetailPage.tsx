@@ -2,8 +2,9 @@ import { ArrowRight, CheckCircle2 } from 'lucide-react'
 import { Navigate, useParams } from 'react-router-dom'
 import { CallToAction } from '../components/common/CallToAction'
 import { PageHero } from '../components/common/PageHero'
+import { RelatedServices } from '../components/common/RelatedServices'
 import { Button } from '../components/ui/Button'
-import { getService, services } from '../data/services'
+import { getService } from '../data/services'
 import { useSeo } from '../hooks/useSeo'
 
 export default function ServiceDetailPage() {
@@ -28,9 +29,9 @@ export default function ServiceDetailPage() {
             </div>
           </div>
           <aside className="aside-panel">
-            <h2>Explore related services</h2>
-            <p>Review SATSB’s other service areas.</p>
-            <div className="aside-links">{services.filter((item) => item.slug !== service.slug).slice(0, 5).map((item) => <Button key={item.slug} to={`/services/${item.slug}`} variant="ghost">{item.title}</Button>)}</div>
+            <h2>Plan your enquiry</h2>
+            <p>Helpful details include the source format, approximate quantity, current condition, location and intended digital result.</p>
+            <Button to="/contact" variant="ghost">Discuss this service</Button>
           </aside>
         </div>
       </section>
@@ -48,6 +49,7 @@ export default function ServiceDetailPage() {
           </div>
         </div>
       </section>
+      <RelatedServices current={service} />
       <CallToAction title={`Planning a ${service.title.toLowerCase()} project?`} />
     </>
   )

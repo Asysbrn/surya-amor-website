@@ -1,4 +1,13 @@
-import { Building2, Columns3, Landmark, LibraryBig, Ruler, ShieldCheck } from 'lucide-react'
+import { Archive, Building2, Columns3, HardHat, Landmark, LibraryBig, Ruler, ShieldCheck } from 'lucide-react'
+import dbpLogo from '../assets/images/clients/dewan-bahasa-dan-pustaka-logo.png'
+import jkknLogo from '../assets/images/clients/jabatan-kesenian-kebudayaan-negara-logo.png'
+import jkptgLogo from '../assets/images/clients/jabatan-ketua-pengarah-tanah-galian-logo.png'
+import agricultureLogo from '../assets/images/clients/kementerian-pertanian-keterjaminan-makanan-logo.png'
+import defenceLogo from '../assets/images/clients/kementerian-pertahanan-malaysia-logo.png'
+import museumLogo from '../assets/images/clients/jabatan-muzium-malaysia-logo.png'
+import pknsLogo from '../assets/images/clients/perbadanan-kemajuan-negeri-selangor-logo.png'
+import nationalLibraryLogo from '../assets/images/clients/perpustakaan-negara-malaysia-logo.png'
+import federalLandLogo from '../assets/images/clients/pejabat-tanah-galian-wilayah-persekutuan-logo.png'
 import { services } from './services'
 import type { NavItem } from '../types'
 
@@ -38,6 +47,8 @@ export const industries = [
   { title: 'Land & development', description: 'Land administration and state development organizations are displayed as credentials on the legacy website.', icon: Ruler },
   { title: 'Agriculture & food', description: 'A Malaysian agriculture and food ministry is shown in the legacy portfolio; the relationship and work performed require confirmation.', icon: Building2 },
   { title: 'Defence', description: 'The Ministry of Defence Malaysia is displayed in the legacy portfolio without details of any engagement.', icon: ShieldCheck },
+  { title: 'Archives & heritage institutions', description: 'Digitization can support access to archival records, historical collections and heritage materials while reducing routine handling of originals.', icon: Archive },
+  { title: 'Engineering & construction records', description: 'Large-format scanning and document management are relevant to plans, drawings, specifications and long-running project records.', icon: HardHat },
 ]
 
 export const processSteps = [
@@ -51,15 +62,15 @@ export const processSteps = [
 const legacyProjectNote = 'Displayed in the legacy website credentials section. No service, date, scope or outcome is presented here.'
 
 export const representativeProjects = [
-  { title: 'Dewan Bahasa dan Pustaka Malaysia', tag: 'Legacy credentials reference', description: legacyProjectNote },
-  { title: 'Jabatan Kesenian dan Kebudayaan Negara', tag: 'Legacy credentials reference', description: legacyProjectNote },
-  { title: 'Jabatan Ketua Pengarah Tanah dan Galian', tag: 'Legacy credentials reference', description: legacyProjectNote },
-  { title: 'Kementerian Pertanian dan Keterjaminan Makanan Malaysia', tag: 'Legacy credentials reference', description: legacyProjectNote },
-  { title: 'Kementerian Pertahanan Malaysia', tag: 'Legacy credentials reference', description: legacyProjectNote },
-  { title: 'Jabatan Muzium Malaysia', tag: 'Legacy credentials reference', description: legacyProjectNote },
-  { title: 'Perbadanan Kemajuan Negeri Selangor', tag: 'Legacy credentials reference', description: legacyProjectNote },
-  { title: 'Perpustakaan Negara Malaysia', tag: 'Legacy credentials reference', description: legacyProjectNote },
-  { title: 'Pejabat Tanah dan Galian Wilayah Persekutuan Kuala Lumpur', tag: 'Legacy credentials reference', description: legacyProjectNote },
+  { title: 'Dewan Bahasa dan Pustaka Malaysia', tag: 'Legacy credentials reference', description: legacyProjectNote, logo: dbpLogo },
+  { title: 'Jabatan Kesenian dan Kebudayaan Negara', tag: 'Legacy credentials reference', description: legacyProjectNote, logo: jkknLogo },
+  { title: 'Jabatan Ketua Pengarah Tanah dan Galian', tag: 'Legacy credentials reference', description: legacyProjectNote, logo: jkptgLogo },
+  { title: 'Kementerian Pertanian dan Keterjaminan Makanan Malaysia', tag: 'Legacy credentials reference', description: legacyProjectNote, logo: agricultureLogo },
+  { title: 'Kementerian Pertahanan Malaysia', tag: 'Legacy credentials reference', description: legacyProjectNote, logo: defenceLogo },
+  { title: 'Jabatan Muzium Malaysia', tag: 'Legacy credentials reference', description: legacyProjectNote, logo: museumLogo },
+  { title: 'Perbadanan Kemajuan Negeri Selangor', tag: 'Legacy credentials reference', description: legacyProjectNote, logo: pknsLogo },
+  { title: 'Perpustakaan Negara Malaysia', tag: 'Legacy credentials reference', description: legacyProjectNote, logo: nationalLibraryLogo },
+  { title: 'Pejabat Tanah dan Galian Wilayah Persekutuan Kuala Lumpur', tag: 'Legacy credentials reference', description: legacyProjectNote, logo: federalLandLogo },
 ]
 
 export const companyValues = [

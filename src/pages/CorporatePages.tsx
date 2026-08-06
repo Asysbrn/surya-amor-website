@@ -1,6 +1,10 @@
-import { ArrowRight, CheckCircle2 } from 'lucide-react'
+import { ArrowRight, AudioLines, CheckCircle2, FileScan, Map, PlayCircle, ServerCog } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import documentDigitizationImage from '../assets/images/document-digitization.webp'
+import imagingConsultationImage from '../assets/images/imaging-consultation.webp'
+import scannerHardwareImage from '../assets/images/scanner-it-hardware.webp'
 import { CallToAction } from '../components/common/CallToAction'
+import { ProjectCard } from '../components/common/Cards'
 import { PageHero } from '../components/common/PageHero'
 import { SectionHeading } from '../components/ui/SectionHeading'
 import { companyValues, industries, processSteps, representativeProjects, siteConfig, teamFunctions } from '../data/site'
@@ -8,9 +12,15 @@ import { useSeo } from '../hooks/useSeo'
 
 export function AboutPage() {
   useSeo({ title: 'About Us', description: 'Company background, mission and team functions for Surya Amor Technology Sdn Bhd.', path: '/about' })
+  const capabilities = [
+    { icon: FileScan, title: 'Document digitization', text: 'Scanning, indexing and digital delivery shaped around the source material and intended use.' },
+    { icon: AudioLines, title: 'Legacy media conversion', text: 'Digital transfer for selected audio, video, microfilm and microfiche collections.' },
+    { icon: ServerCog, title: 'Information management', text: 'Records-management, data-conversion and imaging-workflow requirements defined for each organization.' },
+    { icon: Map, title: 'GIS & consultation', text: 'GIS requirements and practical imaging recommendations aligned with the agreed project scope.' },
+  ]
   return (
     <>
-      <PageHero eyebrow="About Surya Amor" title="Digitization and information solutions from Kuala Lumpur." description="The legacy company website identifies document imaging and Geographic Information System services as SATSB's principal business activities." />
+      <PageHero eyebrow="About Surya Amor" title="Digitization and information solutions from Kuala Lumpur." description="The legacy company website identifies document imaging and Geographic Information System services as SATSB's principal business activities." image={documentDigitizationImage} imageAlt="Document digitization operator working with business records and scanning equipment" />
       <section className="section section--white">
         <div className="container intro-grid">
           <div className="prose">
@@ -27,6 +37,46 @@ export function AboutPage() {
               {[siteConfig.address, siteConfig.hours, siteConfig.closedHours].map((item) => <li key={item}><CheckCircle2 size={18} aria-hidden="true" />{item}</li>)}
             </ul>
           </aside>
+        </div>
+      </section>
+      <section className="section section--dark section--grid">
+        <div className="container about-story">
+          <div className="about-story__copy about-reveal">
+            <p className="eyebrow">What we do</p>
+            <h2 className="heading">Connect physical information with practical digital access.</h2>
+            <p className="lead">SATSB works across document imaging, legacy-media conversion, information management, imaging consultation and GIS requirements. Projects begin with the source material and the result the organization needs to achieve.</p>
+            <ul className="about-points">
+              <li><CheckCircle2 size={18} aria-hidden="true" /><span><strong>Source-aware planning</strong> considers format, condition, quantity and handling needs.</span></li>
+              <li><CheckCircle2 size={18} aria-hidden="true" /><span><strong>Purpose-led delivery</strong> defines how information should be accessed, searched or transferred.</span></li>
+              <li><CheckCircle2 size={18} aria-hidden="true" /><span><strong>Technology-conscious execution</strong> applies suitable tools without unsupported product claims.</span></li>
+            </ul>
+          </div>
+          <div className="about-gallery about-reveal">
+            <figure className="about-gallery__main"><img src={imagingConsultationImage} alt="Consultants reviewing a document imaging workflow" loading="lazy" /></figure>
+            <figure className="about-gallery__small"><img src={scannerHardwareImage} alt="Technician configuring professional scanning hardware" loading="lazy" /></figure>
+          </div>
+        </div>
+      </section>
+      <section className="section section--tint">
+        <div className="container">
+          <SectionHeading eyebrow="Core expertise" title="Capabilities spanning capture, conversion and access." description="A connected set of services for organizations managing paper records, legacy media and digital information workflows." split />
+          <div className="grid grid--4 about-capabilities">
+            {capabilities.map(({ icon: Icon, title, text }, index) => <article className="card about-capability about-reveal" key={title}><span className="card__tag">Capability 0{index + 1}</span><div className="card__icon"><Icon size={22} aria-hidden="true" /></div><h3>{title}</h3><p>{text}</p></article>)}
+          </div>
+        </div>
+      </section>
+      <section className="section section--white">
+        <div className="container about-profile">
+          <div className="about-profile__video about-reveal" role="img" aria-label="Placeholder for a future Surya Amor Technology company profile video">
+            <img src={documentDigitizationImage} alt="" loading="lazy" />
+            <div className="about-profile__overlay"><PlayCircle size={48} aria-hidden="true" /><span>[COMPANY VIDEO TO BE ADDED]</span></div>
+          </div>
+          <div className="about-profile__copy about-reveal">
+            <p className="eyebrow">Company profile</p>
+            <h2 className="heading">A closer look at SATSB’s work.</h2>
+            <p className="lead">No approved company video is currently available in the project assets. This space is ready for an office, team or project profile when SATSB supplies the final media.</p>
+            <div className="button-row"><Link className="button button--ghost" to="/process">Explore our delivery process <ArrowRight size={16} aria-hidden="true" /></Link></div>
+          </div>
         </div>
       </section>
       <section className="section section--tint">
@@ -75,7 +125,7 @@ export function ProjectsPage() {
         <div className="container">
           <SectionHeading eyebrow="Credentials overview" title="Organizations displayed on the legacy website." description="The available source provides organization names without project descriptions, dates or outcomes." split />
           <div className="grid grid--3">
-            {representativeProjects.map((project) => <article className="card" key={project.title}><p className="card__tag">{project.tag}</p><h3>{project.title}</h3><p>{project.description}</p></article>)}
+            {representativeProjects.map((project) => <ProjectCard key={project.title} {...project} />)}
           </div>
         </div>
       </section>

@@ -157,6 +157,15 @@ img { display: block; max-width: 100%; }
 .service-card:hover .service-card__media img { transform: scale(1.045); }
 .service-card__media .card__icon { position: absolute; z-index: 1; left: 1.35rem; bottom: 1.15rem; color: var(--white); background: rgb(7 31 51 / .78); border: 1px solid rgb(255 255 255 / .2); backdrop-filter: blur(8px); }
 .service-card__body { display: flex; flex: 1; flex-direction: column; padding: 0 clamp(1.25rem, 2.5vw, 1.7rem) clamp(1.25rem, 2.5vw, 1.7rem); }
+.client-card__logo { height: 8rem; display: grid; place-items: center; padding: .9rem; border: 1px solid var(--cloud-200); border-radius: var(--radius-md); background: linear-gradient(145deg, #fff, #f5f8f9); }
+.client-card__logo img { width: 100%; height: 100%; object-fit: contain; }
+.client-card .card__tag { margin-top: 1.2rem; }
+
+.related-services { border-top: 1px solid var(--cloud-200); }
+.related-services__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; align-items: stretch; }
+.related-services__grid .service-card { height: 100%; }
+.related-services__grid .service-card h3 { min-height: 3.15rem; }
+.related-services__grid .service-card__body > p:not(.card__tag) { min-height: 5.2rem; }
 
 .intro-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(20rem, .8fr); gap: clamp(2rem, 7vw, 6rem); align-items: center; }
 .intro-panel { position: relative; padding: clamp(1.5rem, 4vw, 2.7rem); overflow: hidden; border-radius: var(--radius-xl); color: var(--white); background: var(--ink-900); box-shadow: var(--shadow-glow); }
@@ -166,6 +175,32 @@ img { display: block; max-width: 100%; }
 .check-list { display: grid; gap: .7rem; margin: 1.4rem 0 0; padding: 0; list-style: none; }
 .check-list li { display: flex; align-items: flex-start; gap: .65rem; color: #dbe9ec; }
 .check-list svg { flex: 0 0 auto; margin-top: .15rem; color: var(--teal-400); }
+
+.about-story { display: grid; grid-template-columns: minmax(0, .82fr) minmax(24rem, 1fr); gap: clamp(2.5rem, 7vw, 6rem); align-items: center; }
+.about-points { display: grid; gap: 1rem; margin: 2rem 0 0; padding: 0; list-style: none; }
+.about-points li { display: flex; gap: .75rem; padding-top: 1rem; border-top: 1px solid rgb(255 255 255 / .13); color: #bdd1da; line-height: 1.6; }
+.about-points svg { flex: 0 0 auto; margin-top: .2rem; color: var(--teal-300); }
+.about-points strong { color: var(--white); }
+.about-gallery { position: relative; min-height: 34rem; }
+.about-gallery figure { margin: 0; overflow: hidden; border: 1px solid rgb(255 255 255 / .14); background: var(--ink-800); box-shadow: 0 25px 65px rgb(0 0 0 / .28); }
+.about-gallery img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
+.about-gallery:hover img { transform: scale(1.025); }
+.about-gallery__main { position: absolute; inset: 0 4.5rem 3rem 0; border-radius: var(--radius-xl); }
+.about-gallery__small { position: absolute; width: 48%; height: 46%; right: 0; bottom: 0; border-radius: var(--radius-lg); }
+.about-capability .card__tag { margin-top: 0; }
+.about-capability .card__icon { margin: .4rem 0 1.25rem; }
+.about-capability h3 { min-height: 2.6rem; }
+.about-profile { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(20rem, .72fr); gap: clamp(2.5rem, 7vw, 6rem); align-items: center; }
+.about-profile__video { position: relative; aspect-ratio: 16 / 9; overflow: hidden; border-radius: var(--radius-xl); background: var(--ink-900); box-shadow: var(--shadow-md); }
+.about-profile__video img { width: 100%; height: 100%; object-fit: cover; opacity: .6; }
+.about-profile__overlay { position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; gap: .8rem; color: var(--white); background: linear-gradient(0deg, rgb(5 25 37 / .62), transparent 70%); }
+.about-profile__overlay svg { color: var(--teal-300); filter: drop-shadow(0 4px 14px rgb(0 0 0 / .35)); }
+.about-profile__overlay span { padding: .55rem .8rem; border: 1px solid rgb(255 255 255 / .24); border-radius: 999px; background: rgb(5 25 37 / .6); font: 750 .72rem var(--font-display); letter-spacing: .08em; }
+.about-reveal { animation: about-rise .65s ease both; }
+@keyframes about-rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+@supports (animation-timeline: view()) {
+  .about-reveal { animation-timeline: view(); animation-range: entry 5% cover 28%; }
+}
 
 .showcase-split { display: grid; grid-template-columns: minmax(20rem, .9fr) minmax(0, 1fr); gap: clamp(2.5rem, 7vw, 6rem); align-items: center; }
 .showcase-image { position: relative; min-height: 35rem; overflow: hidden; border: 1px solid rgb(255 255 255 / .13); border-radius: var(--radius-xl); box-shadow: 0 30px 80px rgb(0 0 0 / .3); }
@@ -305,7 +340,7 @@ img { display: block; max-width: 100%; }
 }
 
 @media (max-width: 800px) {
-  .section-heading--split, .intro-grid, .principles, .content-layout, .cta__inner, .showcase-split, .service-experience { grid-template-columns: 1fr; }
+  .section-heading--split, .intro-grid, .principles, .content-layout, .cta__inner, .showcase-split, .service-experience, .about-story, .about-profile { grid-template-columns: 1fr; }
   .grid--3, .grid--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .aside-panel { position: static; }
   .hero { min-height: 43rem; }
@@ -316,6 +351,8 @@ img { display: block; max-width: 100%; }
   .page-hero--image::before { background: linear-gradient(90deg, rgb(5 25 37 / .97), rgb(5 25 37 / .72)); }
   .showcase-image, .showcase-image img { min-height: 25rem; }
   .readiness-grid { grid-template-columns: 1fr; }
+  .about-gallery { min-height: 29rem; }
+  .related-services__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .cta__inner .button { justify-self: start; }
 }
 
@@ -323,6 +360,10 @@ img { display: block; max-width: 100%; }
   .container { width: min(calc(100% - 1.25rem), var(--container)); }
   .company-logo--header { width: clamp(8.75rem, 44vw, 9.5rem); }
   .grid--2, .grid--3, .grid--4, .industry-grid, .detail-grid, .form-grid, .application-grid { grid-template-columns: 1fr; }
+  .related-services__grid { grid-template-columns: 1fr; }
+  .related-services__grid .service-card h3, .related-services__grid .service-card__body > p:not(.card__tag) { min-height: 0; }
+  .about-gallery { min-height: auto; display: grid; gap: .75rem; }
+  .about-gallery__main, .about-gallery__small { position: relative; inset: auto; width: auto; height: auto; aspect-ratio: 4 / 3; }
   .application-grid article { min-height: 7.5rem; }
   .process-line { grid-template-columns: 1fr; gap: 1.7rem; }
   .process-step { padding-left: .8rem; }
