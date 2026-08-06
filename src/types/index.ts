@@ -10,7 +10,6 @@ export interface Service {
   description: string
   outcomes: string[]
   deliverables: string[]
-  verificationNote?: string
   image: string
   imageAlt: string
   steps: string[]

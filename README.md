@@ -71,7 +71,8 @@ See `src/assets/images/README.md` for dimensions, formats, naming and the asset 
 
 - Source inventory and verification notes: `Content-Reference.md`
 - Services: `src/data/services.ts`
-- Navigation, industries, projects and company placeholders: `src/data/site.ts`
+- Deduplicated hardware catalogue: `src/data/hardware.ts`
+- Navigation, industries, projects and company details: `src/data/site.ts`
 - Home sections: `src/sections/`
 - Informational pages: `src/pages/`
 - Brand colours, type and layout tokens: `src/styles/index.css`

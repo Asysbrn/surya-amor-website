@@ -34,23 +34,23 @@ React has strong community support, reusable patterns and a low barrier to futur
 
 ## 5. System architecture
 
-The browser loads a Vite-generated static application. `App.tsx` owns the route table. `SiteLayout` supplies global header, footer, skip link, route announcements and scroll restoration. Page components compose reusable section and UI components. Typed files under `src/data` provide navigation, services, projects, industries and contact placeholders. A `useSeo` hook updates route metadata. The form validates locally and calls an adapter that can later submit to an environment-configured HTTPS endpoint.
+The browser loads a Vite-generated static application. `App.tsx` owns the route table. `SiteLayout` supplies global header, footer, skip link, route announcements and scroll restoration. Page components compose reusable section and UI components. Typed files under `src/data` provide navigation, services, hardware, projects and industries. A `useSeo` hook updates route metadata. The form validates locally and calls an adapter that can later submit to an environment-configured HTTPS endpoint.
 
 Current flow: browser → FormSubmit AJAX endpoint → `info@satsb.com.my`. Future controlled flow: browser → CDN/static host → contact API/serverless function → validation and anti-spam → email/CRM/database. Secrets remain server-side.
 
 ## 6. Website page structure
 
 - Home: overview, selected services, industries, process, trust, projects and calls to action.
-- About Us: company positioning, values, operating principles and unverified-company-detail notice.
+- About Us: company positioning, mission, operating approach, workflow and team functions without duplicating the service catalogue.
 - Services: complete catalogue of broad published service areas and focused capabilities named in the available profile material and project brief.
-- Service detail: reusable route at `/services/:slug` with published focus and explicit detail-verification notes.
-- Industries: sectors derived from organizations displayed in the legacy portfolio, with evidence limits shown.
-- Projects: the nine legacy credential names presented as owner-review records without implied scope or endorsement.
-- Solutions: published solution categories without unsupported products, platforms or partner claims.
+- Service detail: reusable route at `/services/:slug` with published focus and project-specific scope points.
+- Hardware: a filterable, deduplicated catalogue derived from the supplied SAT asset workbook, with no serial numbers or invented specifications.
+- Industries: sector applications presented through a shared visual showcase without unsupported project claims.
+- Projects: the nine published credential names presented without inventing project scope or endorsement.
 - Our Process: proposed high-level sequence derived from service descriptions and labelled for owner approval.
 - Why Choose Us: themes from the published mission; quantitative and certification claims are excluded pending evidence.
-- Careers: explicit placeholder because no vacancies or recruitment channel were published.
-- Contact: enquiry options, validation and company-detail placeholders.
+- Careers: production-ready overview of company functions and the official career-enquiry channel.
+- Contact: enquiry options, validation and published company details.
 - Privacy Policy and Terms: starter legal content requiring professional review.
 - 404: recovery links.
 
@@ -58,7 +58,7 @@ Current flow: browser → FormSubmit AJAX endpoint → `info@satsb.com.my`. Futu
 
 - Layout: `SiteLayout`, `Header`, `Footer`, `MobileMenu`, `ScrollToTop`.
 - UI: `Button`, `Container`, `SectionHeading`, `IconBadge`, `Field`, `StatusMessage`.
-- Shared content: `PageHero`, `ServiceCard`, `ProjectCard`, `IndustryCard`, `CallToAction`, `Breadcrumbs`.
+- Shared content: `PageHero`, `ServiceCard`, `ProjectCard`, `IndustryShowcase`, `CallToAction`, `Breadcrumbs`.
 - Home sections: purpose-specific components in `src/sections` to avoid an oversized homepage.
 - Templates: `ContentPage` for informational pages and `ServiceDetailPage` for all service records.
 - Hooks/utilities: `useSeo`, focus and scroll behavior, form validation, URL helpers.

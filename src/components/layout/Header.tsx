@@ -9,6 +9,10 @@ function isSectionActive(pathname: string, href: string) {
   return href === '/' ? pathname === '/' : pathname === href || pathname.startsWith(`${href}/`)
 }
 
+function isNavigationActive(pathname: string, item: { href: string; children?: Array<{ href: string }> }) {
+  return isSectionActive(pathname, item.href) || Boolean(item.children?.some((child) => isSectionActive(pathname, child.href)))
+}
+
 export function Header() {
   const [open, setOpen] = useState(false)
   const [servicesOpen, setServicesOpen] = useState(false)
@@ -60,7 +64,7 @@ export function Header() {
               >
                 {item.children ? (
                   <>
-                    <Link className={`nav__trigger ${isSectionActive(pathname, item.href) ? 'active' : ''}`} to={item.href} aria-haspopup="true" aria-expanded={servicesOpen} onClick={closeNavigation}>
+                    <Link className={`nav__trigger ${isNavigationActive(pathname, item) ? 'active' : ''}`} to={item.href} aria-haspopup="true" aria-expanded={servicesOpen} onClick={closeNavigation}>
                       {item.label}<ChevronDown size={14} aria-hidden="true" />
                     </Link>
                     <div className="nav__dropdown">
@@ -85,7 +89,7 @@ export function Header() {
         <nav aria-label="Mobile navigation">
           {navigation.map((item) => (
             <div key={item.href}>
-              <NavLink to={item.href} onClick={closeNavigation} className={() => isSectionActive(pathname, item.href) ? 'active' : ''}>{item.label}<span aria-hidden="true">→</span></NavLink>
+              <NavLink to={item.href} onClick={closeNavigation} className={() => isNavigationActive(pathname, item) ? 'active' : ''}>{item.label}<span aria-hidden="true">→</span></NavLink>
               {item.children && <div className="mobile-menu__services">{item.children.map((child) => <Link key={child.href} to={child.href} onClick={closeNavigation}>{child.label}</Link>)}</div>}
             </div>
           ))}

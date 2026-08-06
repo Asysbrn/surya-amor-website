@@ -348,6 +348,25 @@ The legacy form asks for name, email and message and submits to a third-party Fo
 **Rewritten content:**  
 The website collects name, work email, optional telephone and organization, service interest and project information to respond to an enquiry. The default modular adapter submits through FormSubmit to `info@satsb.com.my`; the mailbox owner must approve FormSubmit's one-time activation message and confirm the privacy, retention and security arrangements before production use. `VITE_CONTACT_FORM_ENDPOINT` can replace the provider with a controlled HTTPS backend without changing the form UI.
 
+## Hardware Asset Workbook
+
+**Source file:** `ASSET SAT DAN KEMASKINI SEHINGGA 100326.xlsx`
+
+**Source summary:**
+The workbook contains one sheet named `ASSET SAT` with 59 asset rows. It records equipment type, model, serial number, unit count, sticker, condition and location. The website does not publish serial numbers, asset stickers, condition notes or locations.
+
+**Website treatment:**
+Repeated serial-number rows were consolidated into 31 unique model/type entries across nine source-supported categories: book scanners; production document scanners; flatbed and photo scanners; large-format scanners; workstations and laptops; servers and storage; network equipment; printers and displays; and operations accessories. Recorded unit totals are shown only as workbook-derived inventory context and do not imply current stock or availability for sale.
+
+**Model details requiring confirmation:**
+The workbook does not provide exact model numbers for the ASUS desktop CPU, one Synology NAS, the TP-Link eight-port switch, the Canon PIXMA printer or the Lenovo ThinkVision display. `CZUR ET240` is preserved exactly as written because the closest official current product designation found was `ET24 Pro`, which is not assumed to be the same unit. Product cards use representative category visuals because the workbook has no embedded photographs.
+
+**Manufacturer references used for limited feature wording:**
+- Plustek’s official [OpticBook A300 Plus page](https://plustek.com/us/products/book-scanners/opticbook-a300-plus/) supports the A3, book-edge and searchable-output descriptions.
+- Plustek’s official [scanner catalogue](https://downloads.plustek.com/downloads/english/leaflet/plustek_catalog_03006_v1.1.pdf) supports the recorded OpticBook A300 model’s A3 and book-edge descriptions.
+- Plustek’s official [OpticBook 3600 leaflet](https://downloads.plustek.com/downloads/english/leaflet/OpticBook_3600-3600Plus-DE_web.pdf) supports the book-edge and OCR-oriented wording.
+- Synology’s official [DS1621+ product page](https://www.synology.com/en-uk/products/DS1621%2B?ixbt=) and [DS1813+ announcement](https://www.synology.com/en-us/company/news/article/Synology_Unveils_DiskStation_DS1813_) support the six-bay/eight-bay and centralized-storage descriptions.
+
 **Verification status:** Requires technical and privacy approval
 
 **Notes:**  

@@ -23,7 +23,6 @@ export function HomeHero() {
           </div>
         </div>
       </div>
-      <span className="hero__caption">AI-generated illustrative placeholder — replace with an approved company image before launch</span>
     </section>
   )
 }

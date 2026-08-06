@@ -23,6 +23,7 @@ export function Footer() {
           <h2>Core services</h2>
           <div className="footer__links">
             {services.map((service) => <Link key={service.slug} to={`/services/${service.slug}`}>{service.title}</Link>)}
+            <Link to="/hardware">Hardware catalogue</Link>
             <Link to="/services">All services</Link>
           </div>
         </div>

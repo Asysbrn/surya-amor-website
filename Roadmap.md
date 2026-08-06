@@ -1,9 +1,9 @@
 # Project Roadmap
 
 > **Current phase:** Phase 13 — Company content and launch review  
-> **Last completed task:** Refined client-logo alignment, replaced the About video placeholder with a self-contained workflow animation, fixed immediate service-menu closing, connected the contact form, and added an interactive office map
-> **Next task:** Activate and test FormSubmit from the `info@satsb.com.my` mailbox, replace screenshot-derived client logos with official high-resolution assets, confirm the correct office unit, obtain the official SAT Profile for line-by-line reconciliation, then complete browser/accessibility QA
-> **Known issues:** The source conflicts between office units `T2A-09-3A` and `T02A-09-3A`; the map therefore targets the verified 3 Towers street address and does not claim unverified coordinates. FormSubmit requires a one-time approval from `info@satsb.com.my` before it can deliver production enquiries. Formal vision, detailed quality/security practices, current staffing and project facts remain unconfirmed. Privacy Policy and Terms still require qualified legal approval. Client logos are low-resolution crops from a supplied screenshot; official vector or high-resolution originals are still needed for ideal Retina sharpness. The `WARISAN` and `BKS@Melaka` marks require manual identification, while six other identifiable screenshot logos were not assigned because those organizations are absent from the current client inventory. The three older general PNG visuals total approximately 5.6 MB and should be replaced or converted to optimized approved AVIF/WebP assets before launch. `npm audit` previously reported a high-severity React Router RSC-mode advisory in 7.18.2; this static Browser Router site does not use RSC, Actions or a React Router server, but the dependency should be updated when an appropriate patched version is approved. No browser executable was available for console, visual breakpoint, screen-reader, cross-browser or Lighthouse testing.
+> **Last completed task:** Removed duplicated About and Solutions content, redesigned Industries, replaced the OCR visual, cleaned public placeholder copy, and created a 31-item deduplicated Hardware catalogue from the supplied workbook
+> **Next task:** Obtain approved exact-model hardware photography and confirm incomplete workbook model names, activate FormSubmit, replace low-resolution client logos, confirm the correct office unit, then complete browser/accessibility QA
+> **Known issues:** The hardware workbook does not identify exact model numbers for the ASUS desktop CPU, one Synology NAS, the TP-Link eight-port switch, the Canon PIXMA printer or the Lenovo ThinkVision display; `CZUR ET240` also requires model-name confirmation. Hardware cards therefore use representative category visuals rather than claiming to show exact equipment. The source conflicts between office units `T2A-09-3A` and `T02A-09-3A`; the map therefore targets the verified 3 Towers street address and does not claim unverified coordinates. FormSubmit requires a one-time approval from `info@satsb.com.my` before it can deliver production enquiries. Privacy Policy and Terms still require qualified legal approval. Client logos are low-resolution crops from a supplied screenshot; official vector or high-resolution originals are still needed for ideal Retina sharpness. The `WARISAN` and `BKS@Melaka` marks require manual identification. The three older general PNG visuals total approximately 5.6 MB and should be replaced or converted to optimized approved AVIF/WebP assets before launch. `npm audit` previously reported a high-severity React Router RSC-mode advisory in 7.18.2; this static Browser Router site does not use RSC, Actions or a React Router server, but the dependency should be updated when an appropriate patched version is approved. No browser executable was available for console, visual breakpoint, screen-reader, cross-browser or Lighthouse testing.
 > **Notes for continuing:** Run `npm install`, then `npm run dev`. Review this file from the first unchecked task. Never convert a `Confirmation required` placeholder into a factual claim without company approval. Run `npm run lint && npm run typecheck && npm run build` after every content or code change.
 
 **Verification record (2026-08-05):** `npm run dev` served HTTP 200; ESLint passed; TypeScript passed; the production build passed; all 29 public, service-detail and fallback routes returned HTTP 200 from the production preview; invalid and valid form datasets produced the expected validation results. Browser-only visual/console checks remain listed below.
@@ -21,6 +21,8 @@
 **Logo, About motion, navigation, enquiry and office-map record (2026-08-06):** Standardized every client card around a centred, fixed-height logo viewport with equal padding, `object-fit: contain`, original aspect ratios and responsive grid behavior; the source crops remain the limiting factor for high-DPI sharpness. Replaced the company-video placeholder with a lightweight, self-contained four-stage digitization workflow built from semantic HTML, project icons and CSS motion. This approach adds relevant continuous visual interest without external media, licensing concerns or a play interaction, and all motion is disabled by `prefers-reduced-motion`. Converted the desktop Services dropdown to controlled state so service selection, route change, Escape and focus departure close it immediately; mobile links close the mobile menu as soon as they are selected. Connected the form to FormSubmit for `info@satsb.com.my`, added the requested subject and structured fields, Malaysia-local timestamp, professional success/error states, and retained an environment-based adapter seam for a future backend. Added a lazy responsive Google Maps address-query embed plus directions, Google Maps, Waze, copy-address and copy-link actions. The published building address was corroborated by the Waze 3 Towers listing; exact coordinates were intentionally not guessed. FormSubmit activation and live-mail deliverability require mailbox-owner action. Browser-only Chrome, Edge, Firefox and Safari checks remain pending because no browser executable is installed in this environment.
 
 **Verification record (2026-08-06):** ESLint passed, strict TypeScript passed and the Vite production build completed successfully. The development server started successfully and returned HTTP 200 for Home, About, Contact, Services and Scanner & IT Hardware, as well as both new shared components and a representative client-logo asset. The form's request builder and validation passed compilation, but no live enquiry was sent because that would initiate an external message and still requires recipient activation. Responsive, reduced-motion, clipboard, menu and keyboard behavior were reviewed in code; hands-on multi-browser, screen-reader and visual breakpoint testing remains pending because no browser executable is installed.
+
+**About, Industries, OCR and Hardware catalogue record (2026-08-06):** Removed the duplicate Core Expertise block from About and rebalanced the sequence from company story to workflow and team functions. Removed the entire Solutions homepage section, `/technology` route, navigation item, sitemap entry and unused exports/imports because the Services catalogue already covers that content. Replaced plain industry grids on Home and Industries with one reusable responsive showcase featuring a three-column editorial composition, emphasized lead sector, icons, decorative depth, hover/focus links and reduced-motion support. Generated a new realistic OCR/ICR/searchable-PDF workstation visual, resized it to 1600 × 900, converted it to a 69 KB WebP and added service-specific alt text. Parsed `ASSET SAT DAN KEMASKINI SEHINGGA 100326.xlsx` directly, reviewed all 59 rows, omitted serial numbers and internal condition/location data, and consolidated repeated records into 31 unique entries in nine categories. Added the `/hardware` route, Services-menu and footer links, accessible category filters, workbook-derived counts, aligned product cards and a Scanner & IT Hardware service link. Replaced visible AI-placeholder captions, internal verification labels and unfinished Careers/Projects wording with production-ready copy while retaining factual boundaries in documentation. Exact approved product images and six incomplete model designations remain for manual confirmation. ESLint, strict TypeScript and the production build passed. The development server returned HTTP 200 for Home, About, Industries, Hardware, Services, both affected service pages, Contact, Projects and Careers, plus the OCR image and new shared source modules. Hands-on browser layout and console testing remains pending because no browser executable is installed.
 
 ## Phase 1 — Planning
 
@@ -70,8 +72,8 @@
 - [x] Build core-services presentation
 - [x] Build industries and capability-count presentation
 - [x] Build why-us and workflow sections
-- [x] Build projects and technology sections
-- [x] Build trust/testimonial placeholder section
+- [x] Build projects presentation and remove the later duplicate Solutions section
+- [x] Build the client-credentials section
 - [x] Build CTA and contact preview
 
 ## Phase 7 — Individual website pages
@@ -81,7 +83,8 @@
 - [x] Build reusable service-detail pages
 - [x] Build Industries / Who We Serve
 - [x] Build Projects / Portfolio
-- [x] Build Technology / Solutions
+- [x] Remove the redundant Technology / Solutions route and navigation
+- [x] Build the deduplicated Hardware catalogue
 - [x] Build Our Process
 - [x] Build Why Choose Us
 - [x] Build Careers
@@ -130,7 +133,7 @@
 - [x] Review initial bundle and route code splitting
 - [ ] Optimize and dimension local imagery
 - [x] Confirm fonts are local
-- [x] Confirm no below-fold raster media is loaded (hero is the only current photo)
+- [x] Lazy-load below-fold catalogue and content imagery
 - [ ] Run Lighthouse before production launch (manual)
 
 ## Phase 13 — Content review
@@ -156,6 +159,13 @@
 - [x] Close the desktop Services dropdown and mobile navigation immediately after service selection
 - [x] Add a responsive address-based office map with Google Maps, Waze and clipboard actions
 - [x] Configure professional FormSubmit enquiry delivery to `info@satsb.com.my`
+- [x] Remove the duplicate About Core Expertise section and rebalance page flow
+- [x] Remove the Solutions homepage section, route, navigation, sitemap entry and dead code
+- [x] Redesign Home and Industries with a shared responsive industry showcase
+- [x] Replace the OCR / ICR / searchable-PDF image and alt text
+- [x] Parse the supplied 59-row asset workbook and consolidate it into 31 unique equipment entries
+- [x] Add the nine-category filterable Hardware catalogue and navigation links
+- [x] Remove visible AI-placeholder captions, internal labels and unfinished Careers/Projects copy
 - [x] Add the published email, telephone and address with the unit-number conflict visibly flagged
 - [ ] Confirm the correct office unit, email and telephone with the owner
 - [x] Add the business hours supplied on 6 August 2026

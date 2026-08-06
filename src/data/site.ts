@@ -29,25 +29,27 @@ export const navigation: NavItem[] = [
   {
     label: 'Services',
     href: '/services',
-    children: services.map((service) => ({
-      label: service.title,
-      href: `/services/${service.slug}`,
-      description: service.summary,
-    })),
+    children: [
+      ...services.map((service) => ({
+        label: service.title,
+        href: `/services/${service.slug}`,
+        description: service.summary,
+      })),
+      { label: 'Hardware catalogue', href: '/hardware', description: 'Browse the deduplicated equipment catalogue recorded in SAT’s asset workbook.' },
+    ],
   },
   { label: 'Industries', href: '/industries' },
   { label: 'Experience', href: '/projects' },
-  { label: 'Solutions', href: '/technology' },
   { label: 'Contact', href: '/contact' },
 ]
 
 export const industries = [
-  { title: 'Government & public administration', description: 'The legacy portfolio lists several Malaysian ministries, departments and public agencies. Exact SATSB engagements require confirmation.', icon: Landmark },
-  { title: 'Libraries, language & publishing', description: 'The legacy portfolio names Dewan Bahasa dan Pustaka and Perpustakaan Negara Malaysia without publishing project scope or outcomes.', icon: LibraryBig },
-  { title: 'Culture & museums', description: 'Arts, culture and museum organizations appear in the legacy portfolio. The services delivered are not described.', icon: Columns3 },
-  { title: 'Land & development', description: 'Land administration and state development organizations are displayed as credentials on the legacy website.', icon: Ruler },
-  { title: 'Agriculture & food', description: 'A Malaysian agriculture and food ministry is shown in the legacy portfolio; the relationship and work performed require confirmation.', icon: Building2 },
-  { title: 'Defence', description: 'The Ministry of Defence Malaysia is displayed in the legacy portfolio without details of any engagement.', icon: ShieldCheck },
+  { title: 'Government & public administration', description: 'Structured digitization can improve access to administrative records, departmental files and long-running public information collections.', icon: Landmark },
+  { title: 'Libraries, language & publishing', description: 'Book, document and searchable-output workflows support access to publications, reference collections and language resources.', icon: LibraryBig },
+  { title: 'Culture & museums', description: 'Careful capture and organized digital delivery can extend access to collection records, photographs and heritage documentation.', icon: Columns3 },
+  { title: 'Land & development', description: 'Large-format scanning, indexing and records workflows are relevant to plans, titles, drawings and development documentation.', icon: Ruler },
+  { title: 'Agriculture & food', description: 'Digitization can help organize technical, administrative and programme records across distributed operational environments.', icon: Building2 },
+  { title: 'Defence', description: 'Structured capture and controlled information workflows can support complex document collections with defined handling requirements.', icon: ShieldCheck },
   { title: 'Archives & heritage institutions', description: 'Digitization can support access to archival records, historical collections and heritage materials while reducing routine handling of originals.', icon: Archive },
   { title: 'Engineering & construction records', description: 'Large-format scanning and document management are relevant to plans, drawings, specifications and long-running project records.', icon: HardHat },
 ]
@@ -60,18 +62,18 @@ export const processSteps = [
   { number: '05', title: 'Provide the agreed output', description: 'Deliver the files or implemented solution in the format defined for the engagement.' },
 ]
 
-const legacyProjectNote = 'Displayed in the legacy website credentials section. No service, date, scope or outcome is presented here.'
+const legacyProjectNote = 'Organization represented in SATSB’s published credentials portfolio. Contact the company to discuss experience relevant to your requirements.'
 
 export const representativeProjects = [
-  { title: 'Dewan Bahasa dan Pustaka Malaysia', tag: 'Legacy credentials reference', description: legacyProjectNote, logo: dbpLogo },
-  { title: 'Jabatan Kesenian dan Kebudayaan Negara', tag: 'Legacy credentials reference', description: legacyProjectNote, logo: jkknLogo },
-  { title: 'Jabatan Ketua Pengarah Tanah dan Galian', tag: 'Legacy credentials reference', description: legacyProjectNote, logo: jkptgLogo },
-  { title: 'Kementerian Pertanian dan Keterjaminan Makanan Malaysia', tag: 'Legacy credentials reference', description: legacyProjectNote, logo: agricultureLogo },
-  { title: 'Kementerian Pertahanan Malaysia', tag: 'Legacy credentials reference', description: legacyProjectNote, logo: defenceLogo },
-  { title: 'Jabatan Muzium Malaysia', tag: 'Legacy credentials reference', description: legacyProjectNote, logo: museumLogo },
-  { title: 'Perbadanan Kemajuan Negeri Selangor', tag: 'Legacy credentials reference', description: legacyProjectNote, logo: pknsLogo },
-  { title: 'Perpustakaan Negara Malaysia', tag: 'Legacy credentials reference', description: legacyProjectNote, logo: nationalLibraryLogo },
-  { title: 'Pejabat Tanah dan Galian Wilayah Persekutuan Kuala Lumpur', tag: 'Legacy credentials reference', description: legacyProjectNote, logo: federalLandLogo },
+  { title: 'Dewan Bahasa dan Pustaka Malaysia', tag: 'Published credentials', description: legacyProjectNote, logo: dbpLogo },
+  { title: 'Jabatan Kesenian dan Kebudayaan Negara', tag: 'Published credentials', description: legacyProjectNote, logo: jkknLogo },
+  { title: 'Jabatan Ketua Pengarah Tanah dan Galian', tag: 'Published credentials', description: legacyProjectNote, logo: jkptgLogo },
+  { title: 'Kementerian Pertanian dan Keterjaminan Makanan Malaysia', tag: 'Published credentials', description: legacyProjectNote, logo: agricultureLogo },
+  { title: 'Kementerian Pertahanan Malaysia', tag: 'Published credentials', description: legacyProjectNote, logo: defenceLogo },
+  { title: 'Jabatan Muzium Malaysia', tag: 'Published credentials', description: legacyProjectNote, logo: museumLogo },
+  { title: 'Perbadanan Kemajuan Negeri Selangor', tag: 'Published credentials', description: legacyProjectNote, logo: pknsLogo },
+  { title: 'Perpustakaan Negara Malaysia', tag: 'Published credentials', description: legacyProjectNote, logo: nationalLibraryLogo },
+  { title: 'Pejabat Tanah dan Galian Wilayah Persekutuan Kuala Lumpur', tag: 'Published credentials', description: legacyProjectNote, logo: federalLandLogo },
 ]
 
 export const companyValues = [

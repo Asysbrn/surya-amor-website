@@ -1,4 +1,4 @@
-import { ArrowRight, AudioLines, CheckCircle2, FileScan, Map, ServerCog } from 'lucide-react'
+import { ArrowRight, CheckCircle2 } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import documentDigitizationImage from '../assets/images/document-digitization.webp'
 import imagingConsultationImage from '../assets/images/imaging-consultation.webp'
@@ -6,28 +6,23 @@ import scannerHardwareImage from '../assets/images/scanner-it-hardware.webp'
 import { CallToAction } from '../components/common/CallToAction'
 import { ProjectCard } from '../components/common/Cards'
 import { DigitizationWorkflow } from '../components/common/DigitizationWorkflow'
+import { IndustryShowcase } from '../components/common/IndustryShowcase'
 import { PageHero } from '../components/common/PageHero'
 import { SectionHeading } from '../components/ui/SectionHeading'
-import { companyValues, industries, processSteps, representativeProjects, siteConfig, teamFunctions } from '../data/site'
+import { companyValues, processSteps, representativeProjects, siteConfig, teamFunctions } from '../data/site'
 import { useSeo } from '../hooks/useSeo'
 
 export function AboutPage() {
   useSeo({ title: 'About Us', description: 'Company background, mission and team functions for Surya Amor Technology Sdn Bhd.', path: '/about' })
-  const capabilities = [
-    { icon: FileScan, title: 'Document digitization', text: 'Scanning, indexing and digital delivery shaped around the source material and intended use.' },
-    { icon: AudioLines, title: 'Legacy media conversion', text: 'Digital transfer for selected audio, video, microfilm and microfiche collections.' },
-    { icon: ServerCog, title: 'Information management', text: 'Records-management, data-conversion and imaging-workflow requirements defined for each organization.' },
-    { icon: Map, title: 'GIS & consultation', text: 'GIS requirements and practical imaging recommendations aligned with the agreed project scope.' },
-  ]
   return (
     <>
-      <PageHero eyebrow="About Surya Amor" title="Digitization and information solutions from Kuala Lumpur." description="The legacy company website identifies document imaging and Geographic Information System services as SATSB's principal business activities." image={documentDigitizationImage} imageAlt="Document digitization operator working with business records and scanning equipment" />
+      <PageHero eyebrow="About Surya Amor" title="Digitization and information solutions from Kuala Lumpur." description="SATSB’s principal business activities span document imaging, digitization and Geographic Information System services." image={documentDigitizationImage} imageAlt="Document digitization operator working with business records and scanning equipment" />
       <section className="section section--white">
         <div className="container intro-grid">
           <div className="prose">
             <h2>Company overview</h2>
-            <p>Surya Amor Technology Sdn Bhd describes itself as a Malaysian company serving organizations through document imaging, digitization and Geographic Information System services. Its legacy website states that the company was incorporated in 2022.</p>
-            <p>The same source says SATSB is based in Kuala Lumpur and brings together personnel with experience in document management and GIS. Current staffing and experience figures require owner confirmation.</p>
+            <p>Surya Amor Technology Sdn Bhd is a Malaysian company serving organizations through document imaging, digitization and Geographic Information System services. The company was incorporated in 2022.</p>
+            <p>SATSB is based in Kuala Lumpur and brings together management, digitization, audiovisual conversion and technical-support functions around its document-management and GIS activities.</p>
             <h2>Our mission</h2>
             <p>Our mission is to provide flexible, cost-effective and quality-focused services shaped around each customer's requirements. We aim to apply relevant developments in software and technology to deliver practical, competitive solutions.</p>
           </div>
@@ -49,20 +44,12 @@ export function AboutPage() {
             <ul className="about-points">
               <li><CheckCircle2 size={18} aria-hidden="true" /><span><strong>Source-aware planning</strong> considers format, condition, quantity and handling needs.</span></li>
               <li><CheckCircle2 size={18} aria-hidden="true" /><span><strong>Purpose-led delivery</strong> defines how information should be accessed, searched or transferred.</span></li>
-              <li><CheckCircle2 size={18} aria-hidden="true" /><span><strong>Technology-conscious execution</strong> applies suitable tools without unsupported product claims.</span></li>
+              <li><CheckCircle2 size={18} aria-hidden="true" /><span><strong>Technology-conscious execution</strong> applies suitable tools to the agreed workflow and intended output.</span></li>
             </ul>
           </div>
           <div className="about-gallery about-reveal">
             <figure className="about-gallery__main"><img src={imagingConsultationImage} alt="Consultants reviewing a document imaging workflow" loading="lazy" /></figure>
             <figure className="about-gallery__small"><img src={scannerHardwareImage} alt="Technician configuring professional scanning hardware" loading="lazy" /></figure>
-          </div>
-        </div>
-      </section>
-      <section className="section section--tint">
-        <div className="container">
-          <SectionHeading eyebrow="Core expertise" title="Capabilities spanning capture, conversion and access." description="A connected set of services for organizations managing paper records, legacy media and digital information workflows." split />
-          <div className="grid grid--4 about-capabilities">
-            {capabilities.map(({ icon: Icon, title, text }, index) => <article className="card about-capability about-reveal" key={title}><span className="card__tag">Capability 0{index + 1}</span><div className="card__icon"><Icon size={22} aria-hidden="true" /></div><h3>{title}</h3><p>{text}</p></article>)}
           </div>
         </div>
       </section>
@@ -72,7 +59,7 @@ export function AboutPage() {
           <div className="about-profile__copy about-reveal">
             <p className="eyebrow">How information moves</p>
             <h2 className="heading">A clear path from source to digital output.</h2>
-            <p className="lead">This lightweight motion graphic illustrates SATSB’s high-level delivery sequence without relying on external video or third-party media. The exact workflow, checks and deliverables are agreed for each engagement.</p>
+            <p className="lead">This four-stage view shows how source material can move from preparation and capture through structuring and agreed digital delivery.</p>
             <div className="button-row"><Link className="button button--ghost" to="/process">Explore our delivery process <ArrowRight size={16} aria-hidden="true" /></Link></div>
           </div>
         </div>
@@ -91,22 +78,14 @@ export function AboutPage() {
 }
 
 export function IndustriesPage() {
-  useSeo({ title: 'Industries We Serve', description: 'Sectors represented by organizations displayed in SATSB’s legacy portfolio.', path: '/industries' })
+  useSeo({ title: 'Industries We Serve', description: 'Digitization, scanning and information-management applications across institutional sectors.', path: '/industries' })
   return (
     <>
-      <PageHero eyebrow="Sectors represented" title="Institutional experience indicated by the legacy portfolio." description="The source names organizations across several Malaysian sectors, but does not publish SATSB's service scope, dates or outcomes for them." />
-      <section className="section">
+      <PageHero eyebrow="Industries we serve" title="Information workflows shaped around each sector." description="From public records and bound collections to plans, photographs and operational files, different information environments call for a considered digitization approach." />
+      <section className="section section--white industries-page">
         <div className="container">
-          <div className="grid grid--2">
-            {industries.map(({ title, description, icon: Icon }) => (
-              <article className="card" key={title}>
-                <div className="card__icon"><Icon size={23} aria-hidden="true" /></div>
-                <h3 style={{ marginTop: '1.25rem' }}>{title}</h3>
-                <p>{description}</p>
-                <Link className="card__link" to="/contact">Discuss your requirements <ArrowRight size={16} aria-hidden="true" /></Link>
-              </article>
-            ))}
-          </div>
+          <SectionHeading eyebrow="Sector perspectives" title="One service framework, many information environments." description="The source materials and intended result differ by sector. SATSB begins with the collection, workflow and access outcome required." split />
+          <IndustryShowcase destination="/contact" />
         </div>
       </section>
       <CallToAction title="Tell us about your organization and information needs." />
@@ -115,13 +94,13 @@ export function IndustriesPage() {
 }
 
 export function ProjectsPage() {
-  useSeo({ title: 'Projects & Experience', description: 'Organizations displayed in SATSB’s legacy credentials section, presented with clear context.', path: '/projects' })
+  useSeo({ title: 'Projects & Experience', description: 'Organizations represented in SATSB’s published credentials portfolio.', path: '/projects' })
   return (
     <>
-      <PageHero eyebrow="Projects & experience" title="Legacy credentials, presented with their evidence limits." description="The existing company website displays these organization names but gives no engagement descriptions, dates, project values, outcomes or testimonials." />
+      <PageHero eyebrow="Projects & experience" title="Organizations represented in our published credentials." description="Explore the institutional names presented by SATSB and contact the company to discuss experience relevant to your requirements." />
       <section className="section section--white">
         <div className="container">
-          <SectionHeading eyebrow="Credentials overview" title="Organizations displayed on the legacy website." description="The available source provides organization names without project descriptions, dates or outcomes." split />
+        <SectionHeading eyebrow="Credentials overview" title="Organizations represented by SATSB." description="Project scope and relevance can be discussed directly for your intended requirement." split />
           <div className="grid grid--3">
             {representativeProjects.map((project) => <ProjectCard key={project.title} {...project} />)}
           </div>
@@ -140,30 +119,6 @@ export function ProjectsPage() {
             </ul>
           </div>
           <aside className="aside-panel"><h2>Project enquiries</h2><p>Contact SATSB to discuss experience relevant to your organization’s requirements.</p><Link className="button button--ghost" to="/contact">Discuss a project</Link></aside>
-        </div>
-      </section>
-      <CallToAction />
-    </>
-  )
-}
-
-export function TechnologyPage() {
-  useSeo({ title: 'Solutions', description: 'SATSB solution areas covering document imaging, audiovisual conversion, records management, imaging consultation and GIS.', path: '/technology' })
-  const areas = [
-    { title: 'Document imaging', text: 'Scanning and indexing physical documents for delivery in an agreed digital format.' },
-    { title: 'Audio & video conversion', text: 'Digital transfer for selected legacy carriers, with VHS, Betacam, audio cassette and data-storage tape referenced by the source.' },
-    { title: 'Document & records management', text: 'Solutions intended to support document storage, organization, search, access and version control.' },
-    { title: 'Imaging workflow consultation', text: 'Review of current imaging processes followed by improvement and technology recommendations.' },
-    { title: 'Geographic Information System', text: 'GIS requirements shaped around the organization’s objectives, data environment and agreed project scope.' },
-  ]
-  return (
-    <>
-      <PageHero eyebrow="Solutions" title="Technology aligned with practical information needs." description="SATSB’s solution areas cover document imaging, audiovisual conversion, records management, workflow consultation and GIS requirements." />
-      <section className="section">
-        <div className="container">
-          <div className="grid grid--3">
-            {areas.map((area, index) => <article className="card" key={area.title}><span className="card__tag">Solution 0{index + 1}</span><h3>{area.title}</h3><p>{area.text}</p></article>)}
-          </div>
         </div>
       </section>
       <CallToAction />
@@ -206,18 +161,17 @@ export function WhyUsPage() {
 }
 
 export function CareersPage() {
-  useSeo({ title: 'Careers', description: 'Career information placeholder for Surya Amor Technology; no current vacancies are confirmed.', path: '/careers' })
+  useSeo({ title: 'Careers', description: 'Career information and functional areas at Surya Amor Technology.', path: '/careers' })
   return (
     <>
-      <PageHero eyebrow="Careers" title="Career opportunities at Surya Amor Technology." description="No current vacancies or dedicated recruitment channel are listed at this time." />
+      <PageHero eyebrow="Careers" title="Build practical technology and digitization capability." description="Learn about the functions that support SATSB’s work and use the company contact channel for career-related enquiries." />
       <section className="section section--white">
         <div className="container content-layout">
           <div className="prose">
-            <h2>Information required</h2>
-            <p>Current vacancies and application details will be listed here when available.</p>
-            <h2>Functions named on the legacy website</h2>
+            <h2>Functions within SATSB</h2>
+            <p>SATSB’s work brings together project coordination, document digitization, audiovisual conversion and technical support.</p>
             <ul>{teamFunctions.map((team) => <li key={team}>{team}</li>)}</ul>
-            <p>These team labels do not imply current vacancies.</p>
+            <p>Career opportunities are communicated through SATSB’s official contact channels when roles become available.</p>
           </div>
           <aside className="aside-panel"><h2>Application safety</h2><p>Do not send identity documents or sensitive personal information through the general website form.</p><Link className="button button--ghost" to="/contact">General company contact</Link></aside>
         </div>

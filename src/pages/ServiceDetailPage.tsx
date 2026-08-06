@@ -31,7 +31,10 @@ export default function ServiceDetailPage() {
           <aside className="aside-panel">
             <h2>Plan your enquiry</h2>
             <p>Helpful details include the source format, approximate quantity, current condition, location and intended digital result.</p>
-            <Button to="/contact" variant="ghost">Discuss this service</Button>
+            <div className="button-row">
+              {service.slug === 'scanners-it-hardware' && <Button to="/hardware" variant="dark">Browse hardware catalogue</Button>}
+              <Button to="/contact" variant="ghost">Discuss this service</Button>
+            </div>
           </aside>
         </div>
       </section>
