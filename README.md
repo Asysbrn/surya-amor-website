@@ -22,7 +22,7 @@ cp .env.example .env
 npm install
 ```
 
-No environment value is required for the initial mock contact form.
+No environment value is required for the default contact form. It posts through FormSubmit to `info@satsb.com.my`; the mailbox owner must approve FormSubmit's one-time activation email before live delivery begins.
 
 ## Development commands
 
@@ -85,12 +85,16 @@ Open `Roadmap.md` first. Its header records the current phase, last completed ta
 
 ## Contact form integration
 
-The default handler simulates a successful request but sends no data. For a real endpoint:
+The default adapter submits enquiries to FormSubmit's AJAX endpoint for `info@satsb.com.my`, with no frontend API key. Before launch, submit one test enquiry and approve the one-time activation message delivered to that mailbox. Do not use sensitive production information in the activation test.
 
-1. Implement or select a secure HTTPS form service.
+For a controlled PHP, Node.js, serverless, Formspree or Resend-backed service:
+
+1. Implement a secure HTTPS endpoint that accepts the documented JSON payload.
 2. Set `VITE_CONTACT_FORM_ENDPOINT` in the hosting environment.
-3. Update the adapter in `src/utilities/contact.ts` if the provider contract differs.
-4. Validate and rate-limit submissions server-side; never put private API keys in `VITE_*` variables.
+3. Update only the adapter in `src/utilities/contact.ts` if the provider contract differs; the form UI can remain unchanged.
+4. Validate, rate-limit and protect submissions against spam server-side; never put private API keys in `VITE_*` variables.
+
+The adapter constructs the subject `New Website Enquiry - [Sender Name]` and includes the sender, company, contact details, selected service, message, Malaysia-local submission time and website source.
 
 ## Deployment
 
@@ -100,7 +104,7 @@ The default handler simulates a successful request but sends no data. For a real
 - Publish directory: `dist`
 - Add an SPA rewrite from all paths to `/index.html`.
 - Set `VITE_SITE_URL` to the final HTTPS origin.
-- Configure the contact endpoint only when the backend is ready.
+- Activate FormSubmit for the recipient mailbox, or configure `VITE_CONTACT_FORM_ENDPOINT` when a controlled backend is ready.
 
 ### Traditional Apache/Nginx hosting
 

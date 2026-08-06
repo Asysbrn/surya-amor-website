@@ -1,6 +1,17 @@
 import type { ContactFormErrors, ContactFormValues } from '../types'
+import { services } from '../data/services'
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/
+const recipient = 'info@satsb.com.my'
+const formSubmitEndpoint = `https://formsubmit.co/ajax/${recipient}`
+
+export interface ContactSubmission {
+  recipient: string
+  subject: string
+  submittedAt: string
+  serviceTitle: string
+  emailBody: string
+}
 
 export function validateContactForm(values: ContactFormValues): ContactFormErrors {
   const errors: ContactFormErrors = {}
@@ -13,19 +24,54 @@ export function validateContactForm(values: ContactFormValues): ContactFormError
   return errors
 }
 
-export async function submitContactForm(values: ContactFormValues): Promise<{ mock: boolean }> {
-  const endpoint = import.meta.env.VITE_CONTACT_FORM_ENDPOINT as string | undefined
-  if (!endpoint) {
-    await new Promise((resolve) => window.setTimeout(resolve, 700))
-    return { mock: true }
+export function buildContactSubmission(values: ContactFormValues, submittedAt = new Date()): ContactSubmission {
+  const serviceTitle = services.find((service) => service.slug === values.service)?.title ?? (values.service === 'unsure' ? 'Not sure / multiple services' : values.service)
+  const timestamp = submittedAt.toLocaleString('en-MY', { dateStyle: 'long', timeStyle: 'short', timeZone: 'Asia/Kuala_Lumpur' })
+  const company = values.organization.trim() || 'Not provided'
+  const phone = values.phone.trim() || 'Not provided'
+  const emailBody = `New enquiry received from the Surya Amor Technology website.\n\nName:\n${values.name.trim()}\n\nCompany:\n${company}\n\nEmail:\n${values.email.trim()}\n\nPhone:\n${phone}\n\nService Interested In:\n${serviceTitle}\n\nMessage:\n${values.message.trim()}\n\nSubmitted At:\n${timestamp}\n\nSource:\nWebsite Contact Form`
+
+  return {
+    recipient,
+    subject: `New Website Enquiry - ${values.name.trim()}`,
+    submittedAt: timestamp,
+    serviceTitle,
+    emailBody,
   }
+}
 
-  const response = await fetch(endpoint, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(values),
-  })
+export async function submitContactForm(values: ContactFormValues): Promise<{ provider: 'formsubmit' | 'custom' }> {
+  const configuredEndpoint = (import.meta.env.VITE_CONTACT_FORM_ENDPOINT as string | undefined)?.trim()
+  const endpoint = configuredEndpoint || formSubmitEndpoint
+  const submission = buildContactSubmission(values)
+  const isFormSubmit = endpoint.includes('formsubmit.co')
 
-  if (!response.ok) throw new Error('The enquiry service returned an error. Please try again later.')
-  return { mock: false }
+  const request: RequestInit = isFormSubmit
+    ? (() => {
+        const form = new FormData()
+        form.append('_subject', submission.subject)
+        form.append('_template', 'table')
+        form.append('_captcha', 'false')
+        form.append('_replyto', values.email.trim())
+        form.append('_honey', '')
+        form.append('Name', values.name.trim())
+        form.append('Company', values.organization.trim() || 'Not provided')
+        form.append('Email', values.email.trim())
+        form.append('Phone', values.phone.trim() || 'Not provided')
+        form.append('Service Interested In', submission.serviceTitle)
+        form.append('Message', values.message.trim())
+        form.append('Submitted At', submission.submittedAt)
+        form.append('Source', 'Website Contact Form')
+        return { method: 'POST', headers: { Accept: 'application/json' }, body: form }
+      })()
+    : {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ ...values, service: submission.serviceTitle, submittedAt: submission.submittedAt, source: 'Website Contact Form', recipient: submission.recipient, email: { subject: submission.subject, body: submission.emailBody } }),
+      }
+
+  const response = await fetch(endpoint, request)
+
+  if (!response.ok) throw new Error('We could not send your enquiry. Please try again or email info@satsb.com.my directly.')
+  return { provider: isFormSubmit ? 'formsubmit' : 'custom' }
 }

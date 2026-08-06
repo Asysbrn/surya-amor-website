@@ -1,6 +1,6 @@
 import { Building2, Clock3, Mail, MapPin, Send, Smartphone } from 'lucide-react'
 import { useState, type ChangeEvent, type FormEvent } from 'react'
-import { ConfirmationNotice } from '../components/common/ConfirmationNotice'
+import { OfficeMap } from '../components/common/OfficeMap'
 import { PageHero } from '../components/common/PageHero'
 import { Button } from '../components/ui/Button'
 import { services } from '../data/services'
@@ -45,10 +45,10 @@ export default function ContactPage() {
     setStatus('loading')
     setStatusMessage('Sending your enquiry…')
     try {
-      const result = await submitContactForm(values)
+      await submitContactForm(values)
       setStatus('success')
-      setStatusMessage(result.mock ? 'Form validated successfully. This is a demonstration: no message was sent because a live form endpoint has not been configured.' : 'Thank you. Your enquiry has been sent successfully.')
-      if (!result.mock) setValues(initialValues)
+      setStatusMessage('Thank you for contacting Surya Amor Technology Sdn Bhd. We have received your enquiry and will respond as soon as possible during our business hours.')
+      setValues(initialValues)
     } catch (error) {
       setStatus('error')
       setStatusMessage(error instanceof Error ? error.message : 'We could not send your enquiry. Please try again later.')
@@ -63,7 +63,7 @@ export default function ContactPage() {
           <div>
             <p className="eyebrow">Project enquiry</p>
             <h2 className="heading">Tell us what you need to make usable.</h2>
-            <p className="lead">Fields marked with * are required. Client-side validation protects the experience; a future backend must repeat all security checks.</p>
+            <p className="lead">Fields marked with * are required. Your enquiry will be delivered to {siteConfig.email}.</p>
             <form style={{ marginTop: '2rem' }} onSubmit={handleSubmit} noValidate>
               <div className="form-grid">
                 <div className="field"><label htmlFor="name">Name *</label><input id="name" name="name" autoComplete="name" value={values.name} onChange={update} onBlur={() => validateField('name')} aria-invalid={Boolean(errors.name)} aria-describedby="name-error" /><p className="field__error" id="name-error">{errors.name}</p></div>
@@ -90,10 +90,10 @@ export default function ContactPage() {
                 <div className="contact-option"><Building2 size={19} /><div><strong>Registration</strong><span>Registration No.: {siteConfig.registrationNo}</span></div></div>
               </div>
             </div>
-            <ConfirmationNotice>The form uses a mock submission unless `VITE_CONTACT_FORM_ENDPOINT` is configured. In mock mode, no personal data leaves the browser.</ConfirmationNotice>
           </aside>
         </div>
       </section>
+      <OfficeMap />
     </>
   )
 }

@@ -334,7 +334,7 @@ Business hours: Monday to Friday, 9:00 AM–5:00 PM; closed on weekends and publ
 **Verification status:** Registration number and business hours supplied by the company representative on 6 August 2026; unit number still requires confirmation
 
 **Notes:**  
-The source conflicts between `T2A-09-3A` and `T02A-09-3A`. Confirm the correct unit and postal formatting before launch. Business hours are Monday to Friday, 9:00 AM–5:00 PM; Saturday, Sunday and public holidays are closed.
+The source conflicts between `T2A-09-3A` and `T02A-09-3A`. Confirm the correct unit and postal formatting before launch. Business hours are Monday to Friday, 9:00 AM–5:00 PM; Saturday, Sunday and public holidays are closed. The interactive map intentionally queries the verified building address rather than inventing coordinates or choosing between the conflicting unit variants. The building and street address were independently corroborated by the [Waze 3 Towers listing](https://www.waze.com/live-map/directions/3-towers-jalan-ampang-349-kuala-lumpur?to=place.w.66650144.666763580.16406540) on 6 August 2026.
 
 ## Contact Form
 
@@ -346,7 +346,7 @@ The legacy form asks for name, email and message and submits to a third-party Fo
 **Proposed website page:** Contact Us
 
 **Rewritten content:**  
-The new website may collect name, work email, telephone, organization, service interest and project information only after SATSB approves the form recipient, privacy notice, retention and security arrangements.
+The website collects name, work email, optional telephone and organization, service interest and project information to respond to an enquiry. The default modular adapter submits through FormSubmit to `info@satsb.com.my`; the mailbox owner must approve FormSubmit's one-time activation message and confirm the privacy, retention and security arrangements before production use. `VITE_CONTACT_FORM_ENDPOINT` can replace the provider with a controlled HTTPS backend without changing the form UI.
 
 **Verification status:** Requires technical and privacy approval
 

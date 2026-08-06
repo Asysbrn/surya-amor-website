@@ -13,7 +13,7 @@ export function PrivacyPage() {
             <p>A complete legal privacy policy is not currently available on this website. Before submitting an enquiry, avoid including confidential records or sensitive personal information.</p>
             <ul>
               <li>The enquiry form requests contact and project information.</li>
-              <li>The current demonstration form does not transmit data unless a live endpoint is configured.</li>
+              <li>Enquiry submissions are sent through the configured form-delivery provider to SATSB’s published contact email.</li>
               <li>Contact SATSB directly for privacy-related questions.</li>
             </ul>
           </article>

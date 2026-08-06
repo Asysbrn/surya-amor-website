@@ -25,7 +25,7 @@ The legacy website at `https://www.satsb.com.my/` may be used only as a factual 
 - React Router 7 for client-side routing and nested layout composition.
 - Lucide React for consistent, accessible SVG iconography.
 - Local variable fonts through Fontsource (Manrope and DM Sans).
-- Native Fetch API for the future contact endpoint; a mock adapter in the first release.
+- Native Fetch API with a modular FormSubmit adapter and an environment-configurable production endpoint.
 - ESLint and TypeScript compiler for code quality.
 
 ## 4. Reasons for each technology choice
@@ -36,7 +36,7 @@ React has strong community support, reusable patterns and a low barrier to futur
 
 The browser loads a Vite-generated static application. `App.tsx` owns the route table. `SiteLayout` supplies global header, footer, skip link, route announcements and scroll restoration. Page components compose reusable section and UI components. Typed files under `src/data` provide navigation, services, projects, industries and contact placeholders. A `useSeo` hook updates route metadata. The form validates locally and calls an adapter that can later submit to an environment-configured HTTPS endpoint.
 
-Future flow: browser → CDN/static host → contact API/serverless function → validation and anti-spam → email/CRM/database. Secrets remain server-side.
+Current flow: browser → FormSubmit AJAX endpoint → `info@satsb.com.my`. Future controlled flow: browser → CDN/static host → contact API/serverless function → validation and anti-spam → email/CRM/database. Secrets remain server-side.
 
 ## 6. Website page structure
 
@@ -133,7 +133,7 @@ The temporary identity uses midnight navy, ocean blue, teal and warm cloud neutr
 
 ## 15. Contact form requirements
 
-Fields: name, work email, phone (optional), organization (optional), service interest, message and privacy acknowledgement. Required fields display inline errors after blur or submit. Submission exposes loading, success and failure states. The initial mock handler performs no transmission and tells the visitor this clearly. A future adapter may target EmailJS, Formspree, PHP, Node.js or a custom API through `VITE_CONTACT_FORM_ENDPOINT`; secrets must stay on the backend.
+Fields: name, work email, phone (optional), organization (optional), service interest, message and privacy acknowledgement. Required fields display inline errors after blur or submit. Submission exposes loading, success and failure states. The default FormSubmit adapter sends to `info@satsb.com.my` after one-time recipient activation. A future adapter may target Formspree, PHP, Node.js, Resend or a custom API through `VITE_CONTACT_FORM_ENDPOINT`; secrets must stay on the backend.
 
 ## 16. Image and media requirements
 

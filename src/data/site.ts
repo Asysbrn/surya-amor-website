@@ -17,6 +17,7 @@ export const siteConfig = {
   email: 'info@satsb.com.my',
   phone: '+603 6416 6978',
   address: 'T2A-09-3A, 3 Towers, 349 Jalan Ampang, 50450 Kuala Lumpur, Malaysia',
+  mapQuery: '3 Towers, 349 Jalan Ampang, 50450 Kuala Lumpur, Malaysia',
   hours: 'Monday to Friday, 9:00 AM–5:00 PM',
   closedHours: 'Closed on weekends and public holidays',
   registrationNo: '1481846-M / 202201036149',

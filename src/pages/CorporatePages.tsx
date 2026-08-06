@@ -1,10 +1,11 @@
-import { ArrowRight, AudioLines, CheckCircle2, FileScan, Map, PlayCircle, ServerCog } from 'lucide-react'
+import { ArrowRight, AudioLines, CheckCircle2, FileScan, Map, ServerCog } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import documentDigitizationImage from '../assets/images/document-digitization.webp'
 import imagingConsultationImage from '../assets/images/imaging-consultation.webp'
 import scannerHardwareImage from '../assets/images/scanner-it-hardware.webp'
 import { CallToAction } from '../components/common/CallToAction'
 import { ProjectCard } from '../components/common/Cards'
+import { DigitizationWorkflow } from '../components/common/DigitizationWorkflow'
 import { PageHero } from '../components/common/PageHero'
 import { SectionHeading } from '../components/ui/SectionHeading'
 import { companyValues, industries, processSteps, representativeProjects, siteConfig, teamFunctions } from '../data/site'
@@ -67,14 +68,11 @@ export function AboutPage() {
       </section>
       <section className="section section--white">
         <div className="container about-profile">
-          <div className="about-profile__video about-reveal" role="img" aria-label="Placeholder for a future Surya Amor Technology company profile video">
-            <img src={documentDigitizationImage} alt="" loading="lazy" />
-            <div className="about-profile__overlay"><PlayCircle size={48} aria-hidden="true" /><span>[COMPANY VIDEO TO BE ADDED]</span></div>
-          </div>
+          <div className="about-reveal"><DigitizationWorkflow /></div>
           <div className="about-profile__copy about-reveal">
-            <p className="eyebrow">Company profile</p>
-            <h2 className="heading">A closer look at SATSB’s work.</h2>
-            <p className="lead">No approved company video is currently available in the project assets. This space is ready for an office, team or project profile when SATSB supplies the final media.</p>
+            <p className="eyebrow">How information moves</p>
+            <h2 className="heading">A clear path from source to digital output.</h2>
+            <p className="lead">This lightweight motion graphic illustrates SATSB’s high-level delivery sequence without relying on external video or third-party media. The exact workflow, checks and deliverables are agreed for each engagement.</p>
             <div className="button-row"><Link className="button button--ghost" to="/process">Explore our delivery process <ArrowRight size={16} aria-hidden="true" /></Link></div>
           </div>
         </div>
