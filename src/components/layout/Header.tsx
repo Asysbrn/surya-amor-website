@@ -44,7 +44,7 @@ export function Header() {
                     </Link>
                     <div className="nav__dropdown">
                       {item.children.map((child) => <Link key={child.href} to={child.href}><strong>{child.label}</strong><span>{child.description}</span></Link>)}
-                      <Link to="/services"><strong>View all services</strong><span>Explore the five published service areas.</span></Link>
+                      <Link to="/services"><strong>View complete catalogue</strong><span>Explore all published and profile-listed capabilities.</span></Link>
                       <Link to="/process"><strong>Proposed process</strong><span>Review the high-level workflow awaiting owner approval.</span></Link>
                     </div>
                   </>
@@ -65,7 +65,7 @@ export function Header() {
           {navigation.map((item) => (
             <div key={item.href}>
               <NavLink to={item.href} className={() => isSectionActive(pathname, item.href) ? 'active' : ''}>{item.label}<span aria-hidden="true">→</span></NavLink>
-              {item.children && <div className="mobile-menu__services">{item.children.slice(0, 4).map((child) => <Link key={child.href} to={child.href}>{child.label}</Link>)}</div>}
+              {item.children && <div className="mobile-menu__services">{item.children.map((child) => <Link key={child.href} to={child.href}>{child.label}</Link>)}</div>}
             </div>
           ))}
           <NavLink to="/process">Our Process<span aria-hidden="true">→</span></NavLink>

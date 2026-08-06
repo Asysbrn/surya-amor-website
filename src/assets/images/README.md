@@ -51,6 +51,6 @@ Add `-2x` only for an intentional high-density asset and avoid spaces, dates, `f
 - `client-logo-*`: trust area only after written approval.
 - `og-default.*`: shared social preview metadata.
 
-`hero-digitization-studio.png` is an AI-generated placeholder, not evidence of a Surya Amor Technology facility or project. Replace or approve it before launch.
+`hero-digitization-studio.png`, `service-document-studio.png`, `service-legacy-media.png` and `service-information-systems.png` are AI-generated placeholders, not evidence of a Surya Amor Technology facility, equipment or project. Replace or approve and optimize them before launch. The three `service-*` assets were generated on 6 August 2026 with the built-in image-generation tool for this redesign.
 
 Do not download or reuse images from the legacy SATSB website. Suitable approved replacements include document scanning equipment, paper preparation, VHS or Betacam transfer, audio cassette transfer, records-management interfaces, imaging consultation, GIS workflows, the corporate team and the Kuala Lumpur office.

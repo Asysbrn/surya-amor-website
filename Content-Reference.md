@@ -23,7 +23,7 @@ Surya Amor Technology Sdn Bhd is a Kuala Lumpur-based company providing document
 
 **Verification status:** Requires owner review
 
-**Notes:**  
+**Notes:**
 Confirm the incorporation year, full registered business activities, service territory and whether “private company” is the preferred public description. Add the official company registration number: `[COMPANY OWNER TO PROVIDE THIS INFORMATION]`.
 
 ## Company Background and History
@@ -35,7 +35,7 @@ The company says it began modestly, has grown steadily and employs more than 20 
 
 **Proposed website page:** About Us
 
-**Rewritten content:**  
+**Rewritten content:**
 Since its stated incorporation in 2022, SATSB reports that it has grown its team and brought together personnel with substantial experience in document management and Geographic Information System services.
 
 **Verification status:** Requires owner review before publication
@@ -93,6 +93,24 @@ SATSB converts physical documents into organized digital files to support easier
 
 **Notes:**  
 The source claims high-resolution scanning, advanced security and confidentiality but supplies no technical specifications or documented controls. Confirm supported document sizes, file formats, OCR/ICR capabilities, indexing methods, locations and quality process before publishing those details.
+
+### Focused capabilities represented in the updated catalogue
+
+The updated website gives dedicated catalogue entries and detail pages to the scanning and conversion capabilities named across the available profile material and project brief: document digitization, book scanning, large-format scanning, photo scanning, microfilm and microfiche digitization, OCR/ICR and searchable PDF, and data conversion. These pages preserve the parent service meaning and intentionally avoid unsupported equipment, accuracy, format or capacity claims.
+
+**Verification status:** Service labels included; detailed specifications require owner confirmation
+
+**Notes:**
+Confirm the official SAT Profile service wording and supply the source profile document for a final line-by-line reconciliation before production publication.
+
+## Scanners and IT Hardware
+
+**Source page:** Project brief / SAT Profile requirement
+
+**Rewritten content:**
+Scanning equipment and supporting IT hardware aligned to approved digitization requirements. Specific products, brands, supply arrangements, warranties and support responsibilities must be confirmed before quotation.
+
+**Verification status:** Service label included from the project brief; commercial and technical details require owner confirmation
 
 ## Audio and Video Digitization Services
 

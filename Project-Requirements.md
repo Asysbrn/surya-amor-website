@@ -2,7 +2,7 @@
 
 ## 1. Project overview
 
-Surya Amor Technology Sdn Bhd requires a production-quality corporate website that presents only service areas supported by approved source material. The current source inventory supports document digitization, audiovisual digitization, document and records management, imaging consultation and Geographic Information System services. The first release is a fast static single-page application with clearly separated content and presentation layers, ready for a form API or CMS later.
+Surya Amor Technology Sdn Bhd requires a production-quality corporate website that presents service areas supported by the available source material and project brief. The catalogue covers document, book, large-format, photo, microfilm and microfiche digitization; OCR/ICR and searchable PDF; data conversion; audiovisual digitization; document and records management; imaging consultation; Geographic Information System services; and scanners / supporting IT hardware. The first release is a fast static single-page application with clearly separated content and presentation layers, ready for a form API or CMS later.
 
 The legacy website at `https://www.satsb.com.my/` may be used only as a factual content source. Its design, template, code, images, layout, components and branding presentation must not be reused or imitated. All extracted content, rewrites and evidence limitations are recorded in `Content-Reference.md`. Unverified claims are explicitly labelled in the interface or documented as replacement items. The website must not imply certifications, clients, awards, project quantities, partnerships, endorsements or government approval that the company has not substantiated.
 
@@ -42,7 +42,7 @@ Future flow: browser → CDN/static host → contact API/serverless function →
 
 - Home: overview, selected services, industries, process, trust, projects and calls to action.
 - About Us: company positioning, values, operating principles and unverified-company-detail notice.
-- Services: catalogue of the five service areas named by the legacy source.
+- Services: complete catalogue of broad published service areas and focused capabilities named in the available profile material and project brief.
 - Service detail: reusable route at `/services/:slug` with published focus and explicit detail-verification notes.
 - Industries: sectors derived from organizations displayed in the legacy portfolio, with evidence limits shown.
 - Projects: the nine legacy credential names presented as owner-review records without implied scope or endorsement.

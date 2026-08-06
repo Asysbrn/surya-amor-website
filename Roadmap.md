@@ -1,9 +1,9 @@
 # Project Roadmap
 
 > **Current phase:** Phase 13 — Company content and launch review  
-> **Last completed task:** Integrated the official Surya Amor Technology Sdn Bhd logo into the responsive header and footer through a reusable component, removed the temporary favicon reference, and verified the development and production builds
-> **Next task:** Obtain owner approval for the sourced content and remaining placeholders, then replace/optimize the hero image and complete remaining browser/accessibility QA
-> **Known issues:** The source conflicts between office units `T2A-09-3A` and `T02A-09-3A`. Registration details, formal vision, GIS scope, detailed quality/security practices, current staffing, project facts and publication permissions remain unconfirmed. Privacy Policy and Terms require owner/legal approval. The generated PNG hero is 1.84 MB and should be replaced with an optimized approved AVIF/WebP. `npm audit` previously reported a high-severity React Router RSC-mode advisory in 7.18.2; this static Browser Router site does not use RSC, Actions or a React Router server, but the dependency should be updated when an appropriate patched version is approved. No browser executable was available for console, visual breakpoint, screen-reader or Lighthouse testing.
+> **Last completed task:** Completed the corporate visual redesign, added two homepage sections, expanded the catalogue to 12 service pages, added three generated professional placeholder visuals, and verified development and production builds plus all public routes
+> **Next task:** Obtain the official SAT Profile document for line-by-line service reconciliation and owner approval, replace generated placeholders with approved optimized imagery, then complete browser/accessibility QA
+> **Known issues:** The source conflicts between office units `T2A-09-3A` and `T02A-09-3A`. Registration details, formal vision, GIS scope, detailed quality/security practices, current staffing, project facts and publication permissions remain unconfirmed. Privacy Policy and Terms require owner/legal approval. The three generated PNG visuals total approximately 5.6 MB and should be replaced or converted to optimized approved AVIF/WebP assets before launch. `npm audit` previously reported a high-severity React Router RSC-mode advisory in 7.18.2; this static Browser Router site does not use RSC, Actions or a React Router server, but the dependency should be updated when an appropriate patched version is approved. No browser executable was available for console, visual breakpoint, screen-reader or Lighthouse testing.
 > **Notes for continuing:** Run `npm install`, then `npm run dev`. Review this file from the first unchecked task. Never convert a `Confirmation required` placeholder into a factual claim without company approval. Run `npm run lint && npm run typecheck && npm run build` after every content or code change.
 
 **Verification record (2026-08-05):** `npm run dev` served HTTP 200; ESLint passed; TypeScript passed; the production build passed; all 29 public, service-detail and fallback routes returned HTTP 200 from the production preview; invalid and valid form datasets produced the expected validation results. Browser-only visual/console checks remain listed below.
@@ -11,6 +11,8 @@
 **Content integration record (2026-08-05):** The public legacy site at `https://www.satsb.com.my/` was reviewed as a content source only. No legacy images, code, layout or design were reused. `Content-Reference.md` records extracted information, rewrites, destinations and verification status. TypeScript, ESLint and the production build passed after integration; all 18 current public, service-detail and fallback routes returned HTTP 200.
 
 **Official logo integration record (2026-08-05):** Added the supplied `SAT LOGO.jpeg` wordmark to the desktop/mobile header and footer using one responsive `CompanyLogo` component with the approved alt text. The original aspect ratio and colours are preserved. The unrelated temporary favicon reference and asset were removed because the wide JPEG artwork is not suitable as a small browser-tab icon without cropping or altering it. The development page and logo asset returned HTTP 200; ESLint, TypeScript and the production build passed, with Vite emitting the logo as a hashed JPEG asset. Responsive sizing was checked against the 375 px, 768 px and desktop CSS layouts; browser-based visual QA remains open because no browser executable is installed in this environment.
+
+**Visual redesign and service expansion record (2026-08-06):** Upgraded the hero, image-led service cards, service banners, hierarchy, responsive layouts, hover treatments and section composition. Added the new “Information in every form” and “Project readiness” homepage sections. Expanded the catalogue from five broad areas to 12 linked pages covering document, book, large-format, photo, microfilm/microfiche, OCR/ICR/searchable PDF, data conversion, audiovisual, records management, consultation, GIS and scanners/IT hardware. Every service page now includes a relevant visual, overview, outcomes, scope points, applications, workflow and CTA. Placeholder visuals are explicitly labelled. ESLint, TypeScript and the production build passed; the development server returned HTTP 200 and all 25 tested production-preview routes returned HTTP 200.
 
 ## Phase 1 — Planning
 
@@ -127,7 +129,11 @@
 
 - [x] Review the legacy company website as a factual content source only
 - [x] Create the required `Content-Reference.md` inventory and owner checklist
-- [x] Restrict public services to the five areas supported by the source
+- [x] Preserve the five broad areas supported by the legacy source
+- [x] Add dedicated pages for focused scanning, conversion and hardware capabilities identified in the profile material and project brief
+- [x] Add a relevant visual and richer structured presentation to every service page
+- [x] Add two new homepage sections for format coverage and project readiness
+- [x] Update service navigation, contact options and sitemap entries for the expanded catalogue
 - [x] Add the published email, telephone and address with the unit-number conflict visibly flagged
 - [ ] Confirm the correct office unit, email, telephone and business hours with the owner
 - [ ] Verify registration and company profile details

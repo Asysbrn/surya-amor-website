@@ -1,6 +1,6 @@
 import type { LucideIcon } from 'lucide-react'
 
-export type ServiceCategory = 'Digitization' | 'Information Management' | 'Technology'
+export type ServiceCategory = 'Digitization' | 'Data Conversion' | 'Information Management' | 'Technology'
 
 export interface Service {
   slug: string
@@ -11,6 +11,10 @@ export interface Service {
   outcomes: string[]
   deliverables: string[]
   verificationNote?: string
+  image: string
+  imageAlt: string
+  steps: string[]
+  applications: string[]
   icon: LucideIcon
   featured?: boolean
 }

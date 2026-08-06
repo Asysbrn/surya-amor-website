@@ -1,5 +1,5 @@
 import { CheckCircle2 } from 'lucide-react'
-import heroImage from '../assets/images/hero-digitization-studio.png'
+import heroImage from '../assets/images/service-document-studio.png'
 import { Button } from '../components/ui/Button'
 
 export function HomeHero() {
@@ -19,6 +19,7 @@ export function HomeHero() {
             <span><CheckCircle2 size={16} aria-hidden="true" /> Document digitization</span>
             <span><CheckCircle2 size={16} aria-hidden="true" /> Audio & video transfer</span>
             <span><CheckCircle2 size={16} aria-hidden="true" /> Records solutions</span>
+            <span><CheckCircle2 size={16} aria-hidden="true" /> OCR & data conversion</span>
           </div>
         </div>
       </div>

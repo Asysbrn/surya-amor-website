@@ -1,5 +1,6 @@
-import { ArrowRight, CheckCircle2, CircleAlert, FileScan, Images, Map, ServerCog } from 'lucide-react'
+import { ArrowRight, CheckCircle2, CircleAlert, FileCheck2, FileScan, Images, Layers3, Map, ScanText, ServerCog } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import systemsImage from '../assets/images/service-information-systems.png'
 import { ProjectCard, ServiceCard } from '../components/common/Cards'
 import { ConfirmationNotice } from '../components/common/ConfirmationNotice'
 import { Button } from '../components/ui/Button'
@@ -34,9 +35,48 @@ export function ServicesSection() {
   return (
     <section className="section section--tint">
       <div className="container">
-        <SectionHeading eyebrow="Published service areas" title="Focused capabilities for physical and legacy information." description="These five areas are explicitly named on SATSB's legacy website. Detailed specifications remain subject to project requirements and owner confirmation." split />
+        <SectionHeading eyebrow="Complete capability catalogue" title="Focused services for physical and legacy information." description="The catalogue brings together SATSB’s broad published service areas and the specific scanning, conversion and technology capabilities identified in the available profile material." split />
         <div className="grid grid--3">{featuredServices.map((service) => <ServiceCard key={service.slug} service={service} />)}</div>
-        <div className="button-row"><Button to="/services" variant="dark" arrow>View all 5 service areas</Button></div>
+        <div className="button-row"><Button to="/services" variant="dark" arrow>View all service areas</Button></div>
+      </div>
+    </section>
+  )
+}
+
+export function FormatCoverageSection() {
+  const formats = [
+    { icon: FileScan, title: 'Paper & bound records', text: 'Documents, books, photographs, plans and other agreed physical records.' },
+    { icon: Layers3, title: 'Film & legacy media', text: 'Microfilm, microfiche, VHS, Betacam, audio cassette and selected tapes.' },
+    { icon: ScanText, title: 'Searchable information', text: 'OCR, ICR, indexing and searchable output where suitable and agreed.' },
+    { icon: ServerCog, title: 'Managed digital access', text: 'Records solutions, data conversion, consultation and GIS requirements.' },
+  ]
+  return (
+    <section className="section section--dark section--grid">
+      <div className="container showcase-split">
+        <div className="showcase-image"><img src={systemsImage} alt="Illustrative enterprise scanning and information-management workstation" loading="lazy" /><span className="visual-label">Illustrative technology visual</span></div>
+        <div>
+          <p className="eyebrow">Information in every form</p>
+          <h2 className="heading">One connected view of capture, conversion and access.</h2>
+          <p className="lead">SATSB’s service profile spans physical records, legacy carriers and the systems used to organize digital information. Each engagement remains defined around the customer’s actual material and requirements.</p>
+          <div className="format-list">{formats.map(({ icon: Icon, title, text }) => <article key={title}><Icon size={20} aria-hidden="true" /><div><h3>{title}</h3><p>{text}</p></div></article>)}</div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export function ProjectReadinessSection() {
+  const points = [
+    { number: '01', title: 'Source-aware planning', text: 'Start with the format, condition, quantity and handling needs of the source material.' },
+    { number: '02', title: 'Purpose-led output', text: 'Define how the digital result needs to be searched, accessed, stored or transferred.' },
+    { number: '03', title: 'Clear scope alignment', text: 'Agree formats, responsibilities, timing, checks and handover expectations before delivery.' },
+  ]
+  return (
+    <section className="section section--white">
+      <div className="container">
+        <SectionHeading eyebrow="Project readiness" title="A stronger brief leads to a clearer digitization plan." description="These practical preparation points help frame an initial discussion without assuming unsupported technical specifications." split />
+        <div className="readiness-grid">{points.map((point) => <article key={point.number}><span>{point.number}</span><FileCheck2 size={24} aria-hidden="true" /><h3>{point.title}</h3><p>{point.text}</p></article>)}</div>
+        <div className="button-row"><Button to="/contact" variant="dark" arrow>Start a project conversation</Button></div>
       </div>
     </section>
   )

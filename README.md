@@ -1,6 +1,6 @@
 # Surya Amor Technology Corporate Website
 
-A modern, responsive corporate website for Surya Amor Technology Sdn Bhd, focused on the five service areas published by the company: document digitization, audiovisual digitization, document and records management, imaging consultation and Geographic Information System services. Content requiring company verification is deliberately labelled and is never represented as confirmed fact.
+A modern, responsive corporate website for Surya Amor Technology Sdn Bhd, covering the company’s broad published service areas and focused profile capabilities across scanning, digitization, data conversion, audiovisual transfer, records management, consultation, GIS and supporting scanner / IT hardware. Content requiring company verification is deliberately labelled and is never represented as confirmed fact.
 
 ## Technology stack
 

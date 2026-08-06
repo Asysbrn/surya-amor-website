@@ -1,4 +1,4 @@
-import { CheckCircle2 } from 'lucide-react'
+import { ArrowRight, CheckCircle2 } from 'lucide-react'
 import { Navigate, useParams } from 'react-router-dom'
 import { CallToAction } from '../components/common/CallToAction'
 import { ConfirmationNotice } from '../components/common/ConfirmationNotice'
@@ -16,26 +16,38 @@ export default function ServiceDetailPage() {
 
   return (
     <>
-      <PageHero eyebrow={service.category} title={service.title} description={service.summary} parent={{ label: 'Services', href: '/services' }} />
+      <PageHero eyebrow={service.category} title={service.title} description={service.summary} parent={{ label: 'Services', href: '/services' }} image={service.image} imageAlt={service.imageAlt} />
       <section className="section section--white">
         <div className="container content-layout">
           <div className="prose">
-            <div className="card__icon" aria-hidden="true"><Icon size={24} /></div>
-            <h2>Published service description</h2>
+            <div className="service-kicker"><div className="card__icon" aria-hidden="true"><Icon size={24} /></div><span>Service overview</span></div>
+            <h2>A focused approach to {service.title.toLowerCase()}</h2>
             <p>{service.description}</p>
-            {service.verificationNote && <ConfirmationNotice>{service.verificationNote}</ConfirmationNotice>}
             <div className="detail-grid">
-              <section className="detail-box"><h2>Published service focus</h2><ul>{service.outcomes.map((item) => <li key={item}><CheckCircle2 size={17} aria-hidden="true" />{item}</li>)}</ul></section>
-              <section className="detail-box"><h2>Details to confirm</h2><ul>{service.deliverables.map((item) => <li key={item}><CheckCircle2 size={17} aria-hidden="true" />{item}</li>)}</ul></section>
+              <section className="detail-box detail-box--accent"><span className="detail-box__label">Potential value</span><h2>Service focus</h2><ul>{service.outcomes.map((item) => <li key={item}><CheckCircle2 size={17} aria-hidden="true" />{item}</li>)}</ul></section>
+              <section className="detail-box"><span className="detail-box__label">Scope definition</span><h2>Details to confirm</h2><ul>{service.deliverables.map((item) => <li key={item}><CheckCircle2 size={17} aria-hidden="true" />{item}</li>)}</ul></section>
             </div>
-            <h2>Project information to agree</h2>
-            <ul><li>Source format, condition and approximate quantity</li><li>Current workflow and intended result</li><li>Required output format and access needs</li><li>Project location, timing and handling requirements</li><li>Scope, responsibilities, quotation and acceptance method</li></ul>
+            {service.verificationNote && <ConfirmationNotice>{service.verificationNote}</ConfirmationNotice>}
           </div>
           <aside className="aside-panel">
             <h2>Explore related services</h2>
             <p>Review the other service areas published by SATSB.</p>
             <div className="aside-links">{services.filter((item) => item.slug !== service.slug).slice(0, 5).map((item) => <Button key={item.slug} to={`/services/${item.slug}`} variant="ghost">{item.title}</Button>)}</div>
           </aside>
+        </div>
+      </section>
+      <section className="section section--tint">
+        <div className="container service-experience">
+          <div>
+            <p className="eyebrow">Typical applications</p>
+            <h2 className="heading">Designed around the material and intended result.</h2>
+            <div className="application-grid">{service.applications.map((item, index) => <article key={item}><span>0{index + 1}</span><h3>{item}</h3></article>)}</div>
+          </div>
+          <div className="workflow-card">
+            <p className="eyebrow">How an engagement can progress</p>
+            {service.steps.map((step, index) => <div className="workflow-card__step" key={step}><span>0{index + 1}</span><div><h3>{step}</h3><p>{index === 0 ? 'Clarify the source, scale, condition and intended use.' : index === 1 ? 'Define the practical method, responsibilities and required output.' : 'Complete the agreed work and verify the handover requirements.'}</p></div></div>)}
+            <Button to="/process" variant="ghost">View the full process <ArrowRight size={16} /></Button>
+          </div>
         </div>
       </section>
       <CallToAction title={`Planning a ${service.title.toLowerCase()} project?`} />

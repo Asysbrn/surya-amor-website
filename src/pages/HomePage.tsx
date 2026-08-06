@@ -1,8 +1,8 @@
 import { useSeo } from '../hooks/useSeo'
 import { HomeHero } from '../sections/HomeHero'
-import { ContactPreviewSection, IndustriesSection, IntroductionSection, ProcessSection, ProjectsSection, ServicesSection, TechnologySection, TrustSection, WhySection } from '../sections/HomeSections'
+import { ContactPreviewSection, FormatCoverageSection, IndustriesSection, IntroductionSection, ProcessSection, ProjectReadinessSection, ProjectsSection, ServicesSection, TechnologySection, TrustSection, WhySection } from '../sections/HomeSections'
 
 export default function HomePage() {
-  useSeo({ title: 'Document Digitization & Information Solutions', description: 'Document digitization, audiovisual conversion, document and records management, imaging consultation and GIS services from Kuala Lumpur.', path: '/' })
-  return <><HomeHero /><IntroductionSection /><ServicesSection /><IndustriesSection /><WhySection /><ProcessSection /><ProjectsSection /><TechnologySection /><TrustSection /><ContactPreviewSection /></>
+  useSeo({ title: 'Digitization & Information Solutions', description: 'Scanning, digitization, data conversion, audiovisual transfer, records management, imaging consultation, GIS and supporting technology services from Kuala Lumpur.', path: '/' })
+  return <><HomeHero /><IntroductionSection /><ServicesSection /><FormatCoverageSection /><IndustriesSection /><WhySection /><ProcessSection /><ProjectReadinessSection /><ProjectsSection /><TechnologySection /><TrustSection /><ContactPreviewSection /></>
 }

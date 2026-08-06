@@ -12,10 +12,10 @@ type Filter = 'All' | ServiceCategory
 export default function ServicesPage() {
   const [filter, setFilter] = useState<Filter>('All')
   const filtered = useMemo(() => filter === 'All' ? services : services.filter((service) => service.category === filter), [filter])
-  useSeo({ title: 'Services', description: 'Explore SATSB’s published document digitization, audiovisual conversion, records management, imaging consultation and GIS service areas.', path: '/services' })
+  useSeo({ title: 'Services', description: 'Explore SATSB’s scanning, digitization, data conversion, audiovisual transfer, records management, imaging consultation, GIS and supporting technology services.', path: '/services' })
   return (
     <>
-      <PageHero eyebrow="Published services" title="Five service areas supported by the legacy company website." description="Descriptions have been professionally rewritten from the existing SATSB website without reusing its design, code, images or interface structure." />
+      <PageHero eyebrow="Complete service catalogue" title="Digitization expertise for every information format." description="Explore SATSB’s broad service areas and the focused scanning, conversion and technology capabilities identified in the available company profile material." />
       <section className="section">
         <div className="container">
           <div className="filters" role="group" aria-label="Filter services by category">
