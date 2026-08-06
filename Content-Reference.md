@@ -24,7 +24,7 @@ Surya Amor Technology Sdn Bhd is a Kuala Lumpur-based company providing document
 **Verification status:** Requires owner review
 
 **Notes:**
-Confirm the incorporation year, full registered business activities, service territory and whether “private company” is the preferred public description. Add the official company registration number: `[COMPANY OWNER TO PROVIDE THIS INFORMATION]`.
+Confirm the incorporation year, full registered business activities, service territory and whether “private company” is the preferred public description. Registration No. `1481846-M / 202201036149` was supplied by the company representative on 6 August 2026.
 
 ## Company Background and History
 
@@ -328,11 +328,13 @@ T2A-09-3A, 3 Towers
 50450 Kuala Lumpur, Malaysia  
 Email: info@satsb.com.my  
 Telephone: +603 6416 6978
+Registration No.: 1481846-M / 202201036149
+Business hours: Monday to Friday, 9:00 AM–5:00 PM; closed on weekends and public holidays
 
-**Verification status:** Email and telephone are consistent across the source; unit number requires confirmation
+**Verification status:** Registration number and business hours supplied by the company representative on 6 August 2026; unit number still requires confirmation
 
 **Notes:**  
-The source conflicts between `T2A-09-3A` and `T02A-09-3A`. Confirm the correct unit, postal formatting, public enquiry email, telephone availability and business hours before launch. Business hours: `[COMPANY OWNER TO PROVIDE THIS INFORMATION]`.
+The source conflicts between `T2A-09-3A` and `T02A-09-3A`. Confirm the correct unit and postal formatting before launch. Business hours are Monday to Friday, 9:00 AM–5:00 PM; Saturday, Sunday and public holidays are closed.
 
 ## Contact Form
 
@@ -432,8 +434,8 @@ Use only clearly labelled professional placeholders until approved files are pla
 
 Before production publication, the company owner should confirm:
 
-- Official registration number, incorporation date and registered business description
-- Correct office unit number and business hours
+- Incorporation date and registered business description
+- Correct office unit number
 - Current telephone number and public enquiry email
 - Formal vision and approval of the rewritten mission
 - Current headcount and the basis of experience claims

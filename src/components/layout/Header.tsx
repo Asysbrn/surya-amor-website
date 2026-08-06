@@ -44,7 +44,7 @@ export function Header() {
                     </Link>
                     <div className="nav__dropdown">
                       {item.children.map((child) => <Link key={child.href} to={child.href}><strong>{child.label}</strong><span>{child.description}</span></Link>)}
-                      <Link to="/services"><strong>View complete catalogue</strong><span>Explore all published and profile-listed capabilities.</span></Link>
+                      <Link to="/services"><strong>View complete catalogue</strong><span>Explore all scanning, conversion and technology capabilities.</span></Link>
                       <Link to="/process"><strong>Proposed process</strong><span>Review the high-level workflow awaiting owner approval.</span></Link>
                     </div>
                   </>

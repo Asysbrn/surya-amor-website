@@ -23,7 +23,6 @@ export function PageHero({ eyebrow, title, description, parent, image, imageAlt 
         <p className="eyebrow">{eyebrow}</p>
         <h1>{title}</h1>
         <p>{description}</p>
-        {image && <span className="visual-label">Illustrative service visual</span>}
       </div>
     </section>
   )

@@ -81,16 +81,15 @@ export default function ContactPage() {
           <aside>
             <div className="aside-panel">
               <h2>Company contact details</h2>
-              <p>These details are published on the legacy company website and require final owner confirmation.</p>
+              <p>Contact the Kuala Lumpur office to discuss your digitization or information-management requirements.</p>
               <div className="contact-options">
                 <div className="contact-option"><Mail size={19} /><div><strong>Email</strong><span>{siteConfig.email}</span></div></div>
                 <div className="contact-option"><Smartphone size={19} /><div><strong>Phone</strong><span>{siteConfig.phone}</span></div></div>
                 <div className="contact-option"><MapPin size={19} /><div><strong>Address</strong><span>{siteConfig.address}</span></div></div>
-                <div className="contact-option"><Clock3 size={19} /><div><strong>Business hours</strong><span>{siteConfig.hours}</span></div></div>
-                <div className="contact-option"><Building2 size={19} /><div><strong>Registration</strong><span>[COMPANY OWNER TO PROVIDE]</span></div></div>
+                <div className="contact-option"><Clock3 size={19} /><div><strong>Business hours</strong><span>{siteConfig.hours}<br />{siteConfig.closedHours}</span></div></div>
+                <div className="contact-option"><Building2 size={19} /><div><strong>Registration</strong><span>Registration No.: {siteConfig.registrationNo}</span></div></div>
               </div>
             </div>
-            <ConfirmationNotice>{siteConfig.contactNote}</ConfirmationNotice>
             <ConfirmationNotice>The form uses a mock submission unless `VITE_CONTACT_FORM_ENDPOINT` is configured. In mock mode, no personal data leaves the browser.</ConfirmationNotice>
           </aside>
         </div>

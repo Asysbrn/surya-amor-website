@@ -1,7 +1,6 @@
 import { useMemo, useState } from 'react'
 import { ServiceCard } from '../components/common/Cards'
 import { CallToAction } from '../components/common/CallToAction'
-import { ConfirmationNotice } from '../components/common/ConfirmationNotice'
 import { PageHero } from '../components/common/PageHero'
 import { serviceCategories, services } from '../data/services'
 import { useSeo } from '../hooks/useSeo'
@@ -23,7 +22,6 @@ export default function ServicesPage() {
           </div>
           <p className="sr-only" aria-live="polite">Showing {filtered.length} services</p>
           <div className="grid grid--3">{filtered.map((service) => <ServiceCard service={service} key={service.slug} />)}</div>
-          <ConfirmationNotice>Technical specifications, security controls, products, platforms, GIS scope and detailed deliverables require company-owner confirmation.</ConfirmationNotice>
         </div>
       </section>
       <CallToAction title="Not sure which service fits?" description="Describe the material or workflow, approximate quantity and intended result so SATSB can discuss the requirement with you." />

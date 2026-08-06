@@ -1,7 +1,6 @@
 import { ArrowRight, CheckCircle2 } from 'lucide-react'
 import { Navigate, useParams } from 'react-router-dom'
 import { CallToAction } from '../components/common/CallToAction'
-import { ConfirmationNotice } from '../components/common/ConfirmationNotice'
 import { PageHero } from '../components/common/PageHero'
 import { Button } from '../components/ui/Button'
 import { getService, services } from '../data/services'
@@ -27,11 +26,10 @@ export default function ServiceDetailPage() {
               <section className="detail-box detail-box--accent"><span className="detail-box__label">Potential value</span><h2>Service focus</h2><ul>{service.outcomes.map((item) => <li key={item}><CheckCircle2 size={17} aria-hidden="true" />{item}</li>)}</ul></section>
               <section className="detail-box"><span className="detail-box__label">Scope definition</span><h2>Details to confirm</h2><ul>{service.deliverables.map((item) => <li key={item}><CheckCircle2 size={17} aria-hidden="true" />{item}</li>)}</ul></section>
             </div>
-            {service.verificationNote && <ConfirmationNotice>{service.verificationNote}</ConfirmationNotice>}
           </div>
           <aside className="aside-panel">
             <h2>Explore related services</h2>
-            <p>Review the other service areas published by SATSB.</p>
+            <p>Review SATSB’s other service areas.</p>
             <div className="aside-links">{services.filter((item) => item.slug !== service.slug).slice(0, 5).map((item) => <Button key={item.slug} to={`/services/${item.slug}`} variant="ghost">{item.title}</Button>)}</div>
           </aside>
         </div>

@@ -51,6 +51,8 @@ Add `-2x` only for an intentional high-density asset and avoid spaces, dates, `f
 - `client-logo-*`: trust area only after written approval.
 - `og-default.*`: shared social preview metadata.
 
-`hero-digitization-studio.png`, `service-document-studio.png`, `service-legacy-media.png` and `service-information-systems.png` are AI-generated placeholders, not evidence of a Surya Amor Technology facility, equipment or project. Replace or approve and optimize them before launch. The three `service-*` assets were generated on 6 August 2026 with the built-in image-generation tool for this redesign.
+`hero-digitization-studio.png`, `service-document-studio.png`, `service-legacy-media.png` and `service-information-systems.png` are AI-generated placeholders, not evidence of a Surya Amor Technology facility, equipment or project. Replace or approve and optimize them before launch. The three `service-*` assets were generated on 6 August 2026 with the built-in image-generation tool for the initial redesign.
+
+The following service-specific stock-style visuals were generated on 6 August 2026 with the built-in image-generation tool and optimized to 1600 px WebP at quality 78: `document-digitization.webp`, `large-format-scanning.webp`, `photo-scanning.webp`, `data-conversion.webp`, `audio-video-digitization.webp`, `imaging-consultation.webp`, `gis-services.webp` and `scanner-it-hardware.webp`. They are visual representations only and must not be described as SATSB personnel, facilities or equipment.
 
 Do not download or reuse images from the legacy SATSB website. Suitable approved replacements include document scanning equipment, paper preparation, VHS or Betacam transfer, audio cassette transfer, records-management interfaces, imaging consultation, GIS workflows, the corporate team and the Kuala Lumpur office.

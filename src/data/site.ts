@@ -8,8 +8,9 @@ export const siteConfig = {
   email: 'info@satsb.com.my',
   phone: '+603 6416 6978',
   address: 'T2A-09-3A, 3 Towers, 349 Jalan Ampang, 50450 Kuala Lumpur, Malaysia',
-  hours: '[COMPANY OWNER TO PROVIDE BUSINESS HOURS]',
-  contactNote: 'The legacy website publishes two variants of the unit number (T2A and T02A). Confirm the correct unit before launch.',
+  hours: 'Monday to Friday, 9:00 AM–5:00 PM',
+  closedHours: 'Closed on weekends and public holidays',
+  registrationNo: '1481846-M / 202201036149',
 }
 
 export const navigation: NavItem[] = [
@@ -47,18 +48,18 @@ export const processSteps = [
   { number: '05', title: 'Provide the agreed output', description: 'Deliver the files or implemented solution in the format defined for the engagement.' },
 ]
 
-const legacyProjectNote = 'Displayed in the legacy website credentials section. Service, date, scope, outcome and publication permission are not provided.'
+const legacyProjectNote = 'Displayed in the legacy website credentials section. No service, date, scope or outcome is presented here.'
 
 export const representativeProjects = [
-  { title: 'Dewan Bahasa dan Pustaka Malaysia', tag: 'Legacy portfolio listing — verify', description: legacyProjectNote },
-  { title: 'Jabatan Kesenian dan Kebudayaan Negara', tag: 'Legacy portfolio listing — verify', description: legacyProjectNote },
-  { title: 'Jabatan Ketua Pengarah Tanah dan Galian', tag: 'Legacy portfolio listing — verify', description: legacyProjectNote },
-  { title: 'Kementerian Pertanian dan Keterjaminan Makanan Malaysia', tag: 'Legacy portfolio listing — verify', description: legacyProjectNote },
-  { title: 'Kementerian Pertahanan Malaysia', tag: 'Legacy portfolio listing — verify', description: legacyProjectNote },
-  { title: 'Jabatan Muzium Malaysia', tag: 'Legacy portfolio listing — verify', description: legacyProjectNote },
-  { title: 'Perbadanan Kemajuan Negeri Selangor', tag: 'Legacy portfolio listing — verify', description: legacyProjectNote },
-  { title: 'Perpustakaan Negara Malaysia', tag: 'Legacy portfolio listing — verify', description: legacyProjectNote },
-  { title: 'Pejabat Tanah dan Galian Wilayah Persekutuan Kuala Lumpur', tag: 'Legacy portfolio listing — verify', description: legacyProjectNote },
+  { title: 'Dewan Bahasa dan Pustaka Malaysia', tag: 'Legacy credentials reference', description: legacyProjectNote },
+  { title: 'Jabatan Kesenian dan Kebudayaan Negara', tag: 'Legacy credentials reference', description: legacyProjectNote },
+  { title: 'Jabatan Ketua Pengarah Tanah dan Galian', tag: 'Legacy credentials reference', description: legacyProjectNote },
+  { title: 'Kementerian Pertanian dan Keterjaminan Makanan Malaysia', tag: 'Legacy credentials reference', description: legacyProjectNote },
+  { title: 'Kementerian Pertahanan Malaysia', tag: 'Legacy credentials reference', description: legacyProjectNote },
+  { title: 'Jabatan Muzium Malaysia', tag: 'Legacy credentials reference', description: legacyProjectNote },
+  { title: 'Perbadanan Kemajuan Negeri Selangor', tag: 'Legacy credentials reference', description: legacyProjectNote },
+  { title: 'Perpustakaan Negara Malaysia', tag: 'Legacy credentials reference', description: legacyProjectNote },
+  { title: 'Pejabat Tanah dan Galian Wilayah Persekutuan Kuala Lumpur', tag: 'Legacy credentials reference', description: legacyProjectNote },
 ]
 
 export const companyValues = [

@@ -10,6 +10,8 @@ export function Footer() {
         <div className="footer__company">
           <CompanyLogo variant="footer" />
           <p className="footer__about">Scanning, digitization, data conversion, audiovisual transfer, records management, imaging consultation, GIS and supporting technology services from Kuala Lumpur.</p>
+          <p className="footer__company-detail">Registration No.: {siteConfig.registrationNo}</p>
+          <p className="footer__company-detail">{siteConfig.hours}<br />{siteConfig.closedHours}</p>
         </div>
         <div>
           <h2>Company</h2>

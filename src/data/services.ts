@@ -15,6 +15,14 @@ import {
 import documentStudio from '../assets/images/service-document-studio.png'
 import informationSystems from '../assets/images/service-information-systems.png'
 import legacyMedia from '../assets/images/service-legacy-media.png'
+import audioVideoDigitization from '../assets/images/audio-video-digitization.webp'
+import dataConversion from '../assets/images/data-conversion.webp'
+import documentDigitization from '../assets/images/document-digitization.webp'
+import gisServices from '../assets/images/gis-services.webp'
+import imagingConsultation from '../assets/images/imaging-consultation.webp'
+import largeFormatScanning from '../assets/images/large-format-scanning.webp'
+import photoScanning from '../assets/images/photo-scanning.webp'
+import scannerItHardware from '../assets/images/scanner-it-hardware.webp'
 import type { Service } from '../types'
 
 const documentFlow = ['Assess the source material', 'Prepare and capture', 'Review the agreed output']
@@ -33,8 +41,8 @@ export const services: Service[] = [
     applications: ['Administrative files', 'Historical records', 'Operational documents'],
     steps: documentFlow,
     verificationNote: 'Confirm supported sizes, file formats, indexing methods, project locations and quality controls before publishing detailed specifications.',
-    image: documentStudio,
-    imageAlt: 'Illustrative modern document scanning studio with archival records and an overhead scanner',
+    image: documentDigitization,
+    imageAlt: 'Document digitization operator preparing business records for a production scanner',
     icon: FileScan,
     featured: true,
   },
@@ -65,8 +73,8 @@ export const services: Service[] = [
     applications: ['Plans and drawings', 'Maps', 'Oversized records'],
     steps: documentFlow,
     verificationNote: 'Supported dimensions, scanner types and output specifications require owner confirmation.',
-    image: documentStudio,
-    imageAlt: 'Illustrative large technical drawing beside professional document scanning equipment',
+    image: largeFormatScanning,
+    imageAlt: 'Technician positioning an architectural drawing on a large-format scanner',
     icon: Maximize,
     featured: true,
   },
@@ -81,8 +89,8 @@ export const services: Service[] = [
     applications: ['Institutional photo collections', 'Historical photographs', 'Project image archives'],
     steps: documentFlow,
     verificationNote: 'Accepted photographic formats, treatment scope and colour-management practices require owner confirmation.',
-    image: documentStudio,
-    imageAlt: 'Illustrative professional digitization workspace prepared for archival image capture',
+    image: photoScanning,
+    imageAlt: 'Archival technician carefully scanning historical photographs on a flatbed scanner',
     icon: FileImage,
   },
   {
@@ -128,8 +136,8 @@ export const services: Service[] = [
     applications: ['Index and metadata conversion', 'Legacy data preparation', 'Structured digital delivery'],
     steps: solutionFlow,
     verificationNote: 'Supported source systems, target formats, validation methods and integration scope require owner confirmation.',
-    image: informationSystems,
-    imageAlt: 'Illustrative enterprise workstation displaying document and data conversion workflows',
+    image: dataConversion,
+    imageAlt: 'Data specialist reviewing structured records across a dual-monitor conversion workstation',
     icon: DatabaseZap,
     featured: true,
   },
@@ -144,8 +152,8 @@ export const services: Service[] = [
     applications: ['VHS and Betacam collections', 'Audio cassette archives', 'Selected data-storage tapes'],
     steps: mediaFlow,
     verificationNote: 'The accepted carrier list, transfer equipment, output profiles and handling process require owner confirmation.',
-    image: legacyMedia,
-    imageAlt: 'Illustrative professional transfer station with film reels, video tapes and audio cassettes',
+    image: audioVideoDigitization,
+    imageAlt: 'Technician operating professional video and audio tape digitization equipment',
     icon: AudioLines,
   },
   {
@@ -174,8 +182,8 @@ export const services: Service[] = [
     applications: ['New digitization programmes', 'Workflow reviews', 'Technology planning'],
     steps: solutionFlow,
     verificationNote: 'Confirm the consultation deliverables, supported environments and implementation responsibilities before launch.',
-    image: informationSystems,
-    imageAlt: 'Illustrative corporate imaging technology workstation used for workflow planning',
+    image: imagingConsultation,
+    imageAlt: 'Imaging consultants reviewing a document capture workflow beside scanning equipment',
     icon: Images,
   },
   {
@@ -183,14 +191,14 @@ export const services: Service[] = [
     title: 'Geographic Information System (GIS)',
     category: 'Technology',
     summary: 'GIS is listed by SATSB as a principal business activity; detailed capabilities remain to be confirmed.',
-    description: '[COMPANY OWNER TO PROVIDE GIS SERVICE DESCRIPTION, CAPABILITIES AND DELIVERABLES]',
-    outcomes: ['Business objectives to be confirmed', 'Supported GIS use cases to be confirmed', 'Intended customer outcomes to be confirmed'],
+    description: 'SATSB identifies GIS as a principal business activity. Project objectives, platforms, data requirements and deliverables are defined around each organization’s needs.',
+    outcomes: ['Requirements aligned with business objectives', 'A defined approach to geographic information needs', 'Clear project scope and intended outcomes'],
     deliverables: ['Supported software and platforms', 'Spatial-data, mapping or conversion scope', 'Implementation, training and support responsibilities'],
-    applications: ['[OWNER TO CONFIRM SUPPORTED GIS APPLICATIONS]', 'Platform requirements to be confirmed', 'Spatial-data scope to be confirmed'],
+    applications: ['Organizational GIS requirements', 'Geographic information workflows', 'Spatial-data project planning'],
     steps: solutionFlow,
     verificationNote: 'Only the GIS service label is supported by the source. Do not imply mapping, surveying, platforms, licences or sector-specific capability until details are supplied.',
-    image: informationSystems,
-    imageAlt: 'Illustrative enterprise information interface with restrained geographic data layers',
+    image: gisServices,
+    imageAlt: 'GIS analyst reviewing map layers and geographic data at a dual-monitor workstation',
     icon: Map,
   },
   {
@@ -204,8 +212,8 @@ export const services: Service[] = [
     applications: ['Document capture workstations', 'Digitization project equipment', 'Supporting IT infrastructure'],
     steps: solutionFlow,
     verificationNote: 'Product lines, vendor relationships, specifications, stock, warranty and after-sales support require owner confirmation.',
-    image: informationSystems,
-    imageAlt: 'Illustrative professional desktop scanner and enterprise technology workstation',
+    image: scannerItHardware,
+    imageAlt: 'IT technician configuring a professional document scanner and supporting network equipment',
     icon: ServerCog,
   },
 ]

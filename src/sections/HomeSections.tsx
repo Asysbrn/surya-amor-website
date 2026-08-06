@@ -1,8 +1,7 @@
-import { ArrowRight, CheckCircle2, CircleAlert, FileCheck2, FileScan, Images, Layers3, Map, ScanText, ServerCog } from 'lucide-react'
+import { ArrowRight, CheckCircle2, FileCheck2, FileScan, Images, Layers3, Map, ScanText, ServerCog } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import systemsImage from '../assets/images/service-information-systems.png'
 import { ProjectCard, ServiceCard } from '../components/common/Cards'
-import { ConfirmationNotice } from '../components/common/ConfirmationNotice'
 import { Button } from '../components/ui/Button'
 import { SectionHeading } from '../components/ui/SectionHeading'
 import { featuredServices } from '../data/services'
@@ -19,12 +18,11 @@ export function IntroductionSection() {
           <div className="button-row"><Button to="/about" variant="ghost" arrow>Read our company profile</Button></div>
         </div>
         <aside className="intro-panel">
-          <h3>Our published mission</h3>
+          <h3>Our mission</h3>
           <p>To provide flexible, cost-effective and quality-focused services shaped around customer requirements, while applying relevant developments in software and technology.</p>
           <ul className="check-list">
             {['Flexible service', 'Cost-conscious planning', 'Quality focus', 'Technology awareness'].map((item) => <li key={item}><CheckCircle2 size={18} aria-hidden="true" />{item}</li>)}
           </ul>
-          <p className="microcopy">Rewritten from the legacy website; formal owner approval is required before launch.</p>
         </aside>
       </div>
     </section>
@@ -35,7 +33,7 @@ export function ServicesSection() {
   return (
     <section className="section section--tint">
       <div className="container">
-        <SectionHeading eyebrow="Complete capability catalogue" title="Focused services for physical and legacy information." description="The catalogue brings together SATSB’s broad published service areas and the specific scanning, conversion and technology capabilities identified in the available profile material." split />
+        <SectionHeading eyebrow="Complete capability catalogue" title="Focused services for physical and legacy information." description="The catalogue brings together SATSB’s scanning, conversion, information-management and technology capabilities." split />
         <div className="grid grid--3">{featuredServices.map((service) => <ServiceCard key={service.slug} service={service} />)}</div>
         <div className="button-row"><Button to="/services" variant="dark" arrow>View all service areas</Button></div>
       </div>
@@ -86,7 +84,7 @@ export function IndustriesSection() {
   return (
     <section className="section section--white">
       <div className="container">
-        <SectionHeading eyebrow="Sectors represented" title="Experience indicated across Malaysian institutions." description="These sectors are derived only from organizations displayed in the legacy portfolio. Project scope, outcomes and publication permission still require confirmation." split />
+        <SectionHeading eyebrow="Sectors represented" title="Experience indicated across Malaysian institutions." description="These sectors reflect organizations displayed in SATSB’s legacy credentials. Individual project scopes and outcomes are not presented." split />
         <div className="industry-grid">
           {industries.map(({ title, description, icon: Icon }) => <article className="industry-item" key={title}><Icon size={25} aria-hidden="true" /><h3>{title}</h3><p>{description}</p></article>)}
         </div>
@@ -101,9 +99,9 @@ export function WhySection() {
     <section className="section section--dark section--grid">
       <div className="container principles">
         <div>
-          <p className="eyebrow">Published service commitments</p>
+          <p className="eyebrow">Service commitments</p>
           <h2 className="heading">Flexible, cost-conscious and quality-focused.</h2>
-          <p className="lead">These themes are drawn from SATSB's published mission. They should be approved as formal company commitments before production launch.</p>
+          <p className="lead">These themes reflect SATSB’s mission and its focus on practical, customer-aligned services.</p>
           <div className="button-row"><Button to="/why-us" variant="ghost" arrow>Why choose SATSB</Button></div>
         </div>
         <div className="principle-list">
@@ -118,9 +116,8 @@ export function ProcessSection() {
   return (
     <section className="section">
       <div className="container">
-        <SectionHeading eyebrow="Proposed delivery structure" title="A practical path from requirement to agreed output." description="The legacy site describes these activities across individual services, but does not publish one formal company-wide process." split />
+        <SectionHeading eyebrow="Delivery structure" title="A practical path from requirement to agreed output." description="A clear high-level sequence for understanding the requirement, defining the approach and delivering the agreed result." split />
         <div className="process-line">{processSteps.map((step) => <article className="process-step" key={step.number}><span className="process-step__number">{step.number}</span><h3>{step.title}</h3><p>{step.description}</p></article>)}</div>
-        <ConfirmationNotice>This proposed sequence requires owner approval. Quality gates, custody controls, acceptance testing and support arrangements have not been supplied.</ConfirmationNotice>
         <div className="button-row"><Button to="/process" variant="ghost" arrow>Review the proposed process</Button></div>
       </div>
     </section>
@@ -133,7 +130,6 @@ export function ProjectsSection() {
       <div className="container">
         <SectionHeading eyebrow="Legacy credentials listing" title="Organizations named by the existing company website." description="The source provides names only—not services, dates, results or endorsements. Three of nine legacy listings are shown here." split />
         <div className="grid grid--3">{representativeProjects.slice(0, 3).map((project) => <ProjectCard key={project.title} {...project} />)}</div>
-        <ConfirmationNotice>Every organization name and any future logo requires owner confirmation and publication permission before production launch.</ConfirmationNotice>
       </div>
     </section>
   )
@@ -152,20 +148,6 @@ export function TechnologySection() {
         <SectionHeading eyebrow="Solutions" title="Technology applied to information access and workflow." description="The source supports these high-level solution areas but does not name products, platforms, certifications or technology partners." split />
         <div className="grid grid--4">{capabilities.map(({ icon: Icon, title, text }) => <article className="card" key={title}><div className="card__icon"><Icon size={22} aria-hidden="true" /></div><h3 style={{ marginTop: '1.25rem' }}>{title}</h3><p>{text}</p></article>)}</div>
         <div className="button-row"><Button to="/technology" variant="dark" arrow>Explore solutions</Button></div>
-      </div>
-    </section>
-  )
-}
-
-export function TrustSection() {
-  return (
-    <section className="section section--white">
-      <div className="container">
-        <SectionHeading eyebrow="Publication controls" title="Claims must be supported before they become credentials." description="The legacy site contains quantitative, certification and security claims that remain excluded from the new website until evidence is approved." />
-        <div className="trust-bar">
-          <div className="trust-bar__intro"><CircleAlert size={20} aria-hidden="true" /><br />Owner verification required</div>
-          {['Client permissions', 'Quality evidence', 'Security practices', 'Certifications'].map((item) => <div className="trust-placeholder" key={item}>{item}<br />to be supplied</div>)}
-        </div>
       </div>
     </section>
   )

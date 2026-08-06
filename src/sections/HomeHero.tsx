@@ -15,7 +15,7 @@ export function HomeHero() {
             <Button to="/contact" arrow>Request a consultation</Button>
             <Button to="/services" variant="ghost">Explore services</Button>
           </div>
-          <div className="hero__proof" aria-label="Published service areas">
+          <div className="hero__proof" aria-label="Core service areas">
             <span><CheckCircle2 size={16} aria-hidden="true" /> Document digitization</span>
             <span><CheckCircle2 size={16} aria-hidden="true" /> Audio & video transfer</span>
             <span><CheckCircle2 size={16} aria-hidden="true" /> Records solutions</span>
