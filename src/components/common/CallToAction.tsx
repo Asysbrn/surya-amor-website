@@ -15,7 +15,7 @@ export function CallToAction({
         <div className="cta">
           <div className="cta__inner">
             <div><h2>{title}</h2><p>{description}</p></div>
-            <Button to="/contact" arrow>Discuss your project</Button>
+            <Button to="/contact" arrow>Enquiry</Button>
           </div>
         </div>
       </div>

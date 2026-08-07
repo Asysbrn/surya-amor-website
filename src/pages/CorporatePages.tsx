@@ -4,19 +4,19 @@ import documentDigitizationImage from '../assets/images/document-digitization.we
 import imagingConsultationImage from '../assets/images/imaging-consultation.webp'
 import scannerHardwareImage from '../assets/images/scanner-it-hardware.webp'
 import { CallToAction } from '../components/common/CallToAction'
-import { ProjectCard } from '../components/common/Cards'
 import { DigitizationWorkflow } from '../components/common/DigitizationWorkflow'
 import { IndustryShowcase } from '../components/common/IndustryShowcase'
 import { PageHero } from '../components/common/PageHero'
 import { SectionHeading } from '../components/ui/SectionHeading'
-import { companyValues, processSteps, representativeProjects, siteConfig, teamFunctions } from '../data/site'
+import { clientLogos } from '../data/clients'
+import { companyValues, processSteps, siteConfig, teamFunctions } from '../data/site'
 import { useSeo } from '../hooks/useSeo'
 
 export function AboutPage() {
   useSeo({ title: 'About Us', description: 'Company background, mission and team functions for Surya Amor Technology Sdn Bhd.', path: '/about' })
   return (
     <>
-      <PageHero eyebrow="About Surya Amor" title="Digitization and information solutions from Kuala Lumpur." description="SATSB’s principal business activities span document imaging, digitization and Geographic Information System services." image={documentDigitizationImage} imageAlt="Document digitization operator working with business records and scanning equipment" />
+      <PageHero eyebrow="About Surya Amor" title="Digitization and information solutions from Kuala Lumpur." description="Our span includes document digitization, audio visual services, GIS services, and other IT-related services." image={documentDigitizationImage} imageAlt="Document digitization operator working with business records and scanning equipment" />
       <section className="section section--white">
         <div className="container intro-grid">
           <div className="prose">
@@ -40,7 +40,7 @@ export function AboutPage() {
           <div className="about-story__copy about-reveal">
             <p className="eyebrow">What we do</p>
             <h2 className="heading">Connect physical information with practical digital access.</h2>
-            <p className="lead">SATSB works across document imaging, legacy-media conversion, information management, imaging consultation and GIS requirements. Projects begin with the source material and the result the organization needs to achieve.</p>
+            <p className="lead">SATSB works across document digitization, audio visual services, GIS services and other IT-related services. Projects begin with the source material and the result the organization needs to achieve.</p>
             <ul className="about-points">
               <li><CheckCircle2 size={18} aria-hidden="true" /><span><strong>Source-aware planning</strong> considers format, condition, quantity and handling needs.</span></li>
               <li><CheckCircle2 size={18} aria-hidden="true" /><span><strong>Purpose-led delivery</strong> defines how information should be accessed, searched or transferred.</span></li>
@@ -48,7 +48,7 @@ export function AboutPage() {
             </ul>
           </div>
           <div className="about-gallery about-reveal">
-            <figure className="about-gallery__main"><img src={imagingConsultationImage} alt="Consultants reviewing a document imaging workflow" loading="lazy" /></figure>
+            <figure className="about-gallery__main"><img src={imagingConsultationImage} alt="Specialists reviewing a document imaging workflow" loading="lazy" /></figure>
             <figure className="about-gallery__small"><img src={scannerHardwareImage} alt="Technician configuring professional scanning hardware" loading="lazy" /></figure>
           </div>
         </div>
@@ -93,36 +93,19 @@ export function IndustriesPage() {
   )
 }
 
-export function ProjectsPage() {
-  useSeo({ title: 'Projects & Experience', description: 'Organizations represented in SATSB’s published credentials portfolio.', path: '/projects' })
+export function ClientsPage() {
+  useSeo({ title: 'Clients', description: 'Client logos supplied and approved for display by Surya Amor Technology.', path: '/clients' })
   return (
-    <>
-      <PageHero eyebrow="Projects & experience" title="Organizations represented in our published credentials." description="Explore the institutional names presented by SATSB and contact the company to discuss experience relevant to your requirements." />
-      <section className="section section--white">
-        <div className="container">
-        <SectionHeading eyebrow="Credentials overview" title="Organizations represented by SATSB." description="Project scope and relevance can be discussed directly for your intended requirement." split />
-          <div className="grid grid--3">
-            {representativeProjects.map((project) => <ProjectCard key={project.title} {...project} />)}
+    <section className="clients-page" aria-labelledby="clients-page-title">
+      <h1 className="sr-only" id="clients-page-title">Clients</h1>
+      <div className="container clients-logo-grid">
+        {clientLogos.map((client) => (
+          <div className="client-logo-only" key={client.src}>
+            <img src={client.src} alt={client.alt} loading="lazy" decoding="async" />
           </div>
-        </div>
-      </section>
-      <section className="section section--tint">
-        <div className="container content-layout">
-          <div className="prose">
-            <h2>How project information is presented</h2>
-            <ul>
-              <li>Organization or sector context</li>
-              <li>Service category and project period</li>
-              <li>Source material, scale and operating constraints</li>
-              <li>Deliverables and measurable outcomes</li>
-              <li>Relevant imagery or testimonials where available</li>
-            </ul>
-          </div>
-          <aside className="aside-panel"><h2>Project enquiries</h2><p>Contact SATSB to discuss experience relevant to your organization’s requirements.</p><Link className="button button--ghost" to="/contact">Discuss a project</Link></aside>
-        </div>
-      </section>
-      <CallToAction />
-    </>
+        ))}
+      </div>
+    </section>
   )
 }
 

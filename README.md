@@ -1,6 +1,6 @@
 # Surya Amor Technology Corporate Website
 
-A modern, responsive corporate website for Surya Amor Technology Sdn Bhd, covering the company’s broad published service areas and focused profile capabilities across scanning, digitization, data conversion, audiovisual transfer, records management, consultation, GIS and supporting scanner / IT hardware. Content requiring company verification is deliberately labelled and is never represented as confirmed fact.
+A modern, responsive corporate website for Surya Amor Technology Sdn Bhd, covering high-volume scanning and indexing, data capture, E-book, audio visual and 3D digitization, GIS, vectorization, records-management integration, DG-flo ERMS, software development and a separate scanner / IT hardware catalogue. Content requiring company verification is deliberately scoped and is never represented as confirmed fact.
 
 ## Technology stack
 

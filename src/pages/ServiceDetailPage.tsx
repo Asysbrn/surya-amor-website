@@ -4,13 +4,15 @@ import { CallToAction } from '../components/common/CallToAction'
 import { PageHero } from '../components/common/PageHero'
 import { RelatedServices } from '../components/common/RelatedServices'
 import { Button } from '../components/ui/Button'
-import { getService } from '../data/services'
+import { getService, legacyServiceRedirects } from '../data/services'
 import { useSeo } from '../hooks/useSeo'
 
 export default function ServiceDetailPage() {
   const { slug } = useParams()
   const service = getService(slug)
+  const legacyDestination = slug ? legacyServiceRedirects[slug] : undefined
   useSeo({ title: service?.title ?? 'Service not found', description: service?.summary ?? 'The requested service could not be found.', path: `/services/${slug ?? ''}` })
+  if (legacyDestination) return <Navigate to={legacyDestination} replace />
   if (!service) return <Navigate to="/404" replace />
   const Icon = service.icon
 
@@ -32,14 +34,13 @@ export default function ServiceDetailPage() {
             <h2>Plan your enquiry</h2>
             <p>Helpful details include the source format, approximate quantity, current condition, location and intended digital result.</p>
             <div className="button-row">
-              {service.slug === 'scanners-it-hardware' && <Button to="/hardware" variant="dark">Browse hardware catalogue</Button>}
-              <Button to="/contact" variant="ghost">Discuss this service</Button>
+              <Button to="/contact" variant="ghost">Enquiry</Button>
             </div>
           </aside>
         </div>
       </section>
       <section className="section section--tint">
-        <div className="container service-experience">
+        <div className="container service-details">
           <div>
             <p className="eyebrow">Typical applications</p>
             <h2 className="heading">Designed around the material and intended result.</h2>

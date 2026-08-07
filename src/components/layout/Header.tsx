@@ -79,7 +79,7 @@ export function Header() {
               </div>
             ))}
           </nav>
-          <Button to="/contact" variant="dark">Request a consultation</Button>
+          <Button to="/contact" variant="dark">Request for Consultation</Button>
           <button className="menu-toggle" type="button" aria-expanded={open} aria-controls="mobile-menu" aria-label={open ? 'Close navigation menu' : 'Open navigation menu'} onClick={() => setOpen((value) => !value)}>
             {open ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
           </button>

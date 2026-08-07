@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
 import SiteLayout from './layouts/SiteLayout'
 
 const HomePage = lazy(() => import('./pages/HomePage'))
@@ -10,7 +10,7 @@ const ContactPage = lazy(() => import('./pages/ContactPage'))
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'))
 const AboutPage = lazy(() => import('./pages/CorporatePages').then((module) => ({ default: module.AboutPage })))
 const IndustriesPage = lazy(() => import('./pages/CorporatePages').then((module) => ({ default: module.IndustriesPage })))
-const ProjectsPage = lazy(() => import('./pages/CorporatePages').then((module) => ({ default: module.ProjectsPage })))
+const ClientsPage = lazy(() => import('./pages/CorporatePages').then((module) => ({ default: module.ClientsPage })))
 const ProcessPage = lazy(() => import('./pages/CorporatePages').then((module) => ({ default: module.ProcessPage })))
 const WhyUsPage = lazy(() => import('./pages/CorporatePages').then((module) => ({ default: module.WhyUsPage })))
 const CareersPage = lazy(() => import('./pages/CorporatePages').then((module) => ({ default: module.CareersPage })))
@@ -30,7 +30,8 @@ const router = createBrowserRouter([{
     { path: '/services/:slug', element: <ServiceDetailPage /> },
     { path: '/hardware', element: <HardwarePage /> },
     { path: '/industries', element: <IndustriesPage /> },
-    { path: '/projects', element: <ProjectsPage /> },
+    { path: '/clients', element: <ClientsPage /> },
+    { path: '/projects', element: <Navigate to="/clients" replace /> },
     { path: '/process', element: <ProcessPage /> },
     { path: '/why-us', element: <WhyUsPage /> },
     { path: '/careers', element: <CareersPage /> },

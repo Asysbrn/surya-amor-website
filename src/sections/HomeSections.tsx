@@ -1,12 +1,12 @@
 import { ArrowRight, CheckCircle2, FileScan, Layers3, MessageSquareText, PackageCheck, Route, ScanLine, ScanSearch, ScanText, ServerCog } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import systemsImage from '../assets/images/service-information-systems.png'
-import { ProjectCard, ServiceCard } from '../components/common/Cards'
+import { ClientCard, ServiceCard } from '../components/common/Cards'
 import { IndustryShowcase } from '../components/common/IndustryShowcase'
 import { Button } from '../components/ui/Button'
 import { SectionHeading } from '../components/ui/SectionHeading'
 import { featuredServices } from '../data/services'
-import { companyValues, processSteps, representativeProjects } from '../data/site'
+import { companyValues, processSteps, representativeClients } from '../data/site'
 
 export function IntroductionSection() {
   return (
@@ -47,7 +47,7 @@ export function FormatCoverageSection() {
     { icon: FileScan, title: 'Paper & bound records', text: 'Documents, books, photographs, plans and other agreed physical records.' },
     { icon: Layers3, title: 'Film & legacy media', text: 'Microfilm, microfiche, VHS, Betacam, audio cassette and selected tapes.' },
     { icon: ScanText, title: 'Searchable information', text: 'OCR, ICR, indexing and searchable output where suitable and agreed.' },
-    { icon: ServerCog, title: 'Managed digital access', text: 'Records solutions, data conversion, consultation and GIS requirements.' },
+    { icon: ServerCog, title: 'Managed digital access', text: 'Records integration, data conversion, GIS and software-development requirements.' },
   ]
   return (
     <section className="section section--dark section--grid">
@@ -112,12 +112,12 @@ export function ProcessSection() {
   )
 }
 
-export function ProjectsSection() {
+export function ClientsSection() {
   return (
     <section className="section section--white">
       <div className="container">
-        <SectionHeading eyebrow="Published credentials" title="Organizations represented by SATSB." description="Three organizations from the published credentials portfolio are presented here. Contact SATSB to discuss experience relevant to your requirement." split />
-        <div className="grid grid--3">{representativeProjects.slice(0, 3).map((project) => <ProjectCard key={project.title} {...project} />)}</div>
+        <SectionHeading eyebrow="Clients" title="Organizations represented by SATSB." description="Three organizations from the published credentials portfolio are presented here. Contact SATSB to discuss requirements relevant to your organization." split />
+        <div className="grid grid--3">{representativeClients.slice(0, 3).map((client) => <ClientCard key={client.title} {...client} />)}</div>
       </div>
     </section>
   )

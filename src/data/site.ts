@@ -1,13 +1,5 @@
-import { Archive, Building2, Columns3, HardHat, Landmark, LibraryBig, Ruler, ShieldCheck } from 'lucide-react'
-import dbpLogo from '../assets/images/clients/dewan-bahasa-dan-pustaka-logo.png'
-import jkknLogo from '../assets/images/clients/jabatan-kesenian-kebudayaan-negara-logo.png'
-import jkptgLogo from '../assets/images/clients/jabatan-ketua-pengarah-tanah-galian-logo.png'
-import agricultureLogo from '../assets/images/clients/kementerian-pertanian-keterjaminan-makanan-logo.png'
-import defenceLogo from '../assets/images/clients/kementerian-pertahanan-malaysia-logo.png'
-import museumLogo from '../assets/images/clients/jabatan-muzium-malaysia-logo.png'
-import pknsLogo from '../assets/images/clients/perbadanan-kemajuan-negeri-selangor-logo.png'
-import nationalLibraryLogo from '../assets/images/clients/perpustakaan-negara-malaysia-logo.png'
-import federalLandLogo from '../assets/images/clients/pejabat-tanah-galian-wilayah-persekutuan-logo.png'
+import { Archive, Building2, Columns3, Factory, Fuel, HardHat, HeartPulse, Landmark, LibraryBig, Ruler, ShieldCheck } from 'lucide-react'
+import { clientLogoAssets } from './clients'
 import { services } from './services'
 import type { NavItem } from '../types'
 
@@ -39,7 +31,7 @@ export const navigation: NavItem[] = [
     ],
   },
   { label: 'Industries', href: '/industries' },
-  { label: 'Experience', href: '/projects' },
+  { label: 'Clients', href: '/clients' },
   { label: 'Contact', href: '/contact' },
 ]
 
@@ -52,6 +44,9 @@ export const industries = [
   { title: 'Defence', description: 'Structured capture and controlled information workflows can support complex document collections with defined handling requirements.', icon: ShieldCheck },
   { title: 'Archives & heritage institutions', description: 'Digitization can support access to archival records, historical collections and heritage materials while reducing routine handling of originals.', icon: Archive },
   { title: 'Engineering & construction records', description: 'Large-format scanning and document management are relevant to plans, drawings, specifications and long-running project records.', icon: HardHat },
+  { title: 'Healthcare', description: 'Structured digitization and information-management workflows can support suitable administrative, operational and historical records in healthcare environments.', icon: HeartPulse },
+  { title: 'Oil & Gas', description: 'Digitization and vectorization are relevant to suitable seismic, well-log, drawing and technical information requirements.', icon: Fuel },
+  { title: 'Manufacturing', description: 'Document capture, data conversion and information-management services can support suitable drawings, records and operational information.', icon: Factory },
 ]
 
 export const processSteps = [
@@ -62,18 +57,18 @@ export const processSteps = [
   { number: '05', title: 'Provide the agreed output', description: 'Deliver the files or implemented solution in the format defined for the engagement.' },
 ]
 
-const legacyProjectNote = 'Organization represented in SATSB’s published credentials portfolio. Contact the company to discuss experience relevant to your requirements.'
+const clientCredentialNote = 'Organization represented in SATSB’s published credentials portfolio. Contact the company to discuss requirements relevant to your organization.'
 
-export const representativeProjects = [
-  { title: 'Dewan Bahasa dan Pustaka Malaysia', tag: 'Published credentials', description: legacyProjectNote, logo: dbpLogo },
-  { title: 'Jabatan Kesenian dan Kebudayaan Negara', tag: 'Published credentials', description: legacyProjectNote, logo: jkknLogo },
-  { title: 'Jabatan Ketua Pengarah Tanah dan Galian', tag: 'Published credentials', description: legacyProjectNote, logo: jkptgLogo },
-  { title: 'Kementerian Pertanian dan Keterjaminan Makanan Malaysia', tag: 'Published credentials', description: legacyProjectNote, logo: agricultureLogo },
-  { title: 'Kementerian Pertahanan Malaysia', tag: 'Published credentials', description: legacyProjectNote, logo: defenceLogo },
-  { title: 'Jabatan Muzium Malaysia', tag: 'Published credentials', description: legacyProjectNote, logo: museumLogo },
-  { title: 'Perbadanan Kemajuan Negeri Selangor', tag: 'Published credentials', description: legacyProjectNote, logo: pknsLogo },
-  { title: 'Perpustakaan Negara Malaysia', tag: 'Published credentials', description: legacyProjectNote, logo: nationalLibraryLogo },
-  { title: 'Pejabat Tanah dan Galian Wilayah Persekutuan Kuala Lumpur', tag: 'Published credentials', description: legacyProjectNote, logo: federalLandLogo },
+export const representativeClients = [
+  { title: 'Dewan Bahasa dan Pustaka Malaysia', tag: 'Published credentials', description: clientCredentialNote, logo: clientLogoAssets.dbp },
+  { title: 'Jabatan Kesenian dan Kebudayaan Negara', tag: 'Published credentials', description: clientCredentialNote, logo: clientLogoAssets.jkkn },
+  { title: 'Jabatan Ketua Pengarah Tanah dan Galian', tag: 'Published credentials', description: clientCredentialNote, logo: clientLogoAssets.jkptg },
+  { title: 'Kementerian Pertanian dan Keterjaminan Makanan Malaysia', tag: 'Published credentials', description: clientCredentialNote, logo: clientLogoAssets.agriculture },
+  { title: 'Kementerian Pertahanan Malaysia', tag: 'Published credentials', description: clientCredentialNote, logo: clientLogoAssets.defence },
+  { title: 'Jabatan Muzium Malaysia', tag: 'Published credentials', description: clientCredentialNote, logo: clientLogoAssets.museum },
+  { title: 'Perbadanan Kemajuan Negeri Selangor', tag: 'Published credentials', description: clientCredentialNote, logo: clientLogoAssets.pkns },
+  { title: 'Perpustakaan Negara Malaysia', tag: 'Published credentials', description: clientCredentialNote, logo: clientLogoAssets.nationalLibrary },
+  { title: 'Pejabat Tanah dan Galian Wilayah Persekutuan Kuala Lumpur', tag: 'Published credentials', description: clientCredentialNote, logo: clientLogoAssets.federalLand },
 ]
 
 export const companyValues = [

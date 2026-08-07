@@ -16,7 +16,7 @@ export default function ContactPage() {
   const [errors, setErrors] = useState<ContactFormErrors>({})
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [statusMessage, setStatusMessage] = useState('')
-  useSeo({ title: 'Contact Us', description: 'Contact Surya Amor Technology in Kuala Lumpur about document digitization, audiovisual conversion, records management, imaging consultation or GIS.', path: '/contact' })
+  useSeo({ title: 'Contact Us', description: 'Contact Surya Amor Technology in Kuala Lumpur about document scanning, indexing, audio visual digitization, GIS, vectorization, records management or software development.', path: '/contact' })
 
   function update(event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) {
     const target = event.target

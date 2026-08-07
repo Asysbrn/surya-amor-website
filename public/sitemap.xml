@@ -6,23 +6,23 @@
   <url><loc>https://www.example.com/services</loc></url>
   <url><loc>https://www.example.com/hardware</loc></url>
   <url><loc>https://www.example.com/industries</loc></url>
-  <url><loc>https://www.example.com/projects</loc></url>
+  <url><loc>https://www.example.com/clients</loc></url>
   <url><loc>https://www.example.com/process</loc></url>
   <url><loc>https://www.example.com/why-us</loc></url>
   <url><loc>https://www.example.com/careers</loc></url>
   <url><loc>https://www.example.com/contact</loc></url>
   <url><loc>https://www.example.com/privacy</loc></url>
   <url><loc>https://www.example.com/terms</loc></url>
-  <url><loc>https://www.example.com/services/document-digitization</loc></url>
-  <url><loc>https://www.example.com/services/book-scanning</loc></url>
-  <url><loc>https://www.example.com/services/large-format-scanning</loc></url>
-  <url><loc>https://www.example.com/services/photo-scanning</loc></url>
-  <url><loc>https://www.example.com/services/microfilm-microfiche-digitization</loc></url>
-  <url><loc>https://www.example.com/services/ocr-searchable-pdf</loc></url>
-  <url><loc>https://www.example.com/services/data-conversion</loc></url>
-  <url><loc>https://www.example.com/services/audiovisual-digitization</loc></url>
-  <url><loc>https://www.example.com/services/document-records-management</loc></url>
-  <url><loc>https://www.example.com/services/imaging-consultation</loc></url>
-  <url><loc>https://www.example.com/services/geographic-information-system</loc></url>
-  <url><loc>https://www.example.com/services/scanners-it-hardware</loc></url>
+  <url><loc>https://www.example.com/services/high-volume-document-scanning-indexing</loc></url>
+  <url><loc>https://www.example.com/services/professional-indexing-data-capture</loc></url>
+  <url><loc>https://www.example.com/services/e-book</loc></url>
+  <url><loc>https://www.example.com/services/audio-visual-digitization</loc></url>
+  <url><loc>https://www.example.com/services/3d-scanning-artifacts</loc></url>
+  <url><loc>https://www.example.com/services/gis-geospatial-services</loc></url>
+  <url><loc>https://www.example.com/services/drawing-vectorization</loc></url>
+  <url><loc>https://www.example.com/services/seismic-data-digitization-vectorization</loc></url>
+  <url><loc>https://www.example.com/services/well-log-data-digitization-vectorization</loc></url>
+  <url><loc>https://www.example.com/services/document-management-integration</loc></url>
+  <url><loc>https://www.example.com/services/dg-flo-erms</loc></url>
+  <url><loc>https://www.example.com/services/software-development</loc></url>
 </urlset>

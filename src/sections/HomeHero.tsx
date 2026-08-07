@@ -10,16 +10,16 @@ export function HomeHero() {
         <div className="hero__copy">
           <p className="eyebrow">Document imaging · Digital conversion · Information systems</p>
           <h1 className="display" id="home-hero-title">Turn physical and legacy information into usable digital resources.</h1>
-          <p className="lead">Surya Amor Technology Sdn Bhd provides document digitization, audiovisual conversion, information-management and imaging consultation services from Kuala Lumpur.</p>
+          <p className="lead">Surya Amor Technology Sdn Bhd provides document scanning, indexing, audio visual digitization, geospatial, records-management and software-development services from Kuala Lumpur.</p>
           <div className="button-row">
-            <Button to="/contact" arrow>Request a consultation</Button>
+            <Button to="/contact" arrow>Enquiry</Button>
             <Button to="/services" variant="ghost">Explore services</Button>
           </div>
           <div className="hero__proof" aria-label="Core service areas">
-            <span><CheckCircle2 size={16} aria-hidden="true" /> Document digitization</span>
-            <span><CheckCircle2 size={16} aria-hidden="true" /> Audio & video transfer</span>
-            <span><CheckCircle2 size={16} aria-hidden="true" /> Records solutions</span>
-            <span><CheckCircle2 size={16} aria-hidden="true" /> OCR & data conversion</span>
+            <span><CheckCircle2 size={16} aria-hidden="true" /> High volume scanning</span>
+            <span><CheckCircle2 size={16} aria-hidden="true" /> Indexing & data capture</span>
+            <span><CheckCircle2 size={16} aria-hidden="true" /> Audio visual digitization</span>
+            <span><CheckCircle2 size={16} aria-hidden="true" /> GIS & geospatial services</span>
           </div>
         </div>
       </div>

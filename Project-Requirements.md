@@ -2,7 +2,7 @@
 
 ## 1. Project overview
 
-Surya Amor Technology Sdn Bhd requires a production-quality corporate website that presents service areas supported by the available source material and project brief. The catalogue covers document, book, large-format, photo, microfilm and microfiche digitization; OCR/ICR and searchable PDF; data conversion; audiovisual digitization; document and records management; imaging consultation; Geographic Information System services; and scanners / supporting IT hardware. The first release is a fast static single-page application with clearly separated content and presentation layers, ready for a form API or CMS later.
+Surya Amor Technology Sdn Bhd requires a production-quality corporate website that presents service areas supported by the available source material and company-supplied catalogue. The catalogue covers high-volume document scanning and indexing; professional indexing and data capture; E-book; audio visual digitization; 3D artifact scanning; GIS and geospatial services; drawing, seismic-data and well-log vectorization; document-management integration; DG-flo ERMS; and software development. The separate Hardware page retains the approved equipment catalogue. The first release is a fast static single-page application with clearly separated content and presentation layers, ready for a form API or CMS later.
 
 The legacy website at `https://www.satsb.com.my/` may be used only as a factual content source. Its design, template, code, images, layout, components and branding presentation must not be reused or imitated. All extracted content, rewrites and evidence limitations are recorded in `Content-Reference.md`. Unverified claims are explicitly labelled in the interface or documented as replacement items. The website must not imply certifications, clients, awards, project quantities, partnerships, endorsements or government approval that the company has not substantiated.
 
@@ -46,7 +46,7 @@ Current flow: browser → FormSubmit AJAX endpoint → `info@satsb.com.my`. Futu
 - Service detail: reusable route at `/services/:slug` with published focus and project-specific scope points.
 - Hardware: a filterable, deduplicated catalogue derived from the supplied SAT asset workbook, with no serial numbers or invented specifications.
 - Industries: sector applications presented through a shared visual showcase without unsupported project claims.
-- Projects: the nine published credential names presented without inventing project scope or endorsement.
+- Clients: an approved logo-only presentation using the supplied client assets.
 - Our Process: proposed high-level sequence derived from service descriptions and labelled for owner approval.
 - Why Choose Us: themes from the published mission; quantitative and certification claims are excluded pending evidence.
 - Careers: production-ready overview of company functions and the official career-enquiry channel.
@@ -58,7 +58,7 @@ Current flow: browser → FormSubmit AJAX endpoint → `info@satsb.com.my`. Futu
 
 - Layout: `SiteLayout`, `Header`, `Footer`, `MobileMenu`, `ScrollToTop`.
 - UI: `Button`, `Container`, `SectionHeading`, `IconBadge`, `Field`, `StatusMessage`.
-- Shared content: `PageHero`, `ServiceCard`, `ProjectCard`, `IndustryShowcase`, `CallToAction`, `Breadcrumbs`.
+- Shared content: `PageHero`, `ServiceCard`, `ClientCard`, `IndustryShowcase`, `CallToAction`, `Breadcrumbs`.
 - Home sections: purpose-specific components in `src/sections` to avoid an oversized homepage.
 - Templates: `ContentPage` for informational pages and `ServiceDetailPage` for all service records.
 - Hooks/utilities: `useSeo`, focus and scroll behavior, form validation, URL helpers.
