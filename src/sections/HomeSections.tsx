@@ -1,4 +1,4 @@
-import { ArrowRight, CheckCircle2, FileCheck2, FileScan, Layers3, ScanText, ServerCog } from 'lucide-react'
+import { ArrowRight, CheckCircle2, FileScan, Layers3, MessageSquareText, PackageCheck, Route, ScanLine, ScanSearch, ScanText, ServerCog } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import systemsImage from '../assets/images/service-information-systems.png'
 import { ProjectCard, ServiceCard } from '../components/common/Cards'
@@ -64,23 +64,6 @@ export function FormatCoverageSection() {
   )
 }
 
-export function ProjectReadinessSection() {
-  const points = [
-    { number: '01', title: 'Source-aware planning', text: 'Start with the format, condition, quantity and handling needs of the source material.' },
-    { number: '02', title: 'Purpose-led output', text: 'Define how the digital result needs to be searched, accessed, stored or transferred.' },
-    { number: '03', title: 'Clear scope alignment', text: 'Agree formats, responsibilities, timing, checks and handover expectations before delivery.' },
-  ]
-  return (
-    <section className="section section--white">
-      <div className="container">
-        <SectionHeading eyebrow="Project readiness" title="A stronger brief leads to a clearer digitization plan." description="These practical preparation points help frame an initial discussion without assuming unsupported technical specifications." split />
-        <div className="readiness-grid">{points.map((point) => <article key={point.number}><span>{point.number}</span><FileCheck2 size={24} aria-hidden="true" /><h3>{point.title}</h3><p>{point.text}</p></article>)}</div>
-        <div className="button-row"><Button to="/contact" variant="dark" arrow>Start a project conversation</Button></div>
-      </div>
-    </section>
-  )
-}
-
 export function IndustriesSection() {
   return (
     <section className="section section--white industries-home">
@@ -112,11 +95,17 @@ export function WhySection() {
 }
 
 export function ProcessSection() {
+  const processIcons = [MessageSquareText, ScanSearch, Route, ScanLine, PackageCheck]
   return (
-    <section className="section">
+    <section className="section process-section">
       <div className="container">
         <SectionHeading eyebrow="Delivery structure" title="A practical path from requirement to agreed output." description="A clear high-level sequence for understanding the requirement, defining the approach and delivering the agreed result." split />
-        <div className="process-line">{processSteps.map((step) => <article className="process-step" key={step.number}><span className="process-step__number">{step.number}</span><h3>{step.title}</h3><p>{step.description}</p></article>)}</div>
+        <div className="process-shell">
+          <div className="process-line">{processSteps.map((step, index) => {
+            const Icon = processIcons[index]
+            return <article className="process-step" key={step.number}><div className="process-step__top"><span className="process-step__number">{step.number}</span><span className="process-step__icon"><Icon size={22} aria-hidden="true" /></span></div><h3>{step.title}</h3><p>{step.description}</p></article>
+          })}</div>
+        </div>
         <div className="button-row"><Button to="/process" variant="ghost" arrow>Review the proposed process</Button></div>
       </div>
     </section>

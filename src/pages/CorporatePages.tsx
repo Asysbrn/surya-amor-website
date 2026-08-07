@@ -1,4 +1,4 @@
-import { ArrowRight, CheckCircle2 } from 'lucide-react'
+import { ArrowRight, BriefcaseBusiness, CheckCircle2, Headphones, ScanLine, ShieldCheck, Video } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import documentDigitizationImage from '../assets/images/document-digitization.webp'
 import imagingConsultationImage from '../assets/images/imaging-consultation.webp'
@@ -161,19 +161,34 @@ export function WhyUsPage() {
 }
 
 export function CareersPage() {
+  const functionIcons = [BriefcaseBusiness, ScanLine, Video, Headphones]
   useSeo({ title: 'Careers', description: 'Career information and functional areas at Surya Amor Technology.', path: '/careers' })
   return (
     <>
-      <PageHero eyebrow="Careers" title="Build practical technology and digitization capability." description="Learn about the functions that support SATSB’s work and use the company contact channel for career-related enquiries." />
-      <section className="section section--white">
-        <div className="container content-layout">
-          <div className="prose">
-            <h2>Functions within SATSB</h2>
-            <p>SATSB’s work brings together project coordination, document digitization, audiovisual conversion and technical support.</p>
-            <ul>{teamFunctions.map((team) => <li key={team}>{team}</li>)}</ul>
-            <p>Career opportunities are communicated through SATSB’s official contact channels when roles become available.</p>
+      <PageHero eyebrow="Careers" title="Build practical technology and digitization capability." description="Learn about the functions that support SATSB’s work and use the company contact channel for career-related enquiries." image={documentDigitizationImage} imageAlt="Document digitization workspace with professional scanning equipment" />
+      <section className="section section--white careers-functions">
+        <div className="container">
+          <div className="careers-functions__heading">
+            <div><p className="eyebrow">Our teams</p><h2 className="heading">Functions within SATSB</h2></div>
+            <p className="lead">SATSB’s work brings together project coordination, document digitization, audiovisual conversion and technical support.</p>
           </div>
-          <aside className="aside-panel"><h2>Application safety</h2><p>Do not send identity documents or sensitive personal information through the general website form.</p><Link className="button button--ghost" to="/contact">General company contact</Link></aside>
+          <div className="careers-function-grid">
+            {teamFunctions.map((team, index) => {
+              const Icon = functionIcons[index]
+              return <article className="careers-function" key={team}><div className="careers-function__top"><span>0{index + 1}</span><Icon size={24} aria-hidden="true" /></div><h3>{team}</h3></article>
+            })}
+          </div>
+        </div>
+      </section>
+      <section className="section section--dark section--grid careers-contact">
+        <div className="container careers-contact__layout">
+          <div>
+            <p className="eyebrow">Future opportunities</p>
+            <h2 className="heading">Stay connected through SATSB’s official channel.</h2>
+            <p className="lead">Career opportunities are communicated through SATSB’s official contact channels when roles become available.</p>
+            <div className="button-row"><Link className="button button--primary" to="/contact">General company contact <ArrowRight size={16} aria-hidden="true" /></Link></div>
+          </div>
+          <aside className="careers-safety"><ShieldCheck size={30} aria-hidden="true" /><div><h2>Application safety</h2><p>Do not send identity documents or sensitive personal information through the general website form.</p></div></aside>
         </div>
       </section>
     </>

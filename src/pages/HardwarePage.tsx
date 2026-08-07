@@ -33,7 +33,7 @@ export default function HardwarePage() {
           </div>
           <div className="hardware-assurance">
             <ScanLine size={20} aria-hidden="true" />
-            <p>Product cards use representative category visuals because the workbook contains no approved product photography. Confirm the exact model, configuration and current commercial availability with SATSB.</p>
+            <p>Product visuals have been separated from the supplied equipment catalogue image and matched to their corresponding workbook entries. Confirm the exact model, configuration and current commercial availability with SATSB.</p>
           </div>
         </div>
       </section>
@@ -52,10 +52,9 @@ export default function HardwarePage() {
           </div>
           <div className="hardware-grid">
             {visibleItems.map((product) => (
-              <article className="hardware-card" key={product.id}>
+              <article className="hardware-card" key={product.id} data-category={product.category}>
                 <div className="hardware-card__media">
-                  <img src={product.image} alt={product.imageAlt} loading="lazy" />
-                  <span>Category visual</span>
+                  <img src={product.image} alt={product.imageAlt} loading="lazy" decoding="async" />
                 </div>
                 <div className="hardware-card__body">
                   <div className="hardware-card__meta"><span>{product.category}</span><strong>{product.brand}</strong></div>

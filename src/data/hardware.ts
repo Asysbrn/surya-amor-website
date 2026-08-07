@@ -1,11 +1,28 @@
-import bookScannerImage from '../assets/images/service-document-studio.png'
-import documentScannerImage from '../assets/images/scanner-it-hardware.webp'
-import flatbedScannerImage from '../assets/images/photo-scanning.webp'
-import largeFormatScannerImage from '../assets/images/large-format-scanning.webp'
-import networkImage from '../assets/images/gis-services.webp'
-import operationsImage from '../assets/images/document-digitization.webp'
-import storageImage from '../assets/images/service-information-systems.png'
-import workstationImage from '../assets/images/data-conversion.webp'
+import asusDesktopCpu from '../assets/images/hardware/asus-desktop-cpu.png'
+import canonCanoScan9000fMarkIi from '../assets/images/hardware/canon-canoscan-9000f-mark-ii.png'
+import canonDr6030c from '../assets/images/hardware/canon-dr-6030c.png'
+import canonDr9050c from '../assets/images/hardware/canon-dr-9050c.png'
+import canonDrG1100 from '../assets/images/hardware/canon-dr-g1100.png'
+import canonDrG2090 from '../assets/images/hardware/canon-dr-g2090.png'
+import canonDrX10c from '../assets/images/hardware/canon-dr-x10c.png'
+import canonPixma from '../assets/images/hardware/canon-pixma.png'
+import colortracSmartlfCi40 from '../assets/images/hardware/colortrac-smartlf-ci40.png'
+import czurEt240 from '../assets/images/hardware/czur-et240.png'
+import dellOptiplex9020 from '../assets/images/hardware/dell-optiplex-9020.png'
+import dellOptiplex990 from '../assets/images/hardware/dell-optiplex-990.png'
+import hpLaserjetP1102 from '../assets/images/hardware/hp-laserjet-p1102.png'
+import hpProdesk600Pcimt from '../assets/images/hardware/hp-prodesk-600-pcimt.png'
+import lenovoThinkpadT490 from '../assets/images/hardware/lenovo-thinkpad-t490.png'
+import lenovoThinkvision from '../assets/images/hardware/lenovo-thinkvision.png'
+import plustekOpticbook3600 from '../assets/images/hardware/plustek-opticbook-3600.png'
+import plustekOpticbookA300 from '../assets/images/hardware/plustek-opticbook-a300.png'
+import plustekOpticbookA300Plus from '../assets/images/hardware/plustek-opticbook-a300-plus.png'
+import synologyDs1621Plus from '../assets/images/hardware/synology-ds1621-plus.png'
+import synologyDs1813Plus from '../assets/images/hardware/synology-ds1813-plus.png'
+import synologyNas from '../assets/images/hardware/synology-nas.png'
+import tpLink8PortGigabitSwitch from '../assets/images/hardware/tp-link-8-port-gigabit-switch.png'
+import trendnetTeg204ws from '../assets/images/hardware/trendnet-teg-204ws.png'
+import trendnetTl2G244 from '../assets/images/hardware/trendnet-tl2-g244.png'
 
 export const hardwareCategoryOrder = [
   'Book scanners',
@@ -16,7 +33,6 @@ export const hardwareCategoryOrder = [
   'Servers & storage',
   'Network equipment',
   'Printers & displays',
-  'Operations accessories',
 ] as const
 
 export type HardwareCategory = typeof hardwareCategoryOrder[number]
@@ -34,20 +50,37 @@ export interface HardwareItem {
   recordedUnits: string
 }
 
-const categoryImages: Record<HardwareCategory, { src: string; alt: string }> = {
-  'Book scanners': { src: bookScannerImage, alt: 'Representative book-scanning workstation' },
-  'Production document scanners': { src: documentScannerImage, alt: 'Representative production document-scanning equipment' },
-  'Flatbed & photo scanners': { src: flatbedScannerImage, alt: 'Representative flatbed photographic scanning workstation' },
-  'Large-format scanners': { src: largeFormatScannerImage, alt: 'Representative large-format scanner handling a technical drawing' },
-  'Workstations & laptops': { src: workstationImage, alt: 'Representative workstation used for digital information processing' },
-  'Servers & storage': { src: storageImage, alt: 'Representative digital storage and information-management environment' },
-  'Network equipment': { src: networkImage, alt: 'Representative networked technology environment' },
-  'Printers & displays': { src: documentScannerImage, alt: 'Representative office imaging and display equipment' },
-  'Operations accessories': { src: operationsImage, alt: 'Representative equipment supporting document-digitization operations' },
+const productImages: Record<string, { src: string; alt: string }> = {
+  'plustek-opticbook-a300-plus': { src: plustekOpticbookA300Plus, alt: 'Plustek OpticBook A300 Plus book scanner' },
+  'plustek-opticbook-a300': { src: plustekOpticbookA300, alt: 'Plustek OpticBook A300 book scanner' },
+  'plustek-opticbook-3600': { src: plustekOpticbook3600, alt: 'Plustek OpticBook 3600 book scanner' },
+  'czur-et240': { src: czurEt240, alt: 'CZUR ET240 overhead book scanner' },
+  'canon-dr-g2090': { src: canonDrG2090, alt: 'Canon DR-G2090 production document scanner' },
+  'canon-dr-x10c': { src: canonDrX10c, alt: 'Canon imageFORMULA DR-X10C production document scanner' },
+  'canon-dr-g1100': { src: canonDrG1100, alt: 'Canon imageFORMULA DR-G1100 production document scanner' },
+  'canon-dr-9050c': { src: canonDr9050c, alt: 'Canon imageFORMULA DR-9050C production document scanner' },
+  'canon-dr-6030c': { src: canonDr6030c, alt: 'Canon imageFORMULA DR-6030C document scanner' },
+  'canon-canoscan-9000f-mark-ii': { src: canonCanoScan9000fMarkIi, alt: 'Canon CanoScan 9000F Mark II flatbed scanner' },
+  'colortrac-smartlf-ci40': { src: colortracSmartlfCi40, alt: 'Colortrac SmartLF Ci 40 large-format scanner' },
+  'hp-prodesk-600-pcimt': { src: hpProdesk600Pcimt, alt: 'HP ProDesk 600 PCIMT desktop workstation' },
+  'dell-optiplex-9020': { src: dellOptiplex9020, alt: 'Dell OptiPlex 9020 desktop workstation' },
+  'dell-optiplex-990': { src: dellOptiplex990, alt: 'Dell OptiPlex 990 desktop workstation' },
+  'asus-cpu-unconfirmed': { src: asusDesktopCpu, alt: 'ASUS desktop CPU with model not recorded' },
+  'lenovo-thinkpad-t490': { src: lenovoThinkpadT490, alt: 'Lenovo ThinkPad T490 business laptop' },
+  'synology-ds1621-plus': { src: synologyDs1621Plus, alt: 'Synology DiskStation DS1621+ network-attached storage' },
+  'synology-ds1813-plus': { src: synologyDs1813Plus, alt: 'Synology DiskStation DS1813+ network-attached storage' },
+  'synology-nas-model-unconfirmed': { src: synologyNas, alt: 'Synology DiskStation NAS with model not recorded' },
+  'tp-link-8-port-gigabit-switch': { src: tpLink8PortGigabitSwitch, alt: 'TP-Link eight-port gigabit desktop switch' },
+  'trendnet-teg-204ws': { src: trendnetTeg204ws, alt: 'TRENDnet TEG-204WS 20-port gigabit web smart switch' },
+  'trendnet-tl2-g244': { src: trendnetTl2G244, alt: 'TRENDnet TL2-G244 24-port gigabit managed Layer 2 switch' },
+  'hp-laserjet-p1102': { src: hpLaserjetP1102, alt: 'HP LaserJet P1102 desktop printer' },
+  'canon-pixma-model-unconfirmed': { src: canonPixma, alt: 'Canon PIXMA printer with model not recorded' },
+  'lenovo-thinkvision-model-unconfirmed': { src: lenovoThinkvision, alt: 'Lenovo ThinkVision display with model not recorded' },
 }
 
 function item(input: Omit<HardwareItem, 'image' | 'imageAlt'>): HardwareItem {
-  const visual = categoryImages[input.category]
+  const visual = productImages[input.id]
+  if (!visual) throw new Error(`Missing product visual for ${input.id}`)
   return { ...input, image: visual.src, imageAlt: visual.alt }
 }
 
@@ -83,13 +116,6 @@ export const hardwareItems: HardwareItem[] = [
   item({ id: 'hp-laserjet-p1102', name: 'LaserJet P1102', brand: 'HP', category: 'Printers & displays', description: 'A laser-printer model recorded in the SAT asset workbook.', features: ['Laser printing', 'Desktop form factor', 'Office-document output'], usage: 'General office and project-document printing.', recordedUnits: '1' }),
   item({ id: 'canon-pixma-model-unconfirmed', name: 'PIXMA — model not recorded', brand: 'Canon', category: 'Printers & displays', description: 'A Canon PIXMA printer is listed without a precise model number.', features: ['Desktop printer', 'Model confirmation required'], usage: 'General office printing; exact output capabilities require confirmation.', recordedUnits: '1' }),
   item({ id: 'lenovo-thinkvision-model-unconfirmed', name: 'ThinkVision — model not recorded', brand: 'Lenovo', category: 'Printers & displays', description: 'A Lenovo ThinkVision display is recorded without a precise model number.', features: ['Desktop display', 'Model confirmation required'], usage: 'Workstation display and visual file review.', recordedUnits: '1' }),
-
-  item({ id: 'operations-trolley', name: 'Equipment trolley', brand: 'Not recorded', category: 'Operations accessories', description: 'Mobile equipment trolleys recorded in the workbook.', features: ['Mobile equipment support', 'Operational accessory'], usage: 'Moving or positioning project equipment and materials.', recordedUnits: '3' }),
-  item({ id: 'operations-banquet-table', name: 'Project work table', brand: 'Not recorded', category: 'Operations accessories', description: 'Banquet-style work tables recorded for project operations.', features: ['Temporary work surface', 'Operational accessory'], usage: 'Document preparation and temporary project work areas.', recordedUnits: '5' }),
-  item({ id: 'operations-extension-plug', name: 'Extension plugs', brand: 'Not recorded', category: 'Operations accessories', description: 'Electrical extension accessories recorded in the workbook.', features: ['Power-distribution accessory', 'Operational support'], usage: 'Supporting temporary equipment and workstation layouts.', recordedUnits: '21' }),
-  item({ id: 'operations-big-box', name: 'Large storage boxes', brand: 'Not recorded', category: 'Operations accessories', description: 'Large storage boxes recorded for operational use.', features: ['Material organization', 'Operational storage'], usage: 'Organizing project materials during handling and preparation.', recordedUnits: '5' }),
-  item({ id: 'operations-small-box', name: 'Small storage box', brand: 'Not recorded', category: 'Operations accessories', description: 'A small storage box recorded for operational use.', features: ['Material organization', 'Operational storage'], usage: 'Organizing smaller project materials and accessories.', recordedUnits: '1' }),
-  item({ id: 'operations-ip-cable', name: 'Network cables', brand: 'Not recorded', category: 'Operations accessories', description: 'Network cabling recorded in the equipment workbook.', features: ['Wired network connection', 'Infrastructure accessory'], usage: 'Connecting workstations, storage and network equipment.', recordedUnits: '10+' }),
 ]
 
 export const hardwareCategories = hardwareCategoryOrder.map((name) => ({
