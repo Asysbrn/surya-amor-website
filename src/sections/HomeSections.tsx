@@ -1,12 +1,14 @@
 import { ArrowRight, CheckCircle2, FileScan, Layers3, MessageSquareText, PackageCheck, Route, ScanLine, ScanSearch, ScanText, ServerCog } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import systemsImage from '../assets/images/service-information-systems.png'
-import { ClientCard, ServiceCard } from '../components/common/Cards'
+import { ServiceCard } from '../components/common/Cards'
+import { ClientLogoGrid } from '../components/common/ClientLogoGrid'
 import { IndustryShowcase } from '../components/common/IndustryShowcase'
 import { Button } from '../components/ui/Button'
 import { SectionHeading } from '../components/ui/SectionHeading'
 import { featuredServices } from '../data/services'
-import { companyValues, processSteps, representativeClients } from '../data/site'
+import { featuredClientLogos } from '../data/clients'
+import { companyValues, processSteps } from '../data/site'
 
 export function IntroductionSection() {
   return (
@@ -117,7 +119,8 @@ export function ClientsSection() {
     <section className="section section--white">
       <div className="container">
         <SectionHeading eyebrow="Clients" title="Organizations represented by SATSB." description="Three organizations from the published credentials portfolio are presented here. Contact SATSB to discuss requirements relevant to your organization." split />
-        <div className="grid grid--3">{representativeClients.slice(0, 3).map((client) => <ClientCard key={client.title} {...client} />)}</div>
+        <ClientLogoGrid logos={featuredClientLogos} />
+        <div className="button-row"><Button to="/clients" variant="ghost" arrow>View our clients</Button></div>
       </div>
     </section>
   )

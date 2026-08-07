@@ -1,5 +1,4 @@
 import { Archive, Building2, Columns3, Factory, Fuel, HardHat, HeartPulse, Landmark, LibraryBig, Ruler, ShieldCheck } from 'lucide-react'
-import { clientLogoAssets } from './clients'
 import { services } from './services'
 import type { NavItem } from '../types'
 
@@ -55,20 +54,6 @@ export const processSteps = [
   { number: '03', title: 'Recommend an approach', description: 'Propose suitable technology, workflow and implementation steps.' },
   { number: '04', title: 'Convert or implement', description: 'Carry out the agreed digitization, transfer or solution work.' },
   { number: '05', title: 'Provide the agreed output', description: 'Deliver the files or implemented solution in the format defined for the engagement.' },
-]
-
-const clientCredentialNote = 'Organization represented in SATSB’s published credentials portfolio. Contact the company to discuss requirements relevant to your organization.'
-
-export const representativeClients = [
-  { title: 'Dewan Bahasa dan Pustaka Malaysia', tag: 'Published credentials', description: clientCredentialNote, logo: clientLogoAssets.dbp },
-  { title: 'Jabatan Kesenian dan Kebudayaan Negara', tag: 'Published credentials', description: clientCredentialNote, logo: clientLogoAssets.jkkn },
-  { title: 'Jabatan Ketua Pengarah Tanah dan Galian', tag: 'Published credentials', description: clientCredentialNote, logo: clientLogoAssets.jkptg },
-  { title: 'Kementerian Pertanian dan Keterjaminan Makanan Malaysia', tag: 'Published credentials', description: clientCredentialNote, logo: clientLogoAssets.agriculture },
-  { title: 'Kementerian Pertahanan Malaysia', tag: 'Published credentials', description: clientCredentialNote, logo: clientLogoAssets.defence },
-  { title: 'Jabatan Muzium Malaysia', tag: 'Published credentials', description: clientCredentialNote, logo: clientLogoAssets.museum },
-  { title: 'Perbadanan Kemajuan Negeri Selangor', tag: 'Published credentials', description: clientCredentialNote, logo: clientLogoAssets.pkns },
-  { title: 'Perpustakaan Negara Malaysia', tag: 'Published credentials', description: clientCredentialNote, logo: clientLogoAssets.nationalLibrary },
-  { title: 'Pejabat Tanah dan Galian Wilayah Persekutuan Kuala Lumpur', tag: 'Published credentials', description: clientCredentialNote, logo: clientLogoAssets.federalLand },
 ]
 
 export const companyValues = [

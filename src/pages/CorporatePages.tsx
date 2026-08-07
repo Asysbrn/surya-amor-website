@@ -9,6 +9,7 @@ import { IndustryShowcase } from '../components/common/IndustryShowcase'
 import { PageHero } from '../components/common/PageHero'
 import { SectionHeading } from '../components/ui/SectionHeading'
 import { clientLogos } from '../data/clients'
+import { ClientLogoGrid } from '../components/common/ClientLogoGrid'
 import { companyValues, processSteps, siteConfig, teamFunctions } from '../data/site'
 import { useSeo } from '../hooks/useSeo'
 
@@ -98,13 +99,7 @@ export function ClientsPage() {
   return (
     <section className="clients-page" aria-labelledby="clients-page-title">
       <h1 className="sr-only" id="clients-page-title">Clients</h1>
-      <div className="container clients-logo-grid">
-        {clientLogos.map((client) => (
-          <div className="client-logo-only" key={client.src}>
-            <img src={client.src} alt={client.alt} loading="lazy" decoding="async" />
-          </div>
-        ))}
-      </div>
+      <div className="container"><ClientLogoGrid logos={clientLogos} /></div>
     </section>
   )
 }

@@ -16,6 +16,7 @@ import artifactScanning from '../assets/images/3d-artifact-scanning.webp'
 import audioVideoDigitization from '../assets/images/audio-video-digitization.webp'
 import dataConversion from '../assets/images/data-conversion.webp'
 import documentDigitization from '../assets/images/document-digitization.webp'
+import dgfloLogo from '../assets/images/dgflo.png'
 import gisServices from '../assets/images/gis-services.webp'
 import largeFormatScanning from '../assets/images/large-format-scanning.webp'
 import ocrSearchablePdf from '../assets/images/ocr-searchable-pdf.webp'
@@ -188,6 +189,8 @@ export const services: Service[] = [
     steps: solutionFlow,
     image: informationSystems,
     imageAlt: 'Illustrative electronic records management workspace with organized digital files',
+    brandLogo: dgfloLogo,
+    brandLogoAlt: 'DGflo Electronic Records Management System',
     icon: Archive,
   },
   {
