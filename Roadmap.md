@@ -32,6 +32,8 @@
 
 **Client-logo replacement and DGflo service-image record (2026-08-09):** Replaced the supplied client image files in `src/assets/images/CLIENT LOGO/` without altering their colours or pixels. The shared `ClientLogoGrid` keeps every varied aspect ratio centred in equal 4:3 containers with contained sizing, and the Home section now presents five marks using the same component as the full Clients gallery. Changed DG-flo ERMS to use `dgflo.png` as its sole service image: the previous information-systems illustration and overlay treatment are no longer used for that service, and contained card/page-hero variants preserve the logo’s proportions.
 
+**Client-logo crop fix record (2026-08-10):** Removed the client-logo image hover zoom and the clipping overflow rule. Each mark now uses intrinsic dimensions bounded only by `max-width` and `max-height` inside the shared centred card, ensuring every supplied logo remains fully visible without stretching, distortion or cropping across responsive breakpoints.
+
 ## Phase 1 — Planning
 
 - [x] Inspect `/home/aiesya` and confirm the target folder is available
