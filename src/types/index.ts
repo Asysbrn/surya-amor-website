@@ -12,8 +12,7 @@ export interface Service {
   deliverables: string[]
   image: string
   imageAlt: string
-  brandLogo?: string
-  brandLogoAlt?: string
+  imageFit?: 'cover' | 'contain'
   steps: string[]
   applications: string[]
   icon: LucideIcon

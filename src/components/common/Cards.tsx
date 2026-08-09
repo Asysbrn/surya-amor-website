@@ -5,11 +5,10 @@ import type { Service } from '../../types'
 export function ServiceCard({ service }: { service: Service }) {
   const Icon = service.icon
   return (
-    <article className="card service-card">
+    <article className={`card service-card ${service.imageFit === 'contain' ? 'service-card--contain' : ''}`}>
       <div className="service-card__media">
         <img src={service.image} alt="" loading="lazy" />
         <div className="card__icon" aria-hidden="true"><Icon size={22} /></div>
-        {service.brandLogo && <div className="service-card__brand"><img src={service.brandLogo} alt={service.brandLogoAlt} loading="lazy" decoding="async" /></div>}
       </div>
       <div className="service-card__body">
         <p className="card__tag">{service.category}</p>

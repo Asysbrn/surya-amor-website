@@ -18,11 +18,10 @@ export default function ServiceDetailPage() {
 
   return (
     <>
-      <PageHero eyebrow={service.category} title={service.title} description={service.summary} parent={{ label: 'Services', href: '/services' }} image={service.image} imageAlt={service.imageAlt} />
+      <PageHero eyebrow={service.category} title={service.title} description={service.summary} parent={{ label: 'Services', href: '/services' }} image={service.image} imageAlt={service.imageAlt} imageFit={service.imageFit} />
       <section className="section section--white">
         <div className="container content-layout">
           <div className="prose">
-            {service.brandLogo && <div className="service-brand"><img src={service.brandLogo} alt={service.brandLogoAlt} decoding="async" /></div>}
             <div className="service-kicker"><div className="card__icon" aria-hidden="true"><Icon size={24} /></div><span>Service overview</span></div>
             <h2>A focused approach to {service.title.toLowerCase()}</h2>
             <p>{service.description}</p>

@@ -56,4 +56,4 @@ export const clientLogos = [
   { src: logo17, alt: 'Parlimen Malaysia logo' },
 ]
 
-export const featuredClientLogos = [clientLogos[10], clientLogos[1], clientLogos[3]]
+export const featuredClientLogos = [clientLogos[10], clientLogos[1], clientLogos[3], clientLogos[4], clientLogos[5]]

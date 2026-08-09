@@ -187,10 +187,9 @@ export const services: Service[] = [
     deliverables: ['Approved functional requirements', 'Deployment and integration scope', 'Implementation, access and support responsibilities'],
     applications: ['Electronic records requirements', 'Organizational record workflows', 'Managed digital information access'],
     steps: solutionFlow,
-    image: informationSystems,
-    imageAlt: 'Illustrative electronic records management workspace with organized digital files',
-    brandLogo: dgfloLogo,
-    brandLogoAlt: 'DGflo Electronic Records Management System',
+    image: dgfloLogo,
+    imageAlt: 'Official DGflo Electronic Records Management System logo',
+    imageFit: 'contain',
     icon: Archive,
   },
   {

@@ -8,11 +8,12 @@ interface PageHeroProps {
   parent?: { label: string; href: string }
   image?: string
   imageAlt?: string
+  imageFit?: 'cover' | 'contain'
 }
 
-export function PageHero({ eyebrow, title, description, parent, image, imageAlt = '' }: PageHeroProps) {
+export function PageHero({ eyebrow, title, description, parent, image, imageAlt = '', imageFit = 'cover' }: PageHeroProps) {
   return (
-    <section className={`page-hero ${image ? 'page-hero--image' : ''}`}>
+    <section className={`page-hero ${image ? 'page-hero--image' : ''} ${image && imageFit === 'contain' ? 'page-hero--image-contain' : ''}`}>
       {image && <img className="page-hero__image" src={image} alt={imageAlt} />}
       <div className="container">
         <nav className="breadcrumbs" aria-label="Breadcrumb">
