@@ -31,6 +31,7 @@ export const navigation: NavItem[] = [
   },
   { label: 'Industries', href: '/industries' },
   { label: 'Clients', href: '/clients' },
+  { label: 'News', href: '/news' },
   { label: 'Contact', href: '/contact' },
 ]
 

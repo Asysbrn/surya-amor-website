@@ -7,6 +7,8 @@ const ServicesPage = lazy(() => import('./pages/ServicesPage'))
 const ServiceDetailPage = lazy(() => import('./pages/ServiceDetailPage'))
 const HardwarePage = lazy(() => import('./pages/HardwarePage'))
 const ContactPage = lazy(() => import('./pages/ContactPage'))
+const NewsPage = lazy(() => import('./pages/NewsPage'))
+const NewsArticlePage = lazy(() => import('./pages/NewsArticlePage'))
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'))
 const AboutPage = lazy(() => import('./pages/CorporatePages').then((module) => ({ default: module.AboutPage })))
 const IndustriesPage = lazy(() => import('./pages/CorporatePages').then((module) => ({ default: module.IndustriesPage })))
@@ -31,6 +33,8 @@ const router = createBrowserRouter([{
     { path: '/hardware', element: <HardwarePage /> },
     { path: '/industries', element: <IndustriesPage /> },
     { path: '/clients', element: <ClientsPage /> },
+    { path: '/news', element: <NewsPage /> },
+    { path: '/news/:slug', element: <NewsArticlePage /> },
     { path: '/projects', element: <Navigate to="/clients" replace /> },
     { path: '/process', element: <ProcessPage /> },
     { path: '/why-us', element: <WhyUsPage /> },

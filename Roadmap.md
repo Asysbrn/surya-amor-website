@@ -1,7 +1,7 @@
 # Project Roadmap
 
 > **Current phase:** Phase 13 — Company content and launch review  
-> **Last completed task:** Replaced the client-logo set, expanded Home to five client marks, and made the supplied DGflo logo the sole ERMS service visual
+> **Last completed task:** Added the scalable SAT Newsroom with a homepage feature, News index, SEAPAVAA article, responsive photo story and selectable supplied-event videos
 > **Next task:** Confirm detailed technical scope for the newly supplied service labels, obtain approved high-resolution hardware and client-logo originals, activate FormSubmit, confirm the correct office unit, then complete browser/accessibility QA
 > **Known issues:** The 12 service titles are company-supplied, but a separate SAT Profile source document containing detailed specifications was not present in the repository; page copy therefore stays conservative and project-specific technical scope still requires owner confirmation. The supplied client PNGs are approved for display but are only 147–232 px wide, so vector or high-resolution originals are still recommended for ideal Retina sharpness. `WARISAN` and `BKS@Melaka` are readable on their supplied marks but their official organization names still require manual confirmation. The hardware workbook and composite do not identify exact model numbers for the ASUS desktop CPU, one Synology NAS, the TP-Link eight-port switch, the Canon PIXMA printer or the Lenovo ThinkVision display; `CZUR ET240` also requires model-name confirmation. Those six catalogue names remain explicitly unconfirmed. The individual product images are lossless crops from a 1536 × 1024 supplied composite, so approved high-resolution originals are still needed for ideal Retina sharpness. The source conflicts between office units `T2A-09-3A` and `T02A-09-3A`; the map therefore targets the verified 3 Towers street address and does not claim unverified coordinates. FormSubmit requires a one-time approval from `info@satsb.com.my` before it can deliver production enquiries. Privacy Policy and Terms still require qualified legal approval. The two older general service PNG visuals total approximately 3.6 MB and should be converted to optimized approved AVIF/WebP assets before launch. `npm audit` reports two high-severity dependency advisories; the dependencies should be reviewed and updated through an approved upgrade. No browser executable was available for console, visual breakpoint, screen-reader, cross-browser or Lighthouse testing.
 > **Notes for continuing:** Run `npm install`, then `npm run dev`. Review this file from the first unchecked task. Never convert a `Confirmation required` placeholder into a factual claim without company approval. Run `npm run lint && npm run typecheck && npm run build` after every content or code change.
@@ -34,6 +34,8 @@
 
 **Client-logo crop fix record (2026-08-10):** Removed the client-logo image hover zoom and the clipping overflow rule. Each mark now uses intrinsic dimensions bounded only by `max-width` and `max-height` inside the shared centred card, ensuring every supplied logo remains fully visible without stretching, distortion or cropping across responsive breakpoints.
 
+**Newsroom and SEAPAVAA story record (2026-08-11):** Inspected all four supplied JPEG photos, all four supplied MP4 videos and all eight Windows `Zone.Identifier` sidecars in `src/assets/images/news/`. The event backdrop confirms the official `SEAPAVAA Conference 2026` spelling, 6–11 June 2026 date range and Ipoh, Perak location; public copy stays within those details and the visible SAT booth/team interactions, without speaker, session, award, partnership, sponsorship or organiser claims. Added a typed, extensible `src/data/news.ts` article model with optional location, author and external-link support; a premium asymmetric homepage News feature; `/news`; dynamic `/news/:slug` article handling; an editorial image grid; and a responsive selectable video stage that loads one H.264/AAC clip at a time. Added News to desktop/mobile navigation and the footer, added both routes to the sitemap, and used only the supplied SAT conference media. Responsive behavior was reviewed in code at the existing 1050 px, 800 px and 580 px breakpoints, including contained video behavior and reduced-motion coverage. ESLint, strict TypeScript and the production build passed. The production preview returned HTTP 200 for Home, `/news`, `/news/seepavaa-conference`, every supplied photo and every supplied video; a video byte-range request returned HTTP 206. Browser-based visual and console QA remains pending because no browser executable is installed in this environment.
+
 ## Phase 1 — Planning
 
 - [x] Inspect `/home/aiesya` and confirm the target folder is available
@@ -64,6 +66,7 @@
 - [x] Add route configuration and lazy page loading
 - [x] Build announcement bar and desktop navigation
 - [x] Build accessible mobile navigation
+- [x] Add News to desktop, mobile and footer navigation
 - [x] Add active navigation states and dropdown behavior
 - [x] Build the professional footer
 - [x] Add skip link, scroll restoration and scroll-to-top control
@@ -85,6 +88,7 @@
 - [x] Build projects presentation and remove the later duplicate Solutions section
 - [x] Build the client-credentials section
 - [x] Build CTA and contact preview
+- [x] Build the editorial homepage News feature
 
 ## Phase 7 — Individual website pages
 
@@ -100,6 +104,7 @@
 - [x] Build Careers
 - [x] Build Privacy Policy and Terms
 - [x] Build custom 404 page
+- [x] Build the scalable News index and individual article route
 
 ## Phase 8 — Contact form
 
@@ -125,6 +130,7 @@
 - [x] Add canonical and Open Graph metadata
 - [x] Add `robots.txt` and sitemap starter
 - [x] Add safe organization structured-data starter
+- [x] Add News index and SEAPAVAA article sitemap entries
 - [x] Verify production-domain replacement notes
 
 ## Phase 11 — Testing and quality assurance
@@ -186,6 +192,8 @@
 - [x] Add Healthcare, Oil & Gas and Manufacturing to Industries
 - [x] Replace Experience with the `/clients` logo-only page and retain an old-route redirect
 - [x] Integrate all 17 supplied approved client logos with accessible responsive containers
+- [x] Inspect and integrate all supplied SEAPAVAA photos and videos into a reusable News data structure
+- [x] Add the homepage News feature, `/news` index and `/news/seepavaa-conference` article
 - [x] Add the published email, telephone and address with the unit-number conflict visibly flagged
 - [ ] Confirm the correct office unit, email and telephone with the owner
 - [x] Add the business hours supplied on 6 August 2026

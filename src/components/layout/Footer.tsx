@@ -16,7 +16,7 @@ export function Footer() {
         <div>
           <h2>Company</h2>
           <div className="footer__links">
-            <Link to="/about">About us</Link><Link to="/why-us">Why choose us</Link><Link to="/process">Our process</Link><Link to="/clients">Clients</Link><Link to="/careers">Careers</Link>
+            <Link to="/about">About us</Link><Link to="/why-us">Why choose us</Link><Link to="/process">Our process</Link><Link to="/clients">Clients</Link><Link to="/news">News</Link><Link to="/careers">Careers</Link>
           </div>
         </div>
         <div>
