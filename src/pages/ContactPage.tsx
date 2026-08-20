@@ -57,7 +57,7 @@ export default function ContactPage() {
 
   return (
     <>
-      <PageHero eyebrow="Contact us" title="Start with the collection. We’ll help frame the next step." description="Share the source formats, approximate quantity, location and target outcome. Avoid including confidential record content in this initial enquiry." />
+      <PageHero eyebrow="Contact us" title="Start with the collection. We’ll help frame the next step." description="Share the format, approximate quantity and intended result. Do not include confidential record content." />
       <section className="section section--white">
         <div className="container content-layout">
           <div>

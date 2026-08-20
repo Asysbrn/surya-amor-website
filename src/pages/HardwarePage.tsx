@@ -16,14 +16,14 @@ export default function HardwarePage() {
 
   return (
     <>
-      <PageHero eyebrow="Equipment catalogue" title="Hardware supporting capture, processing and delivery." description="A deduplicated view of equipment recorded in SAT’s supplied asset workbook, organized by practical technology category." parent={{ label: 'Services', href: '/services' }} image={scannerHardwareImage} imageAlt="Professional document scanner and supporting IT equipment" />
+      <PageHero eyebrow="Equipment catalogue" title="Hardware supporting capture, processing and delivery." description="Equipment recorded in SAT’s asset workbook, organised by technology category." parent={{ label: 'Services', href: '/services' }} image={scannerHardwareImage} imageAlt="Professional document scanner and supporting IT equipment" />
       <section className="section section--white hardware-intro">
         <div className="container">
           <div className="hardware-summary">
             <div>
               <p className="eyebrow">Workbook overview</p>
               <h2 className="heading">One clear catalogue from a detailed equipment register.</h2>
-              <p className="lead">Repeated serial-number rows have been consolidated into unique model records. The workbook confirms equipment identity and recorded quantities; current availability, supply terms and configurations must be confirmed for each enquiry.</p>
+              <p className="lead">Repeated rows are consolidated into unique models. Confirm current availability and configuration with SATSB.</p>
             </div>
             <div className="hardware-summary__metrics" aria-label="Hardware catalogue summary">
               <article><strong>{hardwareItems.length}</strong><span>Unique equipment entries</span></article>
@@ -33,7 +33,7 @@ export default function HardwarePage() {
           </div>
           <div className="hardware-assurance">
             <ScanLine size={20} aria-hidden="true" />
-            <p>Product visuals have been separated from the supplied equipment catalogue image and matched to their corresponding workbook entries. Confirm the exact model, configuration and current commercial availability with SATSB.</p>
+            <p>Visuals are matched to their workbook entries. Confirm exact models, configurations and availability with SATSB.</p>
           </div>
         </div>
       </section>

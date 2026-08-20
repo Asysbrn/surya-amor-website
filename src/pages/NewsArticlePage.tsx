@@ -53,7 +53,7 @@ function NewsArticle({ slug }: { slug: string }) {
         <section className="section section--tint news-gallery" aria-labelledby="news-gallery-heading">
           <div className="container">
             <header className="news-media-heading"><div><p className="eyebrow">From the event</p><h2 id="news-gallery-heading">Conference moments</h2></div><p>Conversations, demonstrations and connections from the SEAPAVAA Conference floor.</p></header>
-            <div className="news-gallery__grid">{article.images.map((media, index) => <figure className={index === 0 ? 'news-gallery__wide' : ''} key={media.src}><img src={media.src} alt={media.alt} loading="lazy" /><figcaption>{media.caption}</figcaption></figure>)}</div>
+            <div className="news-gallery__grid">{article.images.map((media) => <figure key={media.src}><img src={media.src} alt={media.alt} loading="lazy" /><figcaption>{media.caption}</figcaption></figure>)}</div>
           </div>
         </section>
       )}

@@ -10,7 +10,7 @@ export function HomeHero() {
         <div className="hero__copy">
           <p className="eyebrow">Document imaging · Digital conversion · Information systems</p>
           <h1 className="display" id="home-hero-title">Turn physical and legacy information into usable digital resources.</h1>
-          <p className="lead">Surya Amor Technology Sdn Bhd provides document scanning, indexing, audio visual digitization, geospatial, records-management and software-development services from Kuala Lumpur.</p>
+          <p className="lead">Document scanning, audiovisual digitization, geospatial, records-management and software services from Kuala Lumpur.</p>
           <div className="button-row">
             <Button to="/contact" arrow>Enquiry</Button>
             <Button to="/services" variant="ghost">Explore services</Button>

@@ -17,15 +17,14 @@ export function AboutPage() {
   useSeo({ title: 'About Us', description: 'Company background, mission and team functions for Surya Amor Technology Sdn Bhd.', path: '/about' })
   return (
     <>
-      <PageHero eyebrow="About Surya Amor" title="Digitization and information solutions from Kuala Lumpur." description="Our span includes document digitization, audio visual services, GIS services, and other IT-related services." image={documentDigitizationImage} imageAlt="Document digitization operator working with business records and scanning equipment" />
+      <PageHero eyebrow="About Surya Amor" title="Digitization and information solutions from Kuala Lumpur." description="Document digitization, audiovisual, GIS and related technology services." image={documentDigitizationImage} imageAlt="Document digitization operator working with business records and scanning equipment" />
       <section className="section section--white">
         <div className="container intro-grid">
           <div className="prose">
             <h2>Company overview</h2>
-            <p>Surya Amor Technology Sdn Bhd is a Malaysian company serving organizations through document imaging, digitization and Geographic Information System services. The company was incorporated in 2022.</p>
-            <p>SATSB is based in Kuala Lumpur and brings together management, digitization, audiovisual conversion and technical-support functions around its document-management and GIS activities.</p>
+            <p>Surya Amor Technology Sdn Bhd is a Malaysian company established in 2022, providing document imaging, digitization and Geographic Information System services from Kuala Lumpur.</p>
             <h2>Our mission</h2>
-            <p>Our mission is to provide flexible, cost-effective and quality-focused services shaped around each customer's requirements. We aim to apply relevant developments in software and technology to deliver practical, competitive solutions.</p>
+            <p>We provide flexible, cost-effective and quality-focused services shaped around customer requirements and relevant technology.</p>
           </div>
           <aside className="intro-panel">
             <h3>Company information</h3>
@@ -41,7 +40,7 @@ export function AboutPage() {
           <div className="about-story__copy about-reveal">
             <p className="eyebrow">What we do</p>
             <h2 className="heading">Connect physical information with practical digital access.</h2>
-            <p className="lead">SATSB works across document digitization, audio visual services, GIS services and other IT-related services. Projects begin with the source material and the result the organization needs to achieve.</p>
+            <p className="lead">Projects begin with the source material and the digital result the organisation needs.</p>
             <ul className="about-points">
               <li><CheckCircle2 size={18} aria-hidden="true" /><span><strong>Source-aware planning</strong> considers format, condition, quantity and handling needs.</span></li>
               <li><CheckCircle2 size={18} aria-hidden="true" /><span><strong>Purpose-led delivery</strong> defines how information should be accessed, searched or transferred.</span></li>
@@ -69,7 +68,7 @@ export function AboutPage() {
         <div className="container">
           <SectionHeading eyebrow="Team structure" title="Functions supporting SATSB’s service delivery." description="The company profile identifies management, digitization, audiovisual conversion and technical support functions." split />
           <div className="grid grid--4">
-            {teamFunctions.map((team, index) => <article className="card" key={team}><span className="card__tag">Team 0{index + 1}</span><h3>{team}</h3><p>A functional area supporting the company’s technology and digitization services.</p></article>)}
+            {teamFunctions.map((team, index) => <article className="card" key={team}><span className="card__tag">Team 0{index + 1}</span><h3>{team}</h3></article>)}
           </div>
         </div>
       </section>
@@ -82,7 +81,7 @@ export function IndustriesPage() {
   useSeo({ title: 'Industries We Serve', description: 'Digitization, scanning and information-management applications across institutional sectors.', path: '/industries' })
   return (
     <>
-      <PageHero eyebrow="Industries we serve" title="Information workflows shaped around each sector." description="From public records and bound collections to plans, photographs and operational files, different information environments call for a considered digitization approach." />
+      <PageHero eyebrow="Industries we serve" title="Information workflows shaped around each sector." description="Different information environments call for a considered digitization approach." />
       <section className="section section--white industries-page">
         <div className="container">
           <SectionHeading eyebrow="Sector perspectives" title="One service framework, many information environments." description="The source materials and intended result differ by sector. SATSB begins with the collection, workflow and access outcome required." split />
@@ -98,8 +97,11 @@ export function ClientsPage() {
   useSeo({ title: 'Clients', description: 'Client logos supplied and approved for display by Surya Amor Technology.', path: '/clients' })
   return (
     <section className="clients-page" aria-labelledby="clients-page-title">
-      <h1 className="sr-only" id="clients-page-title">Clients</h1>
-      <div className="container"><ClientLogoGrid logos={clientLogos} /></div>
+      <div className="container">
+        <header className="clients-page__heading"><p className="eyebrow">Our clients</p><h1 id="clients-page-title">Organisations we have supported.</h1></header>
+        <ClientLogoGrid logos={clientLogos} />
+        <div className="clients-page__note"><h2>Built on trust</h2><p>We value the trust our clients place in us. Their positive feedback motivates us to keep delivering reliable, professional and quality-focused solutions.</p></div>
+      </div>
     </section>
   )
 }

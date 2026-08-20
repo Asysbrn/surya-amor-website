@@ -14,7 +14,7 @@ export default function ServicesPage() {
   useSeo({ title: 'Services', description: 'Explore SATSB’s document scanning, indexing, audio visual digitization, 3D capture, geospatial, vectorization, records-management and software-development services.', path: '/services' })
   return (
     <>
-      <PageHero eyebrow="Complete service catalogue" title="Digitization expertise for every information format." description="Explore SATSB’s broad service areas and the focused scanning, conversion and technology capabilities identified in the available company profile material." />
+      <PageHero eyebrow="Complete service catalogue" title="Digitization expertise for every information format." description="Explore SATSB’s scanning, conversion, information-management and technology capabilities." />
       <section className="section">
         <div className="container">
           <div className="filters" role="group" aria-label="Filter services by category">

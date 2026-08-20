@@ -93,9 +93,6 @@ export function Header() {
               {item.children && <div className="mobile-menu__services">{item.children.map((child) => <Link key={child.href} to={child.href} onClick={closeNavigation}>{child.label}</Link>)}</div>}
             </div>
           ))}
-          <NavLink to="/process" onClick={closeNavigation}>Our Process<span aria-hidden="true">→</span></NavLink>
-          <NavLink to="/why-us" onClick={closeNavigation}>Why Choose Us<span aria-hidden="true">→</span></NavLink>
-          <NavLink to="/careers" onClick={closeNavigation}>Careers<span aria-hidden="true">→</span></NavLink>
         </nav>
       </div>
     </>

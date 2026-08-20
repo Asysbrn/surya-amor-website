@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import companyLogo from '../../assets/images/SAT LOGO-PINK.png'
+import companyLogo from '../../assets/images/SAT LOGO -BLUE.png'
 
 type CompanyLogoProps = {
   variant?: 'header' | 'footer'
@@ -14,8 +14,8 @@ export function CompanyLogo({ variant = 'header' }: CompanyLogoProps) {
     >
       <img
         src={companyLogo}
-        width="432"
-        height="113"
+        width="447"
+        height="123"
         alt="Surya Amor Technology Sdn Bhd"
       />
     </Link>

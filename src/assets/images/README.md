@@ -59,6 +59,6 @@ The following active service-specific stock-style visuals were generated on 6 Au
 
 `3d-artifact-scanning.webp`, `seismic-data-vectorization.webp` and `well-log-vectorization.webp` were generated with the built-in image-generation tool on 7 August 2026 and optimized to 1600 px WebP at quality 78. The prompts requested realistic corporate capture or conversion workstations specific to each named service, with no logos, confidential information, readable interface text, futuristic holograms or unsupported SATSB project context. They are representative service visuals, not SATSB personnel, facilities, equipment or completed projects.
 
-`SAT LOGO-PINK.png` is the supplied current website wordmark. The numbered transparent PNG files under `CLIENT LOGO/` are the supplied approved logo set used by the Clients page; their original colour and proportions must remain unchanged.
+`SAT LOGO -BLUE.png` is the supplied current website wordmark. It is displayed at its original 447 × 123 aspect ratio without cropping or recolouring. The numbered transparent PNG files under `CLIENT LOGO/` are the supplied approved logo set used by the Clients page; their original colour and proportions must remain unchanged.
 
 Do not download or reuse images from the legacy SATSB website. Suitable approved replacements include document scanning equipment, paper preparation, VHS or Betacam transfer, audio cassette transfer, records-management interfaces, imaging consultation, GIS workflows, the corporate team and the Kuala Lumpur office.

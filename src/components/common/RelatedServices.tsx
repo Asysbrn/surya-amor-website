@@ -11,7 +11,7 @@ export function RelatedServices({ current }: { current: Service }) {
   return (
     <section className="section section--white related-services">
       <div className="container">
-        <SectionHeading eyebrow="Continue exploring" title="Explore related services" description="Complementary capabilities for planning a connected digitization or information-management project." />
+        <SectionHeading eyebrow="Continue exploring" title="Explore related services" description="Complementary digitization and information-management capabilities." />
         <div className="related-services__grid">
           {related.map((service) => <ServiceCard key={service.slug} service={service} />)}
         </div>

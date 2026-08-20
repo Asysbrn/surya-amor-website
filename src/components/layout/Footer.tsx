@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { featuredServices } from '../../data/services'
-import { siteConfig } from '../../data/site'
+import { navigation, siteConfig } from '../../data/site'
 import { CompanyLogo } from '../common/CompanyLogo'
 
 export function Footer() {
@@ -9,21 +9,20 @@ export function Footer() {
       <div className="container footer__top">
         <div className="footer__company">
           <CompanyLogo variant="footer" />
-          <p className="footer__about">Document scanning, indexing, audio visual digitization, geospatial services, vectorization, records management and software development from Kuala Lumpur.</p>
+          <p className="footer__about">Digitization, information management and technology services from Kuala Lumpur.</p>
           <p className="footer__company-detail">Registration No.: {siteConfig.registrationNo}</p>
           <p className="footer__company-detail">{siteConfig.hours}<br />{siteConfig.closedHours}</p>
         </div>
         <div>
-          <h2>Company</h2>
+          <h2>Explore</h2>
           <div className="footer__links">
-            <Link to="/about">About us</Link><Link to="/why-us">Why choose us</Link><Link to="/process">Our process</Link><Link to="/clients">Clients</Link><Link to="/news">News</Link><Link to="/careers">Careers</Link>
+            {navigation.map((item) => <Link to={item.href} key={item.href}>{item.label}</Link>)}
           </div>
         </div>
         <div>
           <h2>Core services</h2>
           <div className="footer__links">
             {featuredServices.map((service) => <Link key={service.slug} to={`/services/${service.slug}`}>{service.title}</Link>)}
-            <Link to="/hardware">Hardware catalogue</Link>
             <Link to="/services">All services</Link>
           </div>
         </div>

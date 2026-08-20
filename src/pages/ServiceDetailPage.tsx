@@ -48,7 +48,7 @@ export default function ServiceDetailPage() {
           </div>
           <div className="workflow-card">
             <p className="eyebrow">How an engagement can progress</p>
-            {service.steps.map((step, index) => <div className="workflow-card__step" key={step}><span>0{index + 1}</span><div><h3>{step}</h3><p>{index === 0 ? 'Clarify the source, scale, condition and intended use.' : index === 1 ? 'Define the practical method, responsibilities and required output.' : 'Complete the agreed work and verify the handover requirements.'}</p></div></div>)}
+            {service.steps.map((step, index) => <div className="workflow-card__step" key={step}><span>0{index + 1}</span><div><h3>{step}</h3></div></div>)}
             <Button to="/process" variant="ghost">View the full process <ArrowRight size={16} /></Button>
           </div>
         </div>

@@ -7,7 +7,7 @@ interface CallToActionProps {
 
 export function CallToAction({
   title = 'Turn complex records into usable digital assets.',
-  description = 'Share your material types, approximate volume and intended outcome. We’ll help frame the right next step without overcomplicating the conversation.',
+  description = 'Share the material type, approximate volume and intended outcome to frame the next step.',
 }: CallToActionProps) {
   return (
     <section className="section section--compact" aria-label="Start a conversation">

@@ -22,7 +22,7 @@ export function IntroductionSection() {
         </div>
         <aside className="intro-panel">
           <h3>Our mission</h3>
-          <p>To provide flexible, cost-effective and quality-focused services shaped around customer requirements, while applying relevant developments in software and technology.</p>
+          <p>Flexible, cost-effective and quality-focused services shaped around customer requirements and relevant technology.</p>
           <ul className="check-list">
             {['Flexible service', 'Cost-conscious planning', 'Quality focus', 'Technology awareness'].map((item) => <li key={item}><CheckCircle2 size={18} aria-hidden="true" />{item}</li>)}
           </ul>
@@ -58,7 +58,7 @@ export function FormatCoverageSection() {
         <div>
           <p className="eyebrow">Information in every form</p>
           <h2 className="heading">One connected view of capture, conversion and access.</h2>
-          <p className="lead">SATSB’s service profile spans physical records, legacy carriers and the systems used to organize digital information. Each engagement remains defined around the customer’s actual material and requirements.</p>
+          <p className="lead">From physical records and legacy carriers to the systems used to organise digital information.</p>
           <div className="format-list">{formats.map(({ icon: Icon, title, text }) => <article key={title}><Icon size={20} aria-hidden="true" /><div><h3>{title}</h3><p>{text}</p></div></article>)}</div>
         </div>
       </div>
@@ -70,7 +70,7 @@ export function IndustriesSection() {
   return (
     <section className="section section--white industries-home">
       <div className="container">
-        <SectionHeading eyebrow="Industries we serve" title="Information needs vary. The approach should too." description="SATSB’s capture, conversion and records capabilities are relevant across public, cultural, technical and corporate information environments." split />
+        <SectionHeading eyebrow="Industries we serve" title="Information needs vary. The approach should too." description="Capture, conversion and records capabilities across public, cultural, technical and corporate settings." split />
         <IndustryShowcase />
         <div className="button-row"><Button to="/industries" variant="ghost" arrow>Review represented sectors</Button></div>
       </div>
@@ -85,7 +85,7 @@ export function WhySection() {
         <div>
           <p className="eyebrow">Service commitments</p>
           <h2 className="heading">Flexible, cost-conscious and quality-focused.</h2>
-          <p className="lead">These themes reflect SATSB’s mission and its focus on practical, customer-aligned services.</p>
+          <p className="lead">Practical services aligned with customer requirements.</p>
           <div className="button-row"><Button to="/why-us" variant="ghost" arrow>Why choose SATSB</Button></div>
         </div>
         <div className="principle-list">
@@ -101,7 +101,7 @@ export function ProcessSection() {
   return (
     <section className="section process-section">
       <div className="container">
-        <SectionHeading eyebrow="Delivery structure" title="A practical path from requirement to agreed output." description="A clear high-level sequence for understanding the requirement, defining the approach and delivering the agreed result." split />
+        <SectionHeading eyebrow="Delivery structure" title="A practical path from requirement to agreed output." description="Five clear stages from initial requirement to delivery." split />
         <div className="process-shell">
           <div className="process-line">{processSteps.map((step, index) => {
             const Icon = processIcons[index]
@@ -118,7 +118,7 @@ export function ClientsSection() {
   return (
     <section className="section section--white">
       <div className="container">
-        <SectionHeading eyebrow="Clients" title="Organizations represented by SATSB." description="Three organizations from the published credentials portfolio are presented here. Contact SATSB to discuss requirements relevant to your organization." split />
+        <SectionHeading eyebrow="Clients" title="Organizations represented by SATSB." description="A selection from SATSB’s client portfolio." split />
         <ClientLogoGrid logos={featuredClientLogos} />
         <div className="button-row"><Button to="/clients" variant="ghost" arrow>View our clients</Button></div>
       </div>
@@ -133,7 +133,7 @@ export function ContactPreviewSection() {
         <div>
           <p className="eyebrow">Request a quotation</p>
           <h2 className="heading">Discuss your requirements with SATSB.</h2>
-          <p className="lead">The legacy website states that project pricing is prepared around each customer's requirements, objectives and budget.</p>
+          <p className="lead">Project planning is shaped around the requirement, objective and budget.</p>
         </div>
         <div className="intro-panel" style={{ background: '#0d304b' }}>
           <h3>Helpful details for an initial discussion</h3>
