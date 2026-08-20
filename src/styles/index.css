@@ -497,6 +497,7 @@ img { display: block; max-width: 100%; }
 .workflow-card .button { margin-top: 1.2rem; }
 
 .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form-honeypot { position: absolute !important; width: 1px !important; height: 1px !important; margin: -1px !important; padding: 0 !important; overflow: hidden !important; clip: rect(0 0 0 0) !important; white-space: nowrap !important; border: 0 !important; }
 .field { display: grid; gap: .42rem; }
 .field--full { grid-column: 1 / -1; }
 .field label, .field legend { color: var(--ink-800); font-weight: 700; font-size: .9rem; }

@@ -3,7 +3,19 @@ import { services } from '../data/services'
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/
 const recipient = 'info@satsb.com.my'
-const formSubmitEndpoint = `https://formsubmit.co/ajax/${recipient}`
+const formSubmitBaseUrl = 'https://formsubmit.co/ajax'
+export const contactFormSubject = 'New Website Enquiry - Surya Amor Technology'
+
+function getFormSubmitTarget() {
+  const identifier = (import.meta.env.VITE_FORM_SUBMIT_ID as string | undefined)?.trim()
+  return identifier || recipient
+}
+
+export function getContactFormEndpoint() {
+  const configuredEndpoint = (import.meta.env.VITE_CONTACT_FORM_ENDPOINT as string | undefined)?.trim()
+  if (configuredEndpoint) return configuredEndpoint
+  return `${formSubmitBaseUrl}/${encodeURIComponent(getFormSubmitTarget())}`
+}
 
 export interface ContactSubmission {
   recipient: string
@@ -33,7 +45,7 @@ export function buildContactSubmission(values: ContactFormValues, submittedAt = 
 
   return {
     recipient,
-    subject: `New Website Enquiry - ${values.name.trim()}`,
+    subject: contactFormSubject,
     submittedAt: timestamp,
     serviceTitle,
     emailBody,
@@ -41,25 +53,24 @@ export function buildContactSubmission(values: ContactFormValues, submittedAt = 
 }
 
 export async function submitContactForm(values: ContactFormValues): Promise<{ provider: 'formsubmit' | 'custom' }> {
-  const configuredEndpoint = (import.meta.env.VITE_CONTACT_FORM_ENDPOINT as string | undefined)?.trim()
-  const endpoint = configuredEndpoint || formSubmitEndpoint
+  const endpoint = getContactFormEndpoint()
   const submission = buildContactSubmission(values)
-  const isFormSubmit = endpoint.includes('formsubmit.co')
+  const isFormSubmit = new URL(endpoint).hostname === 'formsubmit.co'
 
   const request: RequestInit = isFormSubmit
     ? (() => {
         const form = new FormData()
         form.append('_subject', submission.subject)
         form.append('_template', 'table')
-        form.append('_captcha', 'false')
         form.append('_replyto', values.email.trim())
-        form.append('_honey', '')
+        form.append('_honey', values._honey)
         form.append('Name', values.name.trim())
         form.append('Company', values.organization.trim() || 'Not provided')
         form.append('Email', values.email.trim())
         form.append('Phone', values.phone.trim() || 'Not provided')
         form.append('Service Interested In', submission.serviceTitle)
         form.append('Message', values.message.trim())
+        form.append('Privacy Acknowledgement', 'Confirmed')
         form.append('Submitted At', submission.submittedAt)
         form.append('Source', 'Website Contact Form')
         return { method: 'POST', headers: { Accept: 'application/json' }, body: form }
@@ -73,5 +84,9 @@ export async function submitContactForm(values: ContactFormValues): Promise<{ pr
   const response = await fetch(endpoint, request)
 
   if (!response.ok) throw new Error('We could not send your enquiry. Please try again or email info@satsb.com.my directly.')
+  if (isFormSubmit && response.headers.get('content-type')?.includes('application/json')) {
+    const result = await response.json().catch(() => null) as { success?: boolean } | null
+    if (result?.success === false) throw new Error('We could not send your enquiry. Please try again or email info@satsb.com.my directly.')
+  }
   return { provider: isFormSubmit ? 'formsubmit' : 'custom' }
 }

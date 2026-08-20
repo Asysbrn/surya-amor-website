@@ -22,7 +22,7 @@ cp .env.example .env
 npm install
 ```
 
-No environment value is required for the default contact form. It posts through FormSubmit to `info@satsb.com.my`; the mailbox owner must approve FormSubmit's one-time activation email before live delivery begins.
+The contact form posts through FormSubmit to `info@satsb.com.my`. Add the random public replacement identifier from FormSubmit's activation email as `VITE_FORM_SUBMIT_ID`; until it is configured, the adapter retains the direct recipient endpoint as a temporary compatibility fallback.
 
 ## Development commands
 
@@ -86,7 +86,16 @@ Open `Roadmap.md` first. Its header records the current phase, last completed ta
 
 ## Contact form integration
 
-The default adapter submits enquiries to FormSubmit's AJAX endpoint for `info@satsb.com.my`, with no frontend API key. Before launch, submit one test enquiry and approve the one-time activation message delivered to that mailbox. Do not use sensitive production information in the activation test.
+The default adapter submits enquiries to FormSubmit's AJAX endpoint for `info@satsb.com.my`, with no frontend API key. It uses FormSubmit's public random replacement identifier when `VITE_FORM_SUBMIT_ID` is configured, keeping the recipient out of the form action. The identifier is public routing configuration—not a password or private API key.
+
+For Cloudflare Pages:
+
+1. Copy the random replacement identifier from the FormSubmit activation email. Use only the identifier, not the complete FormSubmit URL.
+2. Add `VITE_FORM_SUBMIT_ID` to both Preview and Production environment variables.
+3. Set `VITE_SITE_URL=https://www.satsb.com.my` for Production and redeploy.
+4. Submit a non-sensitive test from the Pages domain during transition and again from `https://www.satsb.com.my` after cutover. If FormSubmit sends another domain-specific activation request, approve it from `info@satsb.com.my` and retest delivery.
+
+The form uses FormSubmit's table template, the fixed subject `New Website Enquiry - Surya Amor Technology`, Reply-To, a functional honeypot and FormSubmit's default CAPTCHA protection. Successful AJAX submissions stay on the contact page and show a professional confirmation; the fields clear only after FormSubmit reports success.
 
 For a controlled PHP, Node.js, serverless, Formspree or Resend-backed service:
 
@@ -95,7 +104,7 @@ For a controlled PHP, Node.js, serverless, Formspree or Resend-backed service:
 3. Update only the adapter in `src/utilities/contact.ts` if the provider contract differs; the form UI can remain unchanged.
 4. Validate, rate-limit and protect submissions against spam server-side; never put private API keys in `VITE_*` variables.
 
-The adapter constructs the subject `New Website Enquiry - [Sender Name]` and includes the sender, company, contact details, selected service, message, Malaysia-local submission time and website source.
+The adapter includes the sender, company, contact details, selected service, message, privacy acknowledgement, Malaysia-local submission time and website source.
 
 ## Deployment
 
@@ -104,8 +113,8 @@ The adapter constructs the subject `New Website Enquiry - [Sender Name]` and inc
 - Build command: `npm run build`
 - Publish directory: `dist`
 - Add an SPA rewrite from all paths to `/index.html`.
-- Set `VITE_SITE_URL` to the final HTTPS origin.
-- Activate FormSubmit for the recipient mailbox, or configure `VITE_CONTACT_FORM_ENDPOINT` when a controlled backend is ready.
+- Set `VITE_SITE_URL=https://www.satsb.com.my` on the production deployment.
+- Configure `VITE_FORM_SUBMIT_ID`, verify delivery on the Pages preview and production domain, and approve another activation email if FormSubmit requests one after the domain changes.
 
 ### Traditional Apache/Nginx hosting
 

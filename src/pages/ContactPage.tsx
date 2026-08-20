@@ -7,9 +7,9 @@ import { services } from '../data/services'
 import { siteConfig } from '../data/site'
 import { useSeo } from '../hooks/useSeo'
 import type { ContactFormErrors, ContactFormValues } from '../types'
-import { submitContactForm, validateContactForm } from '../utilities/contact'
+import { contactFormSubject, getContactFormEndpoint, submitContactForm, validateContactForm } from '../utilities/contact'
 
-const initialValues: ContactFormValues = { name: '', email: '', phone: '', organization: '', service: '', message: '', consent: false }
+const initialValues: ContactFormValues = { name: '', email: '', phone: '', organization: '', service: '', message: '', consent: false, _honey: '' }
 
 export default function ContactPage() {
   const [values, setValues] = useState<ContactFormValues>(initialValues)
@@ -64,13 +64,17 @@ export default function ContactPage() {
             <p className="eyebrow">Project enquiry</p>
             <h2 className="heading">Tell us what you need to make usable.</h2>
             <p className="lead">Fields marked with * are required. Your enquiry will be delivered to {siteConfig.email}.</p>
-            <form style={{ marginTop: '2rem' }} onSubmit={handleSubmit} noValidate>
+            <form action={getContactFormEndpoint()} method="POST" style={{ marginTop: '2rem' }} onSubmit={handleSubmit} noValidate>
+              <input type="hidden" name="_subject" value={contactFormSubject} />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_replyto" value={values.email} />
+              <div className="form-honeypot" aria-hidden="true"><label htmlFor="website">Leave this field empty</label><input id="website" name="_honey" type="text" tabIndex={-1} autoComplete="off" value={values._honey} onChange={update} /></div>
               <div className="form-grid">
                 <div className="field"><label htmlFor="name">Name *</label><input id="name" name="name" autoComplete="name" value={values.name} onChange={update} onBlur={() => validateField('name')} aria-invalid={Boolean(errors.name)} aria-describedby="name-error" /><p className="field__error" id="name-error">{errors.name}</p></div>
                 <div className="field"><label htmlFor="email">Work email *</label><input id="email" name="email" type="email" autoComplete="email" value={values.email} onChange={update} onBlur={() => validateField('email')} aria-invalid={Boolean(errors.email)} aria-describedby="email-error" /><p className="field__error" id="email-error">{errors.email}</p></div>
                 <div className="field"><label htmlFor="phone">Phone <span>(optional)</span></label><input id="phone" name="phone" type="tel" autoComplete="tel" value={values.phone} onChange={update} onBlur={() => validateField('phone')} aria-invalid={Boolean(errors.phone)} aria-describedby="phone-error" /><p className="field__error" id="phone-error">{errors.phone}</p></div>
-                <div className="field"><label htmlFor="organization">Organization <span>(optional)</span></label><input id="organization" name="organization" autoComplete="organization" value={values.organization} onChange={update} /><p className="field__error" /></div>
-                <div className="field field--full"><label htmlFor="service">Service area *</label><select id="service" name="service" value={values.service} onChange={update} onBlur={() => validateField('service')} aria-invalid={Boolean(errors.service)} aria-describedby="service-error"><option value="">Select a service area</option>{services.map((service) => <option value={service.slug} key={service.slug}>{service.title}</option>)}<option value="unsure">Not sure / multiple services</option></select><p className="field__error" id="service-error">{errors.service}</p></div>
+                <div className="field"><label htmlFor="organization">Company / organization <span>(optional)</span></label><input id="organization" name="organization" autoComplete="organization" value={values.organization} onChange={update} /><p className="field__error" /></div>
+                <div className="field field--full"><label htmlFor="service">Service interested in *</label><select id="service" name="service" value={values.service} onChange={update} onBlur={() => validateField('service')} aria-invalid={Boolean(errors.service)} aria-describedby="service-error"><option value="">Select a service area</option>{services.map((service) => <option value={service.slug} key={service.slug}>{service.title}</option>)}<option value="unsure">Not sure / multiple services</option></select><p className="field__error" id="service-error">{errors.service}</p></div>
                 <div className="field field--full"><label htmlFor="message">Project details *</label><textarea id="message" name="message" value={values.message} onChange={update} onBlur={() => validateField('message')} aria-invalid={Boolean(errors.message)} aria-describedby="message-hint message-error" placeholder="For example: source formats, approximate volume, location, condition and desired output." /><span className="sr-only" id="message-hint">Provide at least 20 characters. Do not include confidential record content.</span><p className="field__error" id="message-error">{errors.message}</p></div>
                 <div className="field field--full"><div className="checkbox"><input id="consent" name="consent" type="checkbox" checked={values.consent} onChange={update} onBlur={() => validateField('consent')} aria-invalid={Boolean(errors.consent)} aria-describedby="consent-error" /><label htmlFor="consent">I acknowledge that this information will be used to respond to my enquiry and have read the <a href="/privacy" style={{ textDecoration: 'underline' }}>privacy notice</a>. *</label></div><p className="field__error" id="consent-error">{errors.consent}</p></div>
               </div>

@@ -40,6 +40,7 @@ export interface ContactFormValues {
   service: string
   message: string
   consent: boolean
+  _honey: string
 }
 
 export type ContactFormErrors = Partial<Record<keyof ContactFormValues, string>>
