@@ -561,11 +561,6 @@ img { display: block; max-width: 100%; }
 .empty-state h1 { margin: 1.5rem 0 .5rem; font: 750 clamp(2rem, 5vw, 3.5rem) var(--font-display); }
 .empty-state p { max-width: 35rem; margin: 0 auto; color: var(--slate-500); font-size: 1.1rem; line-height: 1.7; }
 
-@media (max-width: 1150px) {
-  .nav, .header .button { display: none; }
-  .menu-toggle { display: grid; }
-}
-
 @media (max-width: 1050px) {
   .nav, .header .button { display: none; }
   .menu-toggle { display: grid; }

@@ -1,7 +1,7 @@
 import { ChevronDown, Menu, X } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
-import { navigation } from '../../data/site'
+import { navigation, secondaryNavigation } from '../../data/site'
 import { CompanyLogo } from '../common/CompanyLogo'
 import { Button } from '../ui/Button'
 
@@ -92,6 +92,9 @@ export function Header() {
               <NavLink to={item.href} onClick={closeNavigation} className={() => isNavigationActive(pathname, item) ? 'active' : ''}>{item.label}<span aria-hidden="true">→</span></NavLink>
               {item.children && <div className="mobile-menu__services">{item.children.map((child) => <Link key={child.href} to={child.href} onClick={closeNavigation}>{child.label}</Link>)}</div>}
             </div>
+          ))}
+          {secondaryNavigation.map((item) => (
+            <NavLink key={item.href} to={item.href} onClick={closeNavigation}>{item.label}<span aria-hidden="true">→</span></NavLink>
           ))}
         </nav>
       </div>

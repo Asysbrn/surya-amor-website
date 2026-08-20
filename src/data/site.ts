@@ -26,14 +26,19 @@ export const navigation: NavItem[] = [
         href: `/services/${service.slug}`,
         description: service.summary,
       })),
+      { label: 'Hardware catalogue', href: '/hardware', description: 'Browse the deduplicated equipment catalogue recorded in SAT’s asset workbook.' },
     ],
   },
   { label: 'Industries', href: '/industries' },
-  { label: 'Hardware', href: '/hardware' },
   { label: 'Clients', href: '/clients' },
   { label: 'News', href: '/news' },
-  { label: 'Careers', href: '/careers' },
   { label: 'Contact', href: '/contact' },
+]
+
+export const secondaryNavigation = [
+  { label: 'Our Process', href: '/process' },
+  { label: 'Why Choose Us', href: '/why-us' },
+  { label: 'Careers', href: '/careers' },
 ]
 
 export const industries = [

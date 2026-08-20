@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { featuredServices } from '../../data/services'
-import { navigation, siteConfig } from '../../data/site'
+import { navigation, secondaryNavigation, siteConfig } from '../../data/site'
 import { CompanyLogo } from '../common/CompanyLogo'
 
 export function Footer() {
@@ -17,12 +17,14 @@ export function Footer() {
           <h2>Explore</h2>
           <div className="footer__links">
             {navigation.map((item) => <Link to={item.href} key={item.href}>{item.label}</Link>)}
+            {secondaryNavigation.map((item) => <Link to={item.href} key={item.href}>{item.label}</Link>)}
           </div>
         </div>
         <div>
           <h2>Core services</h2>
           <div className="footer__links">
             {featuredServices.map((service) => <Link key={service.slug} to={`/services/${service.slug}`}>{service.title}</Link>)}
+            <Link to="/hardware">Hardware catalogue</Link>
             <Link to="/services">All services</Link>
           </div>
         </div>
